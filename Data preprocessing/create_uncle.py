@@ -1,0 +1,89 @@
+import csv
+
+class Node:
+    def __init__(self, name):
+        self.name = name
+        self.children = set()
+        self.parents = set()
+
+    def add_child(self, child):
+        self.children.add(child)
+        child.parents.add(self)
+
+    def __repr__(self):
+        return self.name
+
+class Graph:
+    def __init__(self):
+        self.nodes = {}
+
+    def add_edge(self, child_name, parent_name):
+        parent = self.nodes.get(parent_name, Node(parent_name))
+        child = self.nodes.get(child_name, Node(child_name))
+        parent.add_child(child)
+        self.nodes[parent_name] = parent
+        self.nodes[child_name] = child
+
+    def find_uncle_nephew(self, nephew_name):
+        nephew = self.nodes.get(nephew_name)
+        if not nephew:
+            return None
+
+        uncles = set()
+        for parent in nephew.parents:
+            for grandparent in parent.parents:
+                potential_uncles = grandparent.children - {parent}
+                for uncle in potential_uncles:
+                    if not self.has_is_a_relation(uncle, nephew):
+                        uncles.add(uncle)
+
+        return uncles
+
+    def has_is_a_relation(self, node1, node2):
+        # Check if node1 is a direct or indirect parent of node2
+        visited = set()
+        queue = [node2]
+        while queue:
+            current_node = queue.pop(0)
+            if current_node == node1:
+                return True
+            visited.add(current_node)
+            for parent in current_node.parents:
+                if parent not in visited:
+                    queue.append(parent)
+        return False
+
+    def write_uncle_nephew_to_csv(self, csv_file_path):
+        x = 0
+        with open(csv_file_path, mode='w', newline='') as csvfile:
+            csv_writer = csv.writer(csvfile, delimiter='\t')  # 使用制表符作为分隔符
+            csv_writer.writerow(['Nephew', 'Uncle'])  # 写入表头
+            for nephew_name in self.nodes:
+                uncles = self.find_uncle_nephew(nephew_name)
+                for uncle in uncles:
+                    csv_writer.writerow([nephew_name, uncle.name, 0])
+                    x = x+1
+        print(x)
+
+# 读取CSV文件并建立图
+def build_graph_from_csv(file_path):
+    graph = Graph()
+    with open(file_path, mode='r') as tsvfile:
+        reader = csv.reader(tsvfile, delimiter='\t')
+        for row in reader:
+            child_name = row[0]
+            parent_name = row[1]
+            graph.add_edge(child_name, parent_name)
+    return graph
+
+# CSV文件路径
+csv_file_path = '../data/go_2025/is_a_relations_indexed.csv'
+
+# 构建图
+# 构建图
+graph = build_graph_from_csv(csv_file_path)
+
+# 写入叔侄节点对到CSV文件
+csv_file_path = '../data/go_2025/uncle_nephew_relations.csv'
+graph.write_uncle_nephew_to_csv(csv_file_path)
+print("叔侄节点已写入")

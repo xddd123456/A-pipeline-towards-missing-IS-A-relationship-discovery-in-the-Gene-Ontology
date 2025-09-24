@@ -1,0 +1,43 @@
+import json
+import pandas as pd
+
+# 从 JSON 文件加载森林数据
+with open('forest.json', 'r') as f:
+    forest = json.load(f)
+
+# 存储兄弟节点信息
+brother_nodes = []
+
+# 遍历树的每一层并提取兄弟节点
+def find_siblings_at_level(children, parent_id=None):
+    """
+    遍历树的每一层并提取兄弟节点。
+    :param children: 当前层的子节点列表
+    :param parent_id: 当前父节点的ID
+    """
+    if len(children) > 1:  # 如果当前层有多个子节点
+        for i, child in enumerate(children):
+            child_id = list(child.keys())[0]
+            # 获取当前子节点的兄弟节点
+            siblings = [sibling for j, sibling in enumerate(children) if i != j]
+            for sibling in siblings:
+                sibling_id = list(sibling.keys())[0]
+                brother_nodes.append(['child_id', sibling_id])
+
+    # 递归处理每个子节点的子节点（下一层）
+    for child in children:
+        child_id = list(child.keys())[0]
+        find_siblings_at_level(child[child_id], child_id)
+
+# 遍历森林中的每棵树
+for tree in forest:
+    for parent, children in tree.items():
+        find_siblings_at_level(children, parent)
+
+# 将兄弟节点信息保存为DataFrame
+brother_df = pd.DataFrame(brother_nodes, columns=["bro1", "bro2"])
+
+# 保存为CSV文件
+brother_df.to_csv('brother_nodes.csv', index=False, sep='\t')
+
+print("兄弟节点已保存为brother_nodes.csv")

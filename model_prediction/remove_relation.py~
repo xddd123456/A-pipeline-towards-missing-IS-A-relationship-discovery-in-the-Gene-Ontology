@@ -1,0 +1,68 @@
+import pandas as pd
+
+# 读取两个 CSV 文件
+sibling_relation = pd.read_csv("prediction_data/go_2023/siblings.csv", header=None, sep='\t', usecols=[0, 1], skiprows=1)
+other_relation = pd.read_csv("../data/go_2023/relations_indexed.csv", header=None, sep='\t')
+top3_nf1_relation = pd.read_csv("prediction_data/go_2023/filtered_top1.csv", header=None, sep='\t', skiprows=1)
+# top5_nf1_relation = pd.read_csv("prediction_data/GO_202409/filtered_top2.csv", header=None, sep='\t', skiprows=1)
+
+# 重命名列以便对比
+# sibling_relation.columns = ["Col1", "Col2"]
+other_relation.columns = ["Col1", "Col2"]
+top3_nf1_relation.columns = ["Col1", "Col2"]
+# top5_nf1_relation.columns = ["Col1", "Col2"]
+
+# 转换为集合以提高查找效率
+is_a_set = set(sibling_relation.apply(tuple, axis=1))
+other_relation_set = set(other_relation.apply(tuple, axis=1))
+
+# 定义一个函数，用于去除重复项并逐条打印
+def remove_duplicates_with_logging(relation_df, relation_name):
+    filtered_relation = []
+    x=0
+    for idx, row in relation_df.iterrows():
+        row_tuple = tuple(row)
+        if row_tuple in is_a_set:
+            print(f"{relation_name}: Removed duplicate row {row_tuple}")
+            x += 1
+        else:
+            filtered_relation.append(row_tuple)
+    print(x)
+    return pd.DataFrame(filtered_relation, columns=["Col1", "Col2"])
+
+# 定义函数：去重 + 移除对称关系 (X1, X2) 和 (X2, X1)
+def remove_duplicates_and_symmetric(relation_df, relation_name):
+    unique_relations = set()
+    removed_count = 0
+    for _, row in relation_df.iterrows():
+        x1, x2 = row["Col1"], row["Col2"]
+        # 如果关系已经出现或是对称关系，跳过
+        if (x1, x2) in unique_relations or (x2, x1) in unique_relations:
+            removed_count += 1
+            continue
+        # 检查是否在 sibling_relation 或其他重复集合中
+        if (x1, x2) in other_relation_set or (x2, x1) in other_relation_set:
+            removed_count += 1
+            continue
+        # 如果不是重复或对称关系，添加到结果
+        unique_relations.add((x1, x2))
+    print(f"{relation_name}: Removed {removed_count} duplicate or symmetric relations.")
+    return pd.DataFrame(unique_relations, columns=["Col1", "Col2"])
+
+
+# # 去掉重复部分
+# filtered_top3_nf1_relation = remove_duplicates_with_logging(top3_nf1_relation, "Top3")
+# filtered_top5_nf1_relation = remove_duplicates_with_logging(top5_nf1_relation, "Top5")
+#
+# # 保存去重后的结果
+# filtered_top3_nf1_relation.to_csv("prediction_data/GO_202409/filtered_top3_relation.csv", index=False, header=False, sep='\t')
+# filtered_top5_nf1_relation.to_csv("prediction_data/GO_202409/filtered_top5_relation.csv", index=False, header=False, sep='\t')
+
+# 去重和去对称
+filtered_top3_nf1_relation = remove_duplicates_and_symmetric(top3_nf1_relation, "Top1")
+# filtered_top5_nf1_relation = remove_duplicates_and_symmetric(top5_nf1_relation, "Top2")
+
+filtered_top3_nf1_relation.to_csv("prediction_data/go_2023/filtered_top1.csv", index=False, header=False, sep='\t')
+# filtered_top5_nf1_relation.to_csv("prediction_data/GO_202409/filtered_top2_relation.csv", index=False, header=False, sep='\t')
+
+print("去重完成，结果已保存")

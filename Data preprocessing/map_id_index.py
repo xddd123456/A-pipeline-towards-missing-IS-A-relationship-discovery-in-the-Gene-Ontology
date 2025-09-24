@@ -1,0 +1,37 @@
+import csv
+import json
+
+# Step 1: 读取 go_term_def_embeddings.csv 文件并构建 id -> index 的映射字典
+
+with open("../data/go_2022/id_to_index.json", "r") as jsonfile:
+    id_to_index = json.load(jsonfile)
+
+# Step 2: 读取 is_a_relations.csv 文件，将 id 替换为编号
+# with open("../data/go_2025/is_a_relations.csv", "r") as csvfile:
+for i in range(1, 1001):
+    is_a_relations_indexed = []
+    with open(f"../model_prediction/prediction_data/go_2022/fillter/example/combined_top_iter{i}.csv", "r") as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        next(reader)  # 跳过表头
+        for row in reader:
+            go_id = row[0]
+            related_id = row[1]
+            # relation = row[2]
+
+            # 将 go_id 和 related_id 转换为编号，如果不在字典中，则忽略
+            if go_id in id_to_index and related_id in id_to_index:
+                is_a_relations_indexed.append([
+                    id_to_index[go_id],
+                    id_to_index[related_id],
+                    # 1
+                ])
+
+    # Step 3: 将转换后的 IS_A 关系保存为 csv 文件
+    with open(f"../model_prediction/prediction_data/go_2022/fillter/example/combined_top_iter{i}_index.csv", "w", newline='') as csvfile:
+    # with open("../data/go_2025/is_a_relations_indexed.csv", "w", newline='') as csvfile:
+        writer = csv.writer(csvfile, delimiter='\t')
+        # writer.writerow(["source_id", "target_id"])  # 写入表头
+        # writer.writerow(["source_id", "target_id", "relation"])  # 写入表头
+        writer.writerows(is_a_relations_indexed)
+
+print("IS_A 关系已根据编号转换，并保存")

@@ -1,0 +1,171 @@
+import networkx as nx
+import pandas as pd
+import csv
+
+
+# 1. 加载 is_a 关系文件
+def load_is_a_relations(file_path):
+    df = pd.read_csv(file_path, sep='\t')
+    G = nx.DiGraph()
+    for _, row in df.iterrows():
+        child, parent = row['id'], row['related_id']
+        G.add_edge(parent, child)  # 构建 is_a 关系的有向图
+    return G
+
+
+# 2. 判断两个节点之间是否有路径
+def has_no_path(graph, node1, node2, path_cache):
+    """
+    判断两个节点之间是否有路径（直接或间接）。
+    如果没有路径，则返回 True。
+    使用缓存来避免重复计算路径。
+    """
+    if (node1, node2) in path_cache:
+        return path_cache[(node1, node2)]
+
+    # 如果没有路径，返回 True
+    no_path = not nx.has_path(graph, node1, node2)
+    path_cache[(node1, node2)] = no_path
+    return no_path
+
+
+# 3. 获取非格状子图
+def extract_non_lattice_subgraphs(graph, min_nodes=10, level_threshold=10):
+    """
+    提取非格状子图
+    :param graph: GO 图 (DiGraph)。
+    :param min_nodes: 非格状子图的最小节点数。
+    :param level_threshold: 节点的级别阈值。
+    :return: 返回所有满足条件的非格状子图。
+    """
+    non_lattice_subgraphs = []
+
+    # 缓存每个节点的祖先和后代，以减少重复计算
+    ancestors_cache = {}
+    descendants_cache = {}
+
+    def get_ancestors(node):
+        if node not in ancestors_cache:
+            ancestors_cache[node] = nx.ancestors(graph, node)
+        return ancestors_cache[node]
+
+    def get_descendants(node):
+        if node not in descendants_cache:
+            descendants_cache[node] = nx.descendants(graph, node)
+        return descendants_cache[node]
+
+    # 计算节点的级别
+    def get_node_level(node):
+        """
+        计算节点的级别（从根节点到该节点的路径长度）。
+        """
+        levels = nx.single_source_shortest_path_length(graph.reverse(), node)
+        return max(levels.values()) if levels else 0  # 返回最大路径长度，即节点的级别
+
+    # 遍历图中的所有节点对
+    for node1 in graph.nodes():
+        for node2 in graph.nodes():
+            if node1 != node2:
+                # 筛选符合级别要求的节点对
+                if get_node_level(node1) >= level_threshold and get_node_level(node2) >= level_threshold:
+                    # 检查是否是非格状子图
+                    if is_non_lattice_pair(graph, node1, node2, get_ancestors, get_descendants):
+                        # 获取包含这两个节点的子图
+                        subgraph_nodes = get_ancestors(node1) | get_descendants(node1) | get_ancestors(node2) | get_descendants(node2)
+                        if len(subgraph_nodes) <= min_nodes:
+                            non_lattice_subgraphs.append(subgraph_nodes)
+
+    return non_lattice_subgraphs
+
+
+# 4. 判断是否为非格状子图的节点对
+def is_non_lattice_pair(graph, node1, node2, get_ancestors, get_descendants):
+    """
+    判断两个节点是否构成非格状子图
+    :param graph: GO 图 (DiGraph)。
+    :param node1: 节点1。
+    :param node2: 节点2。
+    :return: 如果两个节点没有唯一的LUB（最小共享祖先）或GLB（最大共享后代），则返回True。
+    """
+    # 获取节点的所有祖先
+    ancestors1 = get_ancestors(node1)
+    ancestors2 = get_ancestors(node2)
+
+    # 获取节点的所有后代
+    descendants1 = get_descendants(node1)
+    descendants2 = get_descendants(node2)
+
+    # 判断是否有唯一的最大共享后代或最小共享祖先
+    common_ancestors = ancestors1 & ancestors2
+    common_descendants = descendants1 & descendants2
+
+    # 如果没有共同的祖先或后代，或者有多个共同的祖先或后代，则视为非格状子图
+    if len(common_ancestors) > 1 or len(common_descendants) > 1:
+        return True
+
+    return False
+
+
+# 5. 提取候选对并去除重复项
+def extract_candidate_pairs(non_lattice_subgraphs, graph):
+    """
+    提取候选对，并去除重复项
+    :param non_lattice_subgraphs: 非格状子图列表
+    :param graph: GO 图 (DiGraph)。
+    :return: 去重后的候选对列表
+    """
+    candidate_pairs = set()
+    path_cache = {}
+
+    # 在每个非格状子图中提取候选对
+    for subgraph in non_lattice_subgraphs:
+        subgraph_list = list(subgraph)
+        for i in range(len(subgraph_list)):
+            for j in range(i + 1, len(subgraph_list)):
+                node1, node2 = subgraph_list[i], subgraph_list[j]
+
+                # 确保没有直接或间接的 is-a 关系
+                if has_no_path(graph, node1, node2, path_cache):
+                    candidate_pairs.add((node1, node2))  # 添加候选对
+
+    return list(candidate_pairs)
+
+
+# 6. 保存结果到 CSV 文件
+def save_candidate_pairs_to_csv(candidate_pairs, output_file):
+    """
+    将候选对保存到 CSV 文件
+    :param candidate_pairs: 候选对列表 [(node1, node2), ...]。
+    :param output_file: 输出文件路径。
+    """
+    with open(output_file, 'w', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Node1", "Node2"])
+        for pair in candidate_pairs:
+            writer.writerow(pair)
+
+
+# 主程序
+def main():
+    # 输入文件路径
+    file_path = '../data/go_2022/is_a_relations.csv'  # 替换为实际路径
+    output_file = 'non_lattice_pairs_level.csv'  # 输出文件路径
+
+    # 1. 加载 is_a 关系文件
+    graph = load_is_a_relations(file_path)
+
+    # 2. 找到非格状子图
+    non_lattice_subgraphs = extract_non_lattice_subgraphs(graph)
+    print(f"找到 {len(non_lattice_subgraphs)} 个非格状子图")
+
+    # 3. 提取候选对
+    candidate_pairs = extract_candidate_pairs(non_lattice_subgraphs, graph)
+
+    # 4. 保存候选对到 CSV 文件
+    save_candidate_pairs_to_csv(candidate_pairs, output_file)
+    print(f"已保存 {len(candidate_pairs)} 个候选对到 {output_file}")
+
+
+# 运行主程序
+if __name__ == "__main__":
+    main()

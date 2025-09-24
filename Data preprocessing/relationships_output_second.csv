@@ -1,0 +1,1899 @@
+Node1,Node2,Relationship
+GO:0046155,GO:0046164,No Specific Relationship
+GO:1901702,GO:1903425,No Specific Relationship
+GO:0022412,GO:0042070,Grandparent-Grandchild (爷孙节点)
+GO:0031331,GO:0033249,Grandparent-Grandchild (爷孙节点)
+GO:0071285,GO:1902075,No Specific Relationship
+GO:0039506,GO:0039507,Grandparent-Grandchild (爷孙节点)
+GO:0001545,GO:0048589,Sibling (兄弟节点)
+GO:0030877,GO:1902494,Sibling (兄弟节点)
+GO:0106274,GO:1990404,Uncle/Nephew (叔侄节点)
+GO:0071805,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0002941,GO:0050673,Sibling (兄弟节点)
+GO:0035833,GO:1901362,No Specific Relationship
+GO:0031507,GO:0140462,Sibling (兄弟节点)
+GO:0042886,GO:0090454,No Specific Relationship
+GO:0031326,GO:2000278,Grandparent-Grandchild (爷孙节点)
+GO:0071326,GO:1905440,Uncle/Nephew (叔侄节点)
+GO:0045089,GO:0062208,No Specific Relationship
+GO:0004657,GO:0016649,Sibling (兄弟节点)
+GO:0005254,GO:0015108,No Specific Relationship
+GO:0019049,GO:0019054,Sibling (兄弟节点)
+GO:0039693,GO:0071897,No Specific Relationship
+GO:1901367,GO:1902074,No Specific Relationship
+GO:0006739,GO:0046496,No Specific Relationship
+GO:0019752,GO:1900539,Uncle/Nephew (叔侄节点)
+GO:1903961,GO:1904214,Grandparent-Grandchild (爷孙节点)
+GO:0033993,GO:0034694,Uncle/Nephew (叔侄节点)
+GO:0007610,GO:0032501,Sibling (兄弟节点)
+GO:0030437,GO:1903046,Grandparent-Grandchild (爷孙节点)
+GO:0060918,GO:0080162,Grandparent-Grandchild (爷孙节点)
+GO:0005667,GO:1990622,Sibling (兄弟节点)
+GO:0031330,GO:1900082,Grandparent-Grandchild (爷孙节点)
+GO:0019872,GO:0044272,No Specific Relationship
+GO:0042176,GO:0061136,No Specific Relationship
+GO:0008150,GO:0042592,No Specific Relationship
+GO:0016469,GO:1904949,No Specific Relationship
+GO:0006338,GO:0070828,Sibling (兄弟节点)
+GO:0048518,GO:1903781,Grandparent-Grandchild (爷孙节点)
+GO:0051924,GO:1902080,Grandparent-Grandchild (爷孙节点)
+GO:0032261,GO:0034355,Uncle/Nephew (叔侄节点)
+GO:0018249,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0043799,GO:0052595,Sibling (兄弟节点)
+GO:0005253,GO:0008509,Grandparent-Grandchild (爷孙节点)
+GO:0009743,GO:0052542,No Specific Relationship
+GO:0005952,GO:1902554,No Specific Relationship
+GO:1990469,GO:1990923,Uncle/Nephew (叔侄节点)
+GO:0071285,GO:1901701,No Specific Relationship
+GO:0048519,GO:1905032,No Specific Relationship
+GO:0000098,GO:0046395,Sibling (兄弟节点)
+GO:0043648,GO:0051202,No Specific Relationship
+GO:0030163,GO:0046155,Grandparent-Grandchild (爷孙节点)
+GO:0002050,GO:1901361,No Specific Relationship
+GO:0010599,GO:0030422,Sibling (兄弟节点)
+GO:0044672,GO:1902494,Sibling (兄弟节点)
+GO:0034764,GO:1905626,No Specific Relationship
+GO:0009815,GO:0016715,No Specific Relationship
+GO:0033239,GO:1900319,Sibling (兄弟节点)
+GO:0010566,GO:1900854,Grandparent-Grandchild (爷孙节点)
+GO:0045717,GO:1902323,Sibling (兄弟节点)
+GO:0042220,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0006629,GO:1901568,Sibling (兄弟节点)
+GO:0031047,GO:0031048,No Specific Relationship
+GO:0009415,GO:0010033,Uncle/Nephew (叔侄节点)
+GO:0055064,GO:0055081,Grandparent-Grandchild (爷孙节点)
+GO:0043169,GO:0051380,No Specific Relationship
+GO:0015747,GO:0071705,No Specific Relationship
+GO:0007059,GO:0022402,Sibling (兄弟节点)
+GO:0006882,GO:0098771,No Specific Relationship
+GO:0015115,GO:1901702,No Specific Relationship
+GO:0015746,GO:0071705,No Specific Relationship
+GO:0015106,GO:0015318,No Specific Relationship
+GO:0015796,GO:0034219,Sibling (兄弟节点)
+GO:0035601,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0034133,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0015706,GO:1902025,Uncle/Nephew (叔侄节点)
+GO:0005835,GO:1902494,Sibling (兄弟节点)
+GO:0033240,GO:1900320,Sibling (兄弟节点)
+GO:0008047,GO:0140677,Uncle/Nephew (叔侄节点)
+GO:0010041,GO:1902074,No Specific Relationship
+GO:0036272,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0034762,GO:1902272,No Specific Relationship
+GO:0051093,GO:1904360,Grandparent-Grandchild (爷孙节点)
+GO:0015694,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0000159,GO:0008287,Grandparent-Grandchild (爷孙节点)
+GO:0015689,GO:0071705,No Specific Relationship
+GO:0031061,GO:0031324,No Specific Relationship
+GO:0034744,GO:0140535,Sibling (兄弟节点)
+GO:0005839,GO:0140535,Sibling (兄弟节点)
+GO:0016577,GO:0070078,Grandparent-Grandchild (爷孙节点)
+GO:0061058,GO:0062207,Sibling (兄弟节点)
+GO:0000758,GO:0051703,Grandparent-Grandchild (爷孙节点)
+GO:0042759,GO:0097251,Uncle/Nephew (叔侄节点)
+GO:0046395,GO:1901606,Sibling (兄弟节点)
+GO:0015124,GO:0046943,No Specific Relationship
+GO:0046584,GO:0072338,Uncle/Nephew (叔侄节点)
+GO:0034176,GO:0039532,No Specific Relationship
+GO:0071078,GO:1902494,No Specific Relationship
+GO:0045869,GO:1902679,No Specific Relationship
+GO:0034131,GO:0062207,Grandparent-Grandchild (爷孙节点)
+GO:0051649,GO:0099585,No Specific Relationship
+GO:0060238,GO:2000241,Grandparent-Grandchild (爷孙节点)
+GO:0015730,GO:0071705,No Specific Relationship
+GO:0036409,GO:0140513,No Specific Relationship
+GO:0007017,GO:0099118,No Specific Relationship
+GO:0008519,GO:0015267,No Specific Relationship
+GO:0015550,GO:0046943,No Specific Relationship
+GO:0050996,GO:1905830,Sibling (兄弟节点)
+GO:1902555,GO:1905348,Sibling (兄弟节点)
+GO:0046415,GO:0072521,No Specific Relationship
+GO:0015297,GO:0015496,Grandparent-Grandchild (爷孙节点)
+GO:1900543,GO:1903579,No Specific Relationship
+GO:0044675,GO:1902494,Sibling (兄弟节点)
+GO:0046394,GO:1900578,Sibling (兄弟节点)
+GO:0008104,GO:0036051,Grandparent-Grandchild (爷孙节点)
+GO:0010486,GO:0051139,Sibling (兄弟节点)
+GO:0016255,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0015297,GO:0045119,No Specific Relationship
+GO:0035151,GO:0035158,Grandparent-Grandchild (爷孙节点)
+GO:0017101,GO:1902494,Sibling (兄弟节点)
+GO:0031329,GO:2000058,No Specific Relationship
+GO:0030015,GO:0140535,Sibling (兄弟节点)
+GO:0015755,GO:1990539,Grandparent-Grandchild (爷孙节点)
+GO:0034219,GO:1902341,Sibling (兄弟节点)
+GO:0035751,GO:0065008,No Specific Relationship
+GO:0034764,GO:0035432,No Specific Relationship
+GO:0006735,GO:0008152,Grandparent-Grandchild (爷孙节点)
+GO:0048520,GO:0051240,Sibling (兄弟节点)
+GO:0002221,GO:0061057,Sibling (兄弟节点)
+GO:0015813,GO:0051938,Sibling (兄弟节点)
+GO:0030642,GO:0055082,No Specific Relationship
+GO:0022857,GO:1901683,No Specific Relationship
+GO:0051172,GO:1900178,Uncle/Nephew (叔侄节点)
+GO:0052929,GO:0070566,No Specific Relationship
+GO:0015607,GO:0034040,Uncle/Nephew (叔侄节点)
+GO:0042759,GO:2001306,Uncle/Nephew (叔侄节点)
+GO:0042176,GO:1904350,Grandparent-Grandchild (爷孙节点)
+GO:0050794,GO:1904359,Grandparent-Grandchild (爷孙节点)
+GO:0009895,GO:0033242,Grandparent-Grandchild (爷孙节点)
+GO:0019752,GO:0030394,Uncle/Nephew (叔侄节点)
+GO:0015724,GO:0071705,No Specific Relationship
+GO:0010033,GO:0042542,Uncle/Nephew (叔侄节点)
+GO:0010961,GO:0030003,Grandparent-Grandchild (爷孙节点)
+GO:0032364,GO:0055082,Uncle/Nephew (叔侄节点)
+GO:0010524,GO:1904427,Sibling (兄弟节点)
+GO:0002951,GO:0008242,Uncle/Nephew (叔侄节点)
+GO:0030003,GO:0030007,Grandparent-Grandchild (爷孙节点)
+GO:0006777,GO:0032324,Sibling (兄弟节点)
+GO:0001676,GO:0009694,Uncle/Nephew (叔侄节点)
+GO:0018214,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0033054,GO:0043170,No Specific Relationship
+GO:0003006,GO:0060525,Grandparent-Grandchild (爷孙节点)
+GO:0015297,GO:0043858,No Specific Relationship
+GO:0032413,GO:0061907,Grandparent-Grandchild (爷孙节点)
+GO:0031328,GO:2001247,Grandparent-Grandchild (爷孙节点)
+GO:0002683,GO:0034148,No Specific Relationship
+GO:1903319,GO:2000259,Sibling (兄弟节点)
+GO:0046189,GO:0106150,No Specific Relationship
+GO:0071418,GO:1904314,No Specific Relationship
+GO:0035794,GO:1901030,Uncle/Nephew (叔侄节点)
+GO:0034109,GO:0090675,No Specific Relationship
+GO:0042864,GO:0046394,Sibling (兄弟节点)
+GO:0031990,GO:1901698,No Specific Relationship
+GO:0008233,GO:0019783,Grandparent-Grandchild (爷孙节点)
+GO:0016595,GO:0033218,No Specific Relationship
+GO:0033591,GO:1902074,No Specific Relationship
+GO:0060965,GO:1900369,Sibling (兄弟节点)
+GO:2000831,GO:2000867,Sibling (兄弟节点)
+GO:0033588,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0030208,GO:0046364,No Specific Relationship
+GO:0031324,GO:0060410,Grandparent-Grandchild (爷孙节点)
+GO:0050568,GO:0140096,No Specific Relationship
+GO:0016862,GO:0034018,Uncle/Nephew (叔侄节点)
+GO:0098655,GO:1903830,Grandparent-Grandchild (爷孙节点)
+GO:0008104,GO:0033365,Grandparent-Grandchild (爷孙节点)
+GO:0035795,GO:1901029,Uncle/Nephew (叔侄节点)
+GO:0042720,GO:1902494,No Specific Relationship
+GO:0010033,GO:0051592,No Specific Relationship
+GO:0072338,GO:1900788,Sibling (兄弟节点)
+GO:0045727,GO:0051247,Grandparent-Grandchild (爷孙节点)
+GO:0044650,GO:0075004,Sibling (兄弟节点)
+GO:0031326,GO:1900646,Grandparent-Grandchild (爷孙节点)
+GO:0047429,GO:0106378,Uncle/Nephew (叔侄节点)
+GO:0033500,GO:0033502,Grandparent-Grandchild (爷孙节点)
+GO:0020035,GO:0044650,Sibling (兄弟节点)
+GO:0004971,GO:0022890,No Specific Relationship
+GO:0005278,GO:0015078,Grandparent-Grandchild (爷孙节点)
+GO:0018901,GO:1901564,Uncle/Nephew (叔侄节点)
+GO:0009205,GO:0046034,No Specific Relationship
+GO:0045740,GO:0051054,Uncle/Nephew (叔侄节点)
+GO:0071247,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0034139,GO:0039531,Uncle/Nephew (叔侄节点)
+GO:0001626,GO:0008528,Grandparent-Grandchild (爷孙节点)
+GO:0045493,GO:2000895,Sibling (兄弟节点)
+GO:0080021,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0035434,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0004152,GO:0016627,Grandparent-Grandchild (爷孙节点)
+GO:0140096,GO:0140674,No Specific Relationship
+GO:0034180,GO:0039532,No Specific Relationship
+GO:0045182,GO:0090624,No Specific Relationship
+GO:0019472,GO:1901362,No Specific Relationship
+GO:0006882,GO:0030003,Grandparent-Grandchild (爷孙节点)
+GO:0018193,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0019752,GO:1900800,Uncle/Nephew (叔侄节点)
+GO:0032879,GO:0090235,Grandparent-Grandchild (爷孙节点)
+GO:0006833,GO:0071702,Uncle/Nephew (叔侄节点)
+GO:0043541,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0005085,GO:0140677,No Specific Relationship
+GO:0010550,GO:0042176,Grandparent-Grandchild (爷孙节点)
+GO:0048518,GO:1905033,No Specific Relationship
+GO:0042445,GO:0042573,Grandparent-Grandchild (爷孙节点)
+GO:0031175,GO:0097485,No Specific Relationship
+GO:0006195,GO:0019677,Uncle/Nephew (叔侄节点)
+GO:0031400,GO:0051248,Grandparent-Grandchild (爷孙节点)
+GO:0043168,GO:0140704,No Specific Relationship
+GO:2000989,GO:2001001,Sibling (兄弟节点)
+GO:0022414,GO:0080112,Grandparent-Grandchild (爷孙节点)
+GO:0034171,GO:0039531,Uncle/Nephew (叔侄节点)
+GO:0000761,GO:0098610,Grandparent-Grandchild (爷孙节点)
+GO:0022853,GO:0062158,No Specific Relationship
+GO:0035738,GO:0035821,Uncle/Nephew (叔侄节点)
+GO:0035725,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0046618,GO:0140352,Uncle/Nephew (叔侄节点)
+GO:0009056,GO:0043605,No Specific Relationship
+GO:0010563,GO:0045942,No Specific Relationship
+GO:0032561,GO:0140703,No Specific Relationship
+GO:0015103,GO:0015108,Grandparent-Grandchild (爷孙节点)
+GO:0031431,GO:1902554,No Specific Relationship
+GO:1902893,GO:2000628,No Specific Relationship
+GO:0015091,GO:1901682,No Specific Relationship
+GO:0052597,GO:0052598,Sibling (兄弟节点)
+GO:0051050,GO:2000120,No Specific Relationship
+GO:0030205,GO:0032787,No Specific Relationship
+GO:0010964,GO:0090052,Sibling (兄弟节点)
+GO:0051094,GO:0075031,No Specific Relationship
+GO:0006082,GO:0019694,Sibling (兄弟节点)
+GO:0046949,GO:1902860,Sibling (兄弟节点)
+GO:0043687,GO:0070212,Uncle/Nephew (叔侄节点)
+GO:0016616,GO:0033792,No Specific Relationship
+GO:0006846,GO:0071705,No Specific Relationship
+GO:0046058,GO:0052652,Uncle/Nephew (叔侄节点)
+GO:0008212,GO:0009987,No Specific Relationship
+GO:0005261,GO:0008324,Grandparent-Grandchild (爷孙节点)
+GO:0006820,GO:0006821,Grandparent-Grandchild (爷孙节点)
+GO:0019471,GO:1901360,No Specific Relationship
+GO:1902690,GO:1905014,No Specific Relationship
+GO:0015730,GO:0015913,Sibling (兄弟节点)
+GO:0016728,GO:0047057,No Specific Relationship
+GO:0019048,GO:0039516,Grandparent-Grandchild (爷孙节点)
+GO:1902494,GO:1990143,Sibling (兄弟节点)
+GO:0005601,GO:1902494,Sibling (兄弟节点)
+GO:0015810,GO:0070779,Sibling (兄弟节点)
+GO:0006734,GO:0019674,Sibling (兄弟节点)
+GO:0030895,GO:0045293,Uncle/Nephew (叔侄节点)
+GO:0046444,GO:0052648,No Specific Relationship
+GO:0019752,GO:0051478,Uncle/Nephew (叔侄节点)
+GO:0010835,GO:0051338,No Specific Relationship
+GO:0046068,GO:0052652,Uncle/Nephew (叔侄节点)
+GO:0006807,GO:1901055,No Specific Relationship
+GO:0071311,GO:1901699,Uncle/Nephew (叔侄节点)
+GO:0034081,GO:1902494,Sibling (兄弟节点)
+GO:0062208,GO:2000442,Grandparent-Grandchild (爷孙节点)
+GO:0010243,GO:1901327,Uncle/Nephew (叔侄节点)
+GO:0039657,GO:0050794,No Specific Relationship
+GO:0031325,GO:2000541,No Specific Relationship
+GO:0044273,GO:0071273,No Specific Relationship
+GO:0032974,GO:0034488,Sibling (兄弟节点)
+GO:0044815,GO:1990249,Sibling (兄弟节点)
+GO:1900781,GO:1901362,Grandparent-Grandchild (爷孙节点)
+GO:0008104,GO:0097271,Grandparent-Grandchild (爷孙节点)
+GO:0055085,GO:1901684,No Specific Relationship
+GO:0055082,GO:0070219,No Specific Relationship
+GO:0051276,GO:1900160,No Specific Relationship
+GO:0005955,GO:0140535,Grandparent-Grandchild (爷孙节点)
+GO:0006807,GO:0046343,No Specific Relationship
+GO:0006470,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0007204,GO:0065008,No Specific Relationship
+GO:0006816,GO:1902656,Grandparent-Grandchild (爷孙节点)
+GO:0051050,GO:1900072,No Specific Relationship
+GO:0046300,GO:1901565,Uncle/Nephew (叔侄节点)
+GO:0070332,GO:1902494,Sibling (兄弟节点)
+GO:0120248,GO:1901575,Sibling (兄弟节点)
+GO:0004601,GO:0072541,Uncle/Nephew (叔侄节点)
+GO:0008509,GO:1903425,Grandparent-Grandchild (爷孙节点)
+GO:0019501,GO:0046395,Sibling (兄弟节点)
+GO:0031250,GO:1902494,Sibling (兄弟节点)
+GO:0048522,GO:1904361,Grandparent-Grandchild (爷孙节点)
+GO:0042908,GO:0140330,Grandparent-Grandchild (爷孙节点)
+GO:0008207,GO:0042445,Grandparent-Grandchild (爷孙节点)
+GO:0006876,GO:0030003,Grandparent-Grandchild (爷孙节点)
+GO:0031406,GO:0035923,No Specific Relationship
+GO:0034745,GO:1905360,Uncle/Nephew (叔侄节点)
+GO:0051958,GO:0072337,Uncle/Nephew (叔侄节点)
+GO:0018143,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0032109,GO:0045883,No Specific Relationship
+GO:0044677,GO:1902494,Sibling (兄弟节点)
+GO:0035864,GO:1902074,No Specific Relationship
+GO:0006163,GO:0019674,No Specific Relationship
+GO:0005835,GO:0140535,Sibling (兄弟节点)
+GO:0035556,GO:0060395,Sibling (兄弟节点)
+GO:1902074,GO:1903493,Uncle/Nephew (叔侄节点)
+GO:0042873,GO:1905039,No Specific Relationship
+GO:0006182,GO:0009190,Grandparent-Grandchild (爷孙节点)
+GO:0010853,GO:0010856,Sibling (兄弟节点)
+GO:0002178,GO:0031211,Grandparent-Grandchild (爷孙节点)
+GO:0015695,GO:0015874,No Specific Relationship
+GO:0051702,GO:0052183,Grandparent-Grandchild (爷孙节点)
+GO:0070921,GO:1903704,Uncle/Nephew (叔侄节点)
+GO:0010034,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0008278,GO:0044815,Sibling (兄弟节点)
+GO:0097076,GO:1902911,No Specific Relationship
+GO:0017148,GO:0035278,Grandparent-Grandchild (爷孙节点)
+GO:0009401,GO:0051476,Sibling (兄弟节点)
+GO:0009308,GO:0030653,Grandparent-Grandchild (爷孙节点)
+GO:0035864,GO:1901700,No Specific Relationship
+GO:0072707,GO:1901701,Uncle/Nephew (叔侄节点)
+GO:0043605,GO:0070690,No Specific Relationship
+GO:0007220,GO:0019538,Grandparent-Grandchild (爷孙节点)
+GO:0014727,GO:0048636,No Specific Relationship
+GO:0045572,GO:0048639,Grandparent-Grandchild (爷孙节点)
+GO:0006704,GO:0120178,Sibling (兄弟节点)
+GO:0010851,GO:0010854,Grandparent-Grandchild (爷孙节点)
+GO:0060919,GO:0098739,No Specific Relationship
+GO:0061553,GO:0071695,Grandparent-Grandchild (爷孙节点)
+GO:0034587,GO:0070918,Uncle/Nephew (叔侄节点)
+GO:0071407,GO:0072748,Uncle/Nephew (叔侄节点)
+GO:0045088,GO:0062207,Sibling (兄弟节点)
+GO:0045723,GO:1902324,Sibling (兄弟节点)
+GO:0000745,GO:0022414,No Specific Relationship
+GO:1902894,GO:2000629,No Specific Relationship
+GO:0036254,GO:1902075,No Specific Relationship
+GO:0030209,GO:0072329,No Specific Relationship
+GO:0016042,GO:1901569,Sibling (兄弟节点)
+GO:0004810,GO:0070567,No Specific Relationship
+GO:0015297,GO:0015520,No Specific Relationship
+GO:0071315,GO:1902075,No Specific Relationship
+GO:0033240,GO:1900332,Sibling (兄弟节点)
+GO:0006633,GO:1903966,Sibling (兄弟节点)
+GO:0008486,GO:0052841,Sibling (兄弟节点)
+GO:0009063,GO:0052710,Uncle/Nephew (叔侄节点)
+GO:0071246,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0019470,GO:0046700,No Specific Relationship
+GO:0019197,GO:1902494,Sibling (兄弟节点)
+GO:0044656,GO:0097494,Sibling (兄弟节点)
+GO:0015297,GO:0044667,No Specific Relationship
+GO:0044272,GO:0097295,No Specific Relationship
+GO:0072337,GO:1990818,Uncle/Nephew (叔侄节点)
+GO:0031421,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0017101,GO:0140535,Sibling (兄弟节点)
+GO:0017013,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0060390,GO:1902531,Sibling (兄弟节点)
+GO:0016462,GO:0110153,Sibling (兄弟节点)
+GO:0032891,GO:0035431,No Specific Relationship
+GO:1900544,GO:1903580,No Specific Relationship
+GO:0051481,GO:0065008,No Specific Relationship
+GO:0014725,GO:0048634,No Specific Relationship
+GO:0032879,GO:0110065,Grandparent-Grandchild (爷孙节点)
+GO:0031406,GO:0043177,No Specific Relationship
+GO:1900544,GO:1902690,No Specific Relationship
+GO:0055063,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0009968,GO:0034136,Grandparent-Grandchild (爷孙节点)
+GO:0004601,GO:0047066,Sibling (兄弟节点)
+GO:0010024,GO:0043650,No Specific Relationship
+GO:0008348,GO:0031348,Uncle/Nephew (叔侄节点)
+GO:1901354,GO:1902074,No Specific Relationship
+GO:0006116,GO:0008152,Grandparent-Grandchild (爷孙节点)
+GO:0031325,GO:2000774,Uncle/Nephew (叔侄节点)
+GO:0006869,GO:1901571,Sibling (兄弟节点)
+GO:0001755,GO:0090497,Sibling (兄弟节点)
+GO:0005277,GO:0015651,Sibling (兄弟节点)
+GO:0015499,GO:1901702,No Specific Relationship
+GO:0031327,GO:1901352,Grandparent-Grandchild (爷孙节点)
+GO:0006807,GO:0043603,Grandparent-Grandchild (爷孙节点)
+GO:0019049,GO:0039673,Grandparent-Grandchild (爷孙节点)
+GO:0044815,GO:0140225,Sibling (兄弟节点)
+GO:0006877,GO:0030003,No Specific Relationship
+GO:0001139,GO:0030674,No Specific Relationship
+GO:0045861,GO:0051248,Grandparent-Grandchild (爷孙节点)
+GO:0019499,GO:1901564,Sibling (兄弟节点)
+GO:0008933,GO:0016837,No Specific Relationship
+GO:0046165,GO:0140723,No Specific Relationship
+GO:0036211,GO:0043543,Grandparent-Grandchild (爷孙节点)
+GO:0090422,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0034763,GO:1902273,No Specific Relationship
+GO:0050794,GO:1904187,Uncle/Nephew (叔侄节点)
+GO:0032803,GO:0042176,Grandparent-Grandchild (爷孙节点)
+GO:0002753,GO:0002754,Sibling (兄弟节点)
+GO:0009368,GO:1902494,Sibling (兄弟节点)
+GO:0032217,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0004115,GO:0004117,Sibling (兄弟节点)
+GO:0035194,GO:0036453,Grandparent-Grandchild (爷孙节点)
+GO:0030956,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0050995,GO:1905829,Sibling (兄弟节点)
+GO:2000988,GO:2001000,Sibling (兄弟节点)
+GO:0034145,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0018215,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0006807,GO:0033609,No Specific Relationship
+GO:0055082,GO:0097275,No Specific Relationship
+GO:0016814,GO:0090612,No Specific Relationship
+GO:0045571,GO:0048640,Grandparent-Grandchild (爷孙节点)
+GO:0010512,GO:0031327,Grandparent-Grandchild (爷孙节点)
+GO:0051870,GO:0072341,Uncle/Nephew (叔侄节点)
+GO:0034151,GO:0062207,Grandparent-Grandchild (爷孙节点)
+GO:0000097,GO:0046394,Sibling (兄弟节点)
+GO:0045283,GO:1902494,No Specific Relationship
+GO:0015297,GO:0070906,Grandparent-Grandchild (爷孙节点)
+GO:0034775,GO:0055085,No Specific Relationship
+GO:0034157,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0071088,GO:1902494,No Specific Relationship
+GO:0042445,GO:0042572,Grandparent-Grandchild (爷孙节点)
+GO:0016709,GO:0047822,No Specific Relationship
+GO:0034141,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0033069,GO:0072338,Sibling (兄弟节点)
+GO:0015793,GO:0034219,Sibling (兄弟节点)
+GO:0051673,GO:0052025,No Specific Relationship
+GO:0009847,GO:0048869,Grandparent-Grandchild (爷孙节点)
+GO:0008214,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0015501,GO:0042887,No Specific Relationship
+GO:0001550,GO:0048589,Sibling (兄弟节点)
+GO:0015138,GO:1901702,No Specific Relationship
+GO:0005452,GO:0015297,Sibling (兄弟节点)
+GO:0006703,GO:0042446,Grandparent-Grandchild (爷孙节点)
+GO:0042758,GO:1901752,Uncle/Nephew (叔侄节点)
+GO:0008200,GO:0019869,Uncle/Nephew (叔侄节点)
+GO:0030097,GO:0061515,No Specific Relationship
+GO:0072338,GO:1901360,No Specific Relationship
+GO:0034165,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0072338,GO:1900555,Uncle/Nephew (叔侄节点)
+GO:0019471,GO:0046483,Uncle/Nephew (叔侄节点)
+GO:0002144,GO:1902494,Sibling (兄弟节点)
+GO:0019752,GO:1901728,Uncle/Nephew (叔侄节点)
+GO:0015112,GO:1901702,No Specific Relationship
+GO:0008104,GO:0072741,Grandparent-Grandchild (爷孙节点)
+GO:0030649,GO:1901151,Sibling (兄弟节点)
+GO:0035865,GO:1902075,No Specific Relationship
+GO:0006259,GO:0006260,Uncle/Nephew (叔侄节点)
+GO:0006517,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0003674,GO:0042556,No Specific Relationship
+GO:0098657,GO:0098709,No Specific Relationship
+GO:0032414,GO:1904783,Grandparent-Grandchild (爷孙节点)
+GO:0031326,GO:1901351,Grandparent-Grandchild (爷孙节点)
+GO:0003674,GO:0010858,No Specific Relationship
+GO:0033239,GO:1900349,Sibling (兄弟节点)
+GO:0001907,GO:0044696,Grandparent-Grandchild (爷孙节点)
+GO:0005956,GO:1902554,No Specific Relationship
+GO:0031325,GO:1904728,Uncle/Nephew (叔侄节点)
+GO:0005278,GO:0015297,No Specific Relationship
+GO:0098656,GO:1903424,Grandparent-Grandchild (爷孙节点)
+GO:0019049,GO:0039671,Grandparent-Grandchild (爷孙节点)
+GO:0031062,GO:2001255,Grandparent-Grandchild (爷孙节点)
+GO:0008104,GO:1990151,Grandparent-Grandchild (爷孙节点)
+GO:0002683,GO:0034152,No Specific Relationship
+GO:0017087,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0044848,GO:1990636,No Specific Relationship
+GO:0034764,GO:1902274,No Specific Relationship
+GO:0036211,GO:0070647,Grandparent-Grandchild (爷孙节点)
+GO:0032412,GO:2000311,Grandparent-Grandchild (爷孙节点)
+GO:0030163,GO:0035694,Grandparent-Grandchild (爷孙节点)
+GO:0042702,GO:0048589,Sibling (兄弟节点)
+GO:0005385,GO:1901702,No Specific Relationship
+GO:0001966,GO:0007610,No Specific Relationship
+GO:0015724,GO:0019755,Uncle/Nephew (叔侄节点)
+GO:0034764,GO:1900925,No Specific Relationship
+GO:1990391,GO:1990710,Grandparent-Grandchild (爷孙节点)
+GO:0010522,GO:1903169,Sibling (兄弟节点)
+GO:0050866,GO:0051241,Uncle/Nephew (叔侄节点)
+GO:0015350,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0062012,GO:1900849,No Specific Relationship
+GO:0031054,GO:0035196,Uncle/Nephew (叔侄节点)
+GO:0050993,GO:0071704,No Specific Relationship
+GO:0009074,GO:0046395,Sibling (兄弟节点)
+GO:0015229,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0031324,GO:2000773,Uncle/Nephew (叔侄节点)
+GO:1901565,GO:1902062,Sibling (兄弟节点)
+GO:0006820,GO:0015705,Grandparent-Grandchild (爷孙节点)
+GO:0006164,GO:0009435,No Specific Relationship
+GO:0015078,GO:0045119,Grandparent-Grandchild (爷孙节点)
+GO:0072748,GO:1901701,Sibling (兄弟节点)
+GO:0030554,GO:0051287,Uncle/Nephew (叔侄节点)
+GO:0048642,GO:1901862,Grandparent-Grandchild (爷孙节点)
+GO:0015698,GO:1902025,Grandparent-Grandchild (爷孙节点)
+GO:0022414,GO:0060321,Grandparent-Grandchild (爷孙节点)
+GO:0036346,GO:1902075,No Specific Relationship
+GO:0005319,GO:0071714,Uncle/Nephew (叔侄节点)
+GO:0055074,GO:0055080,Grandparent-Grandchild (爷孙节点)
+GO:1902074,GO:1903544,No Specific Relationship
+GO:0010352,GO:0090452,Sibling (兄弟节点)
+GO:0043687,GO:0070213,Uncle/Nephew (叔侄节点)
+GO:0036211,GO:0042040,Grandparent-Grandchild (爷孙节点)
+GO:0010217,GO:0030003,Grandparent-Grandchild (爷孙节点)
+GO:0005244,GO:0022839,Uncle/Nephew (叔侄节点)
+GO:0071417,GO:1903928,Uncle/Nephew (叔侄节点)
+GO:0015904,GO:0055085,No Specific Relationship
+GO:0045293,GO:1902494,Sibling (兄弟节点)
+GO:0071090,GO:1902494,No Specific Relationship
+GO:0033238,GO:1900348,Sibling (兄弟节点)
+GO:0007267,GO:0036363,No Specific Relationship
+GO:0002683,GO:2000441,No Specific Relationship
+GO:0055074,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0009896,GO:0034253,Grandparent-Grandchild (爷孙节点)
+GO:0052744,GO:0102091,Uncle/Nephew (叔侄节点)
+GO:0034251,GO:2001156,Uncle/Nephew (叔侄节点)
+GO:0055085,GO:0097080,No Specific Relationship
+GO:0000761,GO:0022414,No Specific Relationship
+GO:0055070,GO:0098771,No Specific Relationship
+GO:0000782,GO:0044815,Uncle/Nephew (叔侄节点)
+GO:0015297,GO:0070909,Uncle/Nephew (叔侄节点)
+GO:0070332,GO:0140535,Sibling (兄弟节点)
+GO:0016577,GO:0070079,Grandparent-Grandchild (爷孙节点)
+GO:0070921,GO:1903705,Uncle/Nephew (叔侄节点)
+GO:0015101,GO:0015200,Sibling (兄弟节点)
+GO:0055064,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0045780,GO:0051240,Sibling (兄弟节点)
+GO:0070543,GO:1902074,No Specific Relationship
+GO:0000752,GO:0051703,Grandparent-Grandchild (爷孙节点)
+GO:0018130,GO:1901012,No Specific Relationship
+GO:0034764,GO:1900931,No Specific Relationship
+GO:0062013,GO:1900851,No Specific Relationship
+GO:0008757,GO:0071885,Uncle/Nephew (叔侄节点)
+GO:0008131,GO:0018527,Sibling (兄弟节点)
+GO:0008213,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0016415,GO:0033819,Sibling (兄弟节点)
+GO:0009968,GO:0034168,Grandparent-Grandchild (爷孙节点)
+GO:0009718,GO:0033487,Sibling (兄弟节点)
+GO:0019752,GO:0071525,Uncle/Nephew (叔侄节点)
+GO:0034252,GO:2001157,Uncle/Nephew (叔侄节点)
+GO:0048519,GO:0110066,Grandparent-Grandchild (爷孙节点)
+GO:0055062,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0034764,GO:0140217,No Specific Relationship
+GO:0014713,GO:0048635,No Specific Relationship
+GO:0006702,GO:0042446,Grandparent-Grandchild (爷孙节点)
+GO:0015078,GO:0015312,Grandparent-Grandchild (爷孙节点)
+GO:0008519,GO:0022890,Grandparent-Grandchild (爷孙节点)
+GO:0036041,GO:0070538,Sibling (兄弟节点)
+GO:0035444,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0009987,GO:0048870,Grandparent-Grandchild (爷孙节点)
+GO:0097068,GO:1902074,No Specific Relationship
+GO:0036211,GO:0070930,Grandparent-Grandchild (爷孙节点)
+GO:0010965,GO:0090266,Grandparent-Grandchild (爷孙节点)
+GO:0046395,GO:1900607,Sibling (兄弟节点)
+GO:0005278,GO:0022853,No Specific Relationship
+GO:0070568,GO:0080048,No Specific Relationship
+GO:0010556,GO:2000278,Grandparent-Grandchild (爷孙节点)
+GO:0009357,GO:0140535,No Specific Relationship
+GO:0018277,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0019289,GO:1901566,Uncle/Nephew (叔侄节点)
+GO:0060906,GO:0060967,Uncle/Nephew (叔侄节点)
+GO:0015908,GO:0071717,Sibling (兄弟节点)
+GO:0000096,GO:0019752,Uncle/Nephew (叔侄节点)
+GO:0009190,GO:0052653,Grandparent-Grandchild (爷孙节点)
+GO:0048521,GO:0051241,Sibling (兄弟节点)
+GO:0032324,GO:0042047,Sibling (兄弟节点)
+GO:0009690,GO:0042445,Grandparent-Grandchild (爷孙节点)
+GO:0030003,GO:0030026,No Specific Relationship
+GO:0035835,GO:1900781,Grandparent-Grandchild (爷孙节点)
+GO:0015110,GO:0022857,No Specific Relationship
+GO:0006824,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0006124,GO:0019538,Grandparent-Grandchild (爷孙节点)
+GO:0008928,GO:0070568,Grandparent-Grandchild (爷孙节点)
+GO:0017136,GO:0046970,Grandparent-Grandchild (爷孙节点)
+GO:2000833,GO:2000869,Sibling (兄弟节点)
+GO:0032991,GO:0097196,Grandparent-Grandchild (爷孙节点)
+GO:0000752,GO:0098609,No Specific Relationship
+GO:1904917,GO:1990818,Sibling (兄弟节点)
+GO:0071379,GO:0071396,Uncle/Nephew (叔侄节点)
+GO:1902075,GO:1903928,Sibling (兄弟节点)
+GO:0030546,GO:0140677,Uncle/Nephew (叔侄节点)
+GO:0034764,GO:1905010,No Specific Relationship
+GO:0030003,GO:0030641,Grandparent-Grandchild (爷孙节点)
+GO:0120256,GO:1901575,Sibling (兄弟节点)
+GO:0016581,GO:0110129,Sibling (兄弟节点)
+GO:0034776,GO:0097280,No Specific Relationship
+GO:0009438,GO:0106045,Grandparent-Grandchild (爷孙节点)
+GO:0016713,GO:0043823,Sibling (兄弟节点)
+GO:0005347,GO:1901702,No Specific Relationship
+GO:0016616,GO:0047934,Grandparent-Grandchild (爷孙节点)
+GO:0034284,GO:1905439,Uncle/Nephew (叔侄节点)
+GO:0007617,GO:0007620,No Specific Relationship
+GO:0031054,GO:0044747,Uncle/Nephew (叔侄节点)
+GO:0034181,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0019457,GO:0043605,No Specific Relationship
+GO:0014711,GO:0048634,No Specific Relationship
+GO:0022413,GO:0140084,No Specific Relationship
+GO:0008289,GO:1901567,Sibling (兄弟节点)
+GO:0015297,GO:0015515,No Specific Relationship
+GO:0010243,GO:1903927,Sibling (兄弟节点)
+GO:0015787,GO:1905039,No Specific Relationship
+GO:0072339,GO:1901362,No Specific Relationship
+GO:0015012,GO:0044272,No Specific Relationship
+GO:0009968,GO:0039532,Grandparent-Grandchild (爷孙节点)
+GO:0019448,GO:0042219,No Specific Relationship
+GO:0014070,GO:0031990,No Specific Relationship
+GO:0016570,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0034164,GO:0039532,No Specific Relationship
+GO:0120269,GO:0140535,Sibling (兄弟节点)
+GO:0039532,GO:0070425,Sibling (兄弟节点)
+GO:0005996,GO:0030205,No Specific Relationship
+GO:0015116,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0048856,GO:0060711,Grandparent-Grandchild (爷孙节点)
+GO:0055072,GO:0055080,No Specific Relationship
+GO:0015810,GO:0090453,Sibling (兄弟节点)
+GO:0015297,GO:0043861,No Specific Relationship
+GO:0009330,GO:1902494,Sibling (兄弟节点)
+GO:0008375,GO:0097363,Uncle/Nephew (叔侄节点)
+GO:0003998,GO:0016462,Sibling (兄弟节点)
+GO:0036211,GO:0044601,Grandparent-Grandchild (爷孙节点)
+GO:0019674,GO:0046496,No Specific Relationship
+GO:1902075,GO:1902350,No Specific Relationship
+GO:1901570,GO:1902899,Uncle/Nephew (叔侄节点)
+GO:0015297,GO:0070908,Grandparent-Grandchild (爷孙节点)
+GO:0015135,GO:0046943,No Specific Relationship
+GO:1903317,GO:2000257,Sibling (兄弟节点)
+GO:0052927,GO:0070567,Sibling (兄弟节点)
+GO:0007018,GO:0010970,Grandparent-Grandchild (爷孙节点)
+GO:0046942,GO:1905039,No Specific Relationship
+GO:0010558,GO:2000279,Grandparent-Grandchild (爷孙节点)
+GO:0046942,GO:1904952,No Specific Relationship
+GO:0035891,GO:0044000,Uncle/Nephew (叔侄节点)
+GO:1901607,GO:1903255,No Specific Relationship
+GO:0008104,GO:0010621,Grandparent-Grandchild (爷孙节点)
+GO:0019752,GO:0042863,Uncle/Nephew (叔侄节点)
+GO:0015418,GO:0031458,Sibling (兄弟节点)
+GO:0050789,GO:0060306,No Specific Relationship
+GO:0010226,GO:1902074,No Specific Relationship
+GO:0055072,GO:0098771,No Specific Relationship
+GO:0006865,GO:0051933,Grandparent-Grandchild (爷孙节点)
+GO:0014712,GO:0048636,No Specific Relationship
+GO:0005332,GO:0015378,No Specific Relationship
+GO:0032414,GO:2000969,Grandparent-Grandchild (爷孙节点)
+GO:0031328,GO:1901353,Grandparent-Grandchild (爷孙节点)
+GO:0140352,GO:0140495,No Specific Relationship
+GO:0018130,GO:1900781,Grandparent-Grandchild (爷孙节点)
+GO:0050794,GO:2000145,Grandparent-Grandchild (爷孙节点)
+GO:0033238,GO:1900318,Sibling (兄弟节点)
+GO:0015791,GO:1904679,Grandparent-Grandchild (爷孙节点)
+GO:1900370,GO:2000637,Sibling (兄弟节点)
+GO:0031401,GO:0051247,Grandparent-Grandchild (爷孙节点)
+GO:0009435,GO:0019674,No Specific Relationship
+GO:0006275,GO:0051052,No Specific Relationship
+GO:0004152,GO:0004589,No Specific Relationship
+GO:0009073,GO:0046394,Sibling (兄弟节点)
+GO:0009968,GO:0034132,Grandparent-Grandchild (爷孙节点)
+GO:0034175,GO:0039531,Uncle/Nephew (叔侄节点)
+GO:0016712,GO:0033770,Uncle/Nephew (叔侄节点)
+GO:1905347,GO:1905348,Sibling (兄弟节点)
+GO:0003995,GO:0052890,Sibling (兄弟节点)
+GO:0031399,GO:0051246,Grandparent-Grandchild (爷孙节点)
+GO:0055085,GO:1902603,No Specific Relationship
+GO:0031328,GO:1905695,Grandparent-Grandchild (爷孙节点)
+GO:0034179,GO:0039531,Uncle/Nephew (叔侄节点)
+GO:0071283,GO:1902075,No Specific Relationship
+GO:0035832,GO:1901360,No Specific Relationship
+GO:0007039,GO:0030163,Grandparent-Grandchild (爷孙节点)
+GO:0002144,GO:0140535,Sibling (兄弟节点)
+GO:0015912,GO:0015913,Uncle/Nephew (叔侄节点)
+GO:0002050,GO:0043171,No Specific Relationship
+GO:0031082,GO:0140535,Sibling (兄弟节点)
+GO:0017038,GO:0045038,Grandparent-Grandchild (爷孙节点)
+GO:1900373,GO:1905014,Sibling (兄弟节点)
+GO:0019752,GO:0033052,Uncle/Nephew (叔侄节点)
+GO:0048519,GO:1904537,Grandparent-Grandchild (爷孙节点)
+GO:0008207,GO:0009987,No Specific Relationship
+GO:0036211,GO:0051725,Grandparent-Grandchild (爷孙节点)
+GO:0010564,GO:0051983,Uncle/Nephew (叔侄节点)
+GO:0004175,GO:0070012,Sibling (兄弟节点)
+GO:0005334,GO:0015101,No Specific Relationship
+GO:0005342,GO:0042959,Uncle/Nephew (叔侄节点)
+GO:0035929,GO:0035938,Sibling (兄弟节点)
+GO:0004843,GO:0008234,Uncle/Nephew (叔侄节点)
+GO:1901700,GO:1902617,Uncle/Nephew (叔侄节点)
+GO:0120178,GO:1901755,Uncle/Nephew (叔侄节点)
+GO:0010966,GO:0051049,No Specific Relationship
+GO:0015137,GO:1901702,No Specific Relationship
+GO:0140097,GO:0140670,No Specific Relationship
+GO:0003824,GO:1904091,No Specific Relationship
+GO:0009401,GO:0098704,Uncle/Nephew (叔侄节点)
+GO:0034763,GO:0090373,Sibling (兄弟节点)
+GO:0034977,GO:1902554,No Specific Relationship
+GO:0048522,GO:2000147,Grandparent-Grandchild (爷孙节点)
+GO:0034763,GO:1905542,No Specific Relationship
+GO:0015297,GO:0015325,Uncle/Nephew (叔侄节点)
+GO:0050000,GO:0051305,Grandparent-Grandchild (爷孙节点)
+GO:0009894,GO:0033241,Grandparent-Grandchild (爷孙节点)
+GO:0019289,GO:0043604,Uncle/Nephew (叔侄节点)
+GO:0060391,GO:1902533,Uncle/Nephew (叔侄节点)
+GO:0072340,GO:1900789,Sibling (兄弟节点)
+GO:0019651,GO:0019666,Uncle/Nephew (叔侄节点)
+GO:0015106,GO:1901702,No Specific Relationship
+GO:0070574,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0015706,GO:0098661,Sibling (兄弟节点)
+GO:0030209,GO:0052782,No Specific Relationship
+GO:0010033,GO:1901370,No Specific Relationship
+GO:0035830,GO:0046483,Grandparent-Grandchild (爷孙节点)
+GO:0015123,GO:1901702,No Specific Relationship
+GO:0043210,GO:1901681,No Specific Relationship
+GO:0017086,GO:1902494,Sibling (兄弟节点)
+GO:0015695,GO:0015898,Sibling (兄弟节点)
+GO:0097429,GO:1904091,No Specific Relationship
+GO:0015849,GO:0042918,Uncle/Nephew (叔侄节点)
+GO:0015078,GO:0015520,Grandparent-Grandchild (爷孙节点)
+GO:0051592,GO:1902074,No Specific Relationship
+GO:1901569,GO:1903174,Uncle/Nephew (叔侄节点)
+GO:0007312,GO:0022412,Grandparent-Grandchild (爷孙节点)
+GO:0023051,GO:1901388,No Specific Relationship
+GO:0030205,GO:0052779,No Specific Relationship
+GO:0010598,GO:1902494,Sibling (兄弟节点)
+GO:0019474,GO:0043605,No Specific Relationship
+GO:0034764,GO:1901036,No Specific Relationship
+GO:0006531,GO:0034628,Grandparent-Grandchild (爷孙节点)
+GO:0001676,GO:2001302,Uncle/Nephew (叔侄节点)
+GO:0032300,GO:0032991,Grandparent-Grandchild (爷孙节点)
+GO:0009308,GO:0034217,Grandparent-Grandchild (爷孙节点)
+GO:0071702,GO:0080170,Uncle/Nephew (叔侄节点)
+GO:0051592,GO:1901700,No Specific Relationship
+GO:0044237,GO:0090398,No Specific Relationship
+GO:0017110,GO:0102459,Uncle/Nephew (叔侄节点)
+GO:0015794,GO:0055085,No Specific Relationship
+GO:1902494,GO:1903269,Sibling (兄弟节点)
+GO:0032108,GO:0045882,No Specific Relationship
+GO:0046585,GO:0072339,Uncle/Nephew (叔侄节点)
+GO:0031327,GO:2000279,Grandparent-Grandchild (爷孙节点)
+GO:0006477,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0052597,GO:0052599,Sibling (兄弟节点)
+GO:0031406,GO:0046904,No Specific Relationship
+GO:0019051,GO:0039526,Grandparent-Grandchild (爷孙节点)
+GO:0019654,GO:0019666,Sibling (兄弟节点)
+GO:0042879,GO:0046943,No Specific Relationship
+GO:0015091,GO:1901702,No Specific Relationship
+GO:0005254,GO:0070089,No Specific Relationship
+GO:0006808,GO:0032107,No Specific Relationship
+GO:0031323,GO:0060408,Grandparent-Grandchild (爷孙节点)
+GO:0001897,GO:0044659,Uncle/Nephew (叔侄节点)
+GO:0015552,GO:1901702,No Specific Relationship
+GO:0032890,GO:0120188,Uncle/Nephew (叔侄节点)
+GO:0006793,GO:0050993,No Specific Relationship
+GO:2000832,GO:2000868,Sibling (兄弟节点)
+GO:0018032,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0098656,GO:1904200,Grandparent-Grandchild (爷孙节点)
+GO:0015220,GO:0015651,Sibling (兄弟节点)
+GO:0034135,GO:0062207,Grandparent-Grandchild (爷孙节点)
+GO:0071939,GO:0140354,No Specific Relationship
+GO:0019752,GO:0046494,Uncle/Nephew (叔侄节点)
+GO:0045487,GO:0046395,Sibling (兄弟节点)
+GO:0032892,GO:0035432,No Specific Relationship
+GO:0010720,GO:1903708,Uncle/Nephew (叔侄节点)
+GO:0015711,GO:0015916,Uncle/Nephew (叔侄节点)
+GO:0006468,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0032787,GO:0052644,No Specific Relationship
+GO:0006874,GO:0030003,Grandparent-Grandchild (爷孙节点)
+GO:1900758,GO:1902283,Sibling (兄弟节点)
+GO:0031328,GO:1900470,Grandparent-Grandchild (爷孙节点)
+GO:0072756,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0015708,GO:0098658,Sibling (兄弟节点)
+GO:0036104,GO:1901570,No Specific Relationship
+GO:0031062,GO:1905473,Grandparent-Grandchild (爷孙节点)
+GO:1901327,GO:1901700,Sibling (兄弟节点)
+GO:0044273,GO:0046306,No Specific Relationship
+GO:0071302,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:1901007,GO:1901360,Grandparent-Grandchild (爷孙节点)
+GO:0034156,GO:0039532,No Specific Relationship
+GO:0019049,GO:0046774,Grandparent-Grandchild (爷孙节点)
+GO:0062014,GO:1900850,No Specific Relationship
+GO:0046993,GO:0061686,No Specific Relationship
+GO:0032879,GO:1904536,Grandparent-Grandchild (爷孙节点)
+GO:0006694,GO:0045456,Grandparent-Grandchild (爷孙节点)
+GO:0032774,GO:0039694,No Specific Relationship
+GO:0015807,GO:1902024,Uncle/Nephew (叔侄节点)
+GO:0051649,GO:1905741,No Specific Relationship
+GO:0005302,GO:1901702,No Specific Relationship
+GO:0042859,GO:0046395,Sibling (兄弟节点)
+GO:0052008,GO:0098933,Uncle/Nephew (叔侄节点)
+GO:0022850,GO:0099589,No Specific Relationship
+GO:0051928,GO:1902082,Grandparent-Grandchild (爷孙节点)
+GO:0019049,GO:0039504,Grandparent-Grandchild (爷孙节点)
+GO:0061436,GO:0098773,No Specific Relationship
+GO:0034140,GO:0039532,No Specific Relationship
+GO:0042932,GO:0046942,No Specific Relationship
+GO:0000758,GO:0098609,No Specific Relationship
+GO:0015306,GO:0046943,No Specific Relationship
+GO:0008410,GO:0008735,No Specific Relationship
+GO:0008509,GO:0008518,No Specific Relationship
+GO:0018293,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0031927,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0015297,GO:0043872,No Specific Relationship
+GO:0002683,GO:0034144,No Specific Relationship
+GO:0001579,GO:0015908,Sibling (兄弟节点)
+GO:0070358,GO:0070360,No Specific Relationship
+GO:0070069,GO:1902494,Sibling (兄弟节点)
+GO:0031328,GO:1900648,Grandparent-Grandchild (爷孙节点)
+GO:0051276,GO:0090139,No Specific Relationship
+GO:0031928,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0015031,GO:0020028,Grandparent-Grandchild (爷孙节点)
+GO:0046155,GO:1902644,No Specific Relationship
+GO:0034177,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0032847,GO:0050789,Grandparent-Grandchild (爷孙节点)
+GO:0005245,GO:0099635,No Specific Relationship
+GO:0031053,GO:0035196,Uncle/Nephew (叔侄节点)
+GO:0010216,GO:0044726,No Specific Relationship
+GO:0071314,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:1903800,GO:2000633,Sibling (兄弟节点)
+GO:1901012,GO:1901362,No Specific Relationship
+GO:0008131,GO:0052596,Sibling (兄弟节点)
+GO:0051052,GO:1903221,No Specific Relationship
+GO:0035434,GO:0140145,Grandparent-Grandchild (爷孙节点)
+GO:0019623,GO:0043605,Uncle/Nephew (叔侄节点)
+GO:0006790,GO:0019694,No Specific Relationship
+GO:0043872,GO:1901702,No Specific Relationship
+GO:0015141,GO:1901702,No Specific Relationship
+GO:0015297,GO:0015312,No Specific Relationship
+GO:0006749,GO:0071704,No Specific Relationship
+GO:0022839,GO:0099099,Sibling (兄弟节点)
+GO:0061389,GO:0065008,Grandparent-Grandchild (爷孙节点)
+GO:0015778,GO:0034219,Sibling (兄弟节点)
+GO:0097176,GO:1900991,Grandparent-Grandchild (爷孙节点)
+GO:0072337,GO:0097638,Uncle/Nephew (叔侄节点)
+GO:0010960,GO:0055080,Grandparent-Grandchild (爷孙节点)
+GO:0050833,GO:1901702,No Specific Relationship
+GO:0043168,GO:0043924,No Specific Relationship
+GO:0006569,GO:0042436,Grandparent-Grandchild (爷孙节点)
+GO:0006865,GO:0046942,No Specific Relationship
+GO:0042030,GO:0060590,Uncle/Nephew (叔侄节点)
+GO:0008324,GO:0019829,Grandparent-Grandchild (爷孙节点)
+GO:0008199,GO:1901681,No Specific Relationship
+GO:0007446,GO:0048589,Grandparent-Grandchild (爷孙节点)
+GO:0033721,GO:0043796,Uncle/Nephew (叔侄节点)
+GO:0070218,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0031123,GO:0034472,Grandparent-Grandchild (爷孙节点)
+GO:0060378,GO:0065007,Grandparent-Grandchild (爷孙节点)
+GO:0035832,GO:0046483,No Specific Relationship
+GO:0097272,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0008514,GO:0022857,No Specific Relationship
+GO:0006878,GO:0030003,No Specific Relationship
+GO:0008156,GO:0051053,No Specific Relationship
+GO:0018130,GO:1901009,Grandparent-Grandchild (爷孙节点)
+GO:0051055,GO:1904277,Sibling (兄弟节点)
+GO:0034137,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0003006,GO:0035846,Grandparent-Grandchild (爷孙节点)
+GO:0031406,GO:1904399,No Specific Relationship
+GO:0010960,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0009579,GO:0043232,No Specific Relationship
+GO:0004475,GO:0070568,Grandparent-Grandchild (爷孙节点)
+GO:0014070,GO:1901327,Uncle/Nephew (叔侄节点)
+GO:2000831,GO:2000864,Sibling (兄弟节点)
+GO:0016462,GO:0034432,Grandparent-Grandchild (爷孙节点)
+GO:0015240,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0060964,GO:1900368,Sibling (兄弟节点)
+GO:0015297,GO:0015367,No Specific Relationship
+GO:0009059,GO:0071897,Grandparent-Grandchild (爷孙节点)
+GO:0022853,GO:0045119,No Specific Relationship
+GO:0048871,GO:0060249,Sibling (兄弟节点)
+GO:0006581,GO:1901565,Sibling (兄弟节点)
+GO:0009063,GO:0019504,Uncle/Nephew (叔侄节点)
+GO:0002630,GO:0045732,No Specific Relationship
+GO:0048519,GO:1903780,Grandparent-Grandchild (爷孙节点)
+GO:0043879,GO:1901702,No Specific Relationship
+GO:0010133,GO:0043605,No Specific Relationship
+GO:0015807,GO:0015816,Sibling (兄弟节点)
+GO:0008641,GO:0140657,No Specific Relationship
+GO:1900543,GO:1905856,Uncle/Nephew (叔侄节点)
+GO:0140298,GO:0140421,Sibling (兄弟节点)
+GO:0033274,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0004047,GO:0016742,Uncle/Nephew (叔侄节点)
+GO:0010471,GO:0070568,Grandparent-Grandchild (爷孙节点)
+GO:1900372,GO:1905013,Sibling (兄弟节点)
+GO:0046719,GO:0065008,No Specific Relationship
+GO:1901056,GO:1901575,No Specific Relationship
+GO:0071414,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0030877,GO:0140535,Sibling (兄弟节点)
+GO:0005476,GO:0015297,Grandparent-Grandchild (爷孙节点)
+GO:1901425,GO:1901698,Uncle/Nephew (叔侄节点)
+GO:1902074,GO:1902349,No Specific Relationship
+GO:0031522,GO:0140535,Sibling (兄弟节点)
+GO:0010523,GO:1903170,Sibling (兄弟节点)
+GO:0022413,GO:0071515,Sibling (兄弟节点)
+GO:0071521,GO:0140535,Sibling (兄弟节点)
+GO:0017014,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0034153,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0005504,GO:1901707,Sibling (兄弟节点)
+GO:0004344,GO:0047935,Grandparent-Grandchild (爷孙节点)
+GO:0090298,GO:1901859,No Specific Relationship
+GO:0034155,GO:0039531,Uncle/Nephew (叔侄节点)
+GO:0046394,GO:0051479,Sibling (兄弟节点)
+GO:1900542,GO:1903578,No Specific Relationship
+GO:0031431,GO:0140513,Uncle/Nephew (叔侄节点)
+GO:0032890,GO:0035430,No Specific Relationship
+GO:0004857,GO:0140678,Uncle/Nephew (叔侄节点)
+GO:0051172,GO:1900340,Uncle/Nephew (叔侄节点)
+GO:0031327,GO:1905694,Grandparent-Grandchild (爷孙节点)
+GO:0034764,GO:0090372,Sibling (兄弟节点)
+GO:0009063,GO:0009080,Uncle/Nephew (叔侄节点)
+GO:0031501,GO:0120097,Sibling (兄弟节点)
+GO:0046395,GO:1900814,Sibling (兄弟节点)
+GO:0008028,GO:0034590,No Specific Relationship
+GO:0015312,GO:0022853,No Specific Relationship
+GO:1903959,GO:1904212,Grandparent-Grandchild (爷孙节点)
+GO:0031390,GO:0140513,Sibling (兄弟节点)
+GO:0034159,GO:0039531,Uncle/Nephew (叔侄节点)
+GO:0034763,GO:1903796,No Specific Relationship
+GO:0032974,GO:1904918,Sibling (兄弟节点)
+GO:0006083,GO:0006807,No Specific Relationship
+GO:0008272,GO:0071705,Uncle/Nephew (叔侄节点)
+GO:0048523,GO:1904113,Grandparent-Grandchild (爷孙节点)
+GO:0050992,GO:1901576,No Specific Relationship
+GO:0010167,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0002038,GO:0034764,No Specific Relationship
+GO:0032352,GO:2000488,Grandparent-Grandchild (爷孙节点)
+GO:0003006,GO:0007506,Grandparent-Grandchild (爷孙节点)
+GO:0016810,GO:0019239,Sibling (兄弟节点)
+GO:0052183,GO:0052338,No Specific Relationship
+GO:0009187,GO:0052652,Grandparent-Grandchild (爷孙节点)
+GO:0016712,GO:0102373,Sibling (兄弟节点)
+GO:0039594,GO:0045182,No Specific Relationship
+GO:0018158,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0030208,GO:0072330,No Specific Relationship
+GO:0034764,GO:1900928,No Specific Relationship
+GO:0015807,GO:1902475,No Specific Relationship
+GO:0015976,GO:0031667,No Specific Relationship
+GO:1901564,GO:1902061,Sibling (兄弟节点)
+GO:0030547,GO:0140678,Uncle/Nephew (叔侄节点)
+GO:0071277,GO:1901701,No Specific Relationship
+GO:0071318,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:1900543,GO:1902689,No Specific Relationship
+GO:0010318,GO:1902494,Sibling (兄弟节点)
+GO:0046483,GO:1901007,Grandparent-Grandchild (爷孙节点)
+GO:0015231,GO:0046943,No Specific Relationship
+GO:0016814,GO:0090613,No Specific Relationship
+GO:0010511,GO:0031326,Grandparent-Grandchild (爷孙节点)
+GO:0051649,GO:0099586,No Specific Relationship
+GO:0015078,GO:0015309,Grandparent-Grandchild (爷孙节点)
+GO:0000087,GO:0000236,Sibling (兄弟节点)
+GO:0010976,GO:1902669,No Specific Relationship
+GO:0032107,GO:0043610,No Specific Relationship
+GO:0001407,GO:0055085,No Specific Relationship
+GO:0045870,GO:1902680,No Specific Relationship
+GO:0009896,GO:0033243,Grandparent-Grandchild (爷孙节点)
+GO:0098708,GO:1904659,Grandparent-Grandchild (爷孙节点)
+GO:0071705,GO:1902025,Grandparent-Grandchild (爷孙节点)
+GO:0060392,GO:1902532,Uncle/Nephew (叔侄节点)
+GO:0052929,GO:0140101,No Specific Relationship
+GO:0042744,GO:1901575,Uncle/Nephew (叔侄节点)
+GO:0015079,GO:1901702,No Specific Relationship
+GO:0031062,GO:0031325,No Specific Relationship
+GO:0002630,GO:0031331,No Specific Relationship
+GO:1902074,GO:1905144,Uncle/Nephew (叔侄节点)
+GO:0032892,GO:0120189,Uncle/Nephew (叔侄节点)
+GO:0036253,GO:1902074,No Specific Relationship
+GO:0048523,GO:1904329,Grandparent-Grandchild (爷孙节点)
+GO:0055068,GO:0055080,No Specific Relationship
+GO:0034741,GO:0140535,Sibling (兄弟节点)
+GO:0031137,GO:0050789,Grandparent-Grandchild (爷孙节点)
+GO:0033049,GO:0072338,Sibling (兄弟节点)
+GO:0036256,GO:1902075,No Specific Relationship
+GO:0009686,GO:0046394,Sibling (兄弟节点)
+GO:0034253,GO:2001158,Uncle/Nephew (叔侄节点)
+GO:0060239,GO:2000243,Grandparent-Grandchild (爷孙节点)
+GO:0048519,GO:0090394,No Specific Relationship
+GO:0010169,GO:0140535,Uncle/Nephew (叔侄节点)
+GO:0034763,GO:1905625,No Specific Relationship
+GO:0023056,GO:1901390,No Specific Relationship
+GO:0019470,GO:1901361,No Specific Relationship
+GO:0051179,GO:0051640,Grandparent-Grandchild (爷孙节点)
+GO:0018126,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0120103,GO:0140535,Sibling (兄弟节点)
+GO:0002221,GO:0002758,Uncle/Nephew (叔侄节点)
+GO:0008291,GO:1901564,Sibling (兄弟节点)
+GO:0006325,GO:0006335,Grandparent-Grandchild (爷孙节点)
+GO:0055068,GO:0098771,No Specific Relationship
+GO:0001692,GO:0006796,No Specific Relationship
+GO:0006523,GO:0030632,Grandparent-Grandchild (爷孙节点)
+GO:0000748,GO:0019953,No Specific Relationship
+GO:1902075,GO:1905232,No Specific Relationship
+GO:0010495,GO:0090625,Uncle/Nephew (叔侄节点)
+GO:0043278,GO:1902074,No Specific Relationship
+GO:1901568,GO:1903173,Uncle/Nephew (叔侄节点)
+GO:0030200,GO:0044273,No Specific Relationship
+GO:0031494,GO:0050793,Grandparent-Grandchild (爷孙节点)
+GO:0031365,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:2000990,GO:2001002,Sibling (兄弟节点)
+GO:0031329,GO:0033247,Grandparent-Grandchild (爷孙节点)
+GO:0009063,GO:1902222,Uncle/Nephew (叔侄节点)
+GO:0034763,GO:1901035,No Specific Relationship
+GO:0000319,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0016410,GO:0018031,Grandparent-Grandchild (爷孙节点)
+GO:0045273,GO:1902494,No Specific Relationship
+GO:0044237,GO:0090399,No Specific Relationship
+GO:0050865,GO:0051239,Uncle/Nephew (叔侄节点)
+GO:1901605,GO:1903252,No Specific Relationship
+GO:0003354,GO:0048523,Grandparent-Grandchild (爷孙节点)
+GO:0015297,GO:0042962,No Specific Relationship
+GO:0005954,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0019051,GO:0052151,Grandparent-Grandchild (爷孙节点)
+GO:1901905,GO:1902074,No Specific Relationship
+GO:0006631,GO:1902925,Uncle/Nephew (叔侄节点)
+GO:0032412,GO:2000310,Grandparent-Grandchild (爷孙节点)
+GO:0071417,GO:0072748,Uncle/Nephew (叔侄节点)
+GO:0046174,GO:1901151,No Specific Relationship
+GO:0032804,GO:0042177,Grandparent-Grandchild (爷孙节点)
+GO:0035552,GO:0080111,Grandparent-Grandchild (爷孙节点)
+GO:0006633,GO:1902321,Sibling (兄弟节点)
+GO:0004117,GO:0047555,Sibling (兄弟节点)
+GO:0015370,GO:0015382,Grandparent-Grandchild (爷孙节点)
+GO:0033050,GO:0072339,Sibling (兄弟节点)
+GO:0070568,GO:0080047,No Specific Relationship
+GO:0030929,GO:1902494,Sibling (兄弟节点)
+GO:0140674,GO:0140713,No Specific Relationship
+GO:0034163,GO:0039531,Uncle/Nephew (叔侄节点)
+GO:0019538,GO:0030091,Grandparent-Grandchild (爷孙节点)
+GO:0004972,GO:0022890,No Specific Relationship
+GO:0003884,GO:0008131,Sibling (兄弟节点)
+GO:0034763,GO:1900927,No Specific Relationship
+GO:0042865,GO:0046395,Sibling (兄弟节点)
+GO:0046173,GO:0106295,No Specific Relationship
+GO:0010157,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0034284,GO:1905441,Uncle/Nephew (叔侄节点)
+GO:0102025,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0006163,GO:0006739,No Specific Relationship
+GO:0015297,GO:0043862,No Specific Relationship
+GO:0008907,GO:0009009,Sibling (兄弟节点)
+GO:0050793,GO:1904359,Grandparent-Grandchild (爷孙节点)
+GO:0010292,GO:0015297,No Specific Relationship
+GO:0022414,GO:0051663,Grandparent-Grandchild (爷孙节点)
+GO:0071326,GO:1905442,Uncle/Nephew (叔侄节点)
+GO:0002050,GO:0019439,No Specific Relationship
+GO:0048523,GO:2000146,Grandparent-Grandchild (爷孙节点)
+GO:0006164,GO:0006741,No Specific Relationship
+GO:1901570,GO:1903175,Uncle/Nephew (叔侄节点)
+GO:1901238,GO:1901702,No Specific Relationship
+GO:0005452,GO:0062158,Sibling (兄弟节点)
+GO:0052008,GO:0052039,Sibling (兄弟节点)
+GO:1901239,GO:1901702,No Specific Relationship
+GO:0008610,GO:1901570,Sibling (兄弟节点)
+GO:0072339,GO:1900557,Uncle/Nephew (叔侄节点)
+GO:0120255,GO:1901576,Sibling (兄弟节点)
+GO:0070588,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0008509,GO:0015111,Grandparent-Grandchild (爷孙节点)
+GO:0016124,GO:0046155,No Specific Relationship
+GO:0071577,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0010304,GO:0030163,Grandparent-Grandchild (爷孙节点)
+GO:0008253,GO:0050340,Uncle/Nephew (叔侄节点)
+GO:0030163,GO:0030164,Grandparent-Grandchild (爷孙节点)
+GO:0097069,GO:1902075,No Specific Relationship
+GO:0002752,GO:0034130,Uncle/Nephew (叔侄节点)
+GO:0046394,GO:1900802,Sibling (兄弟节点)
+GO:0018342,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0042918,GO:0072348,No Specific Relationship
+GO:0055079,GO:0055080,Grandparent-Grandchild (爷孙节点)
+GO:0071092,GO:1902494,No Specific Relationship
+GO:1902074,GO:1905794,Uncle/Nephew (叔侄节点)
+GO:0055071,GO:0055080,No Specific Relationship
+GO:0008104,GO:0072657,Grandparent-Grandchild (爷孙节点)
+GO:0008104,GO:0061586,Grandparent-Grandchild (爷孙节点)
+GO:0046395,GO:1900801,Sibling (兄弟节点)
+GO:0015520,GO:0022853,No Specific Relationship
+GO:0004013,GO:0046508,No Specific Relationship
+GO:0008234,GO:0071567,Grandparent-Grandchild (爷孙节点)
+GO:0046394,GO:0071524,Sibling (兄弟节点)
+GO:0031323,GO:2000772,Uncle/Nephew (叔侄节点)
+GO:0008287,GO:0030289,Grandparent-Grandchild (爷孙节点)
+GO:0045754,GO:0051173,Uncle/Nephew (叔侄节点)
+GO:0036101,GO:0042758,Uncle/Nephew (叔侄节点)
+GO:0055079,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0050794,GO:0106020,Grandparent-Grandchild (爷孙节点)
+GO:0055071,GO:0098771,No Specific Relationship
+GO:1902688,GO:1905012,No Specific Relationship
+GO:0030648,GO:1901152,Sibling (兄弟节点)
+GO:0031324,GO:1904727,Uncle/Nephew (叔侄节点)
+GO:0019725,GO:0060274,Uncle/Nephew (叔侄节点)
+GO:1903800,GO:2000636,Sibling (兄弟节点)
+GO:0036125,GO:1902494,Sibling (兄弟节点)
+GO:0042959,GO:1901682,Uncle/Nephew (叔侄节点)
+GO:0032559,GO:0140703,No Specific Relationship
+GO:0034489,GO:1904919,Uncle/Nephew (叔侄节点)
+GO:0009895,GO:0034252,Grandparent-Grandchild (爷孙节点)
+GO:0031495,GO:0051093,Uncle/Nephew (叔侄节点)
+GO:0016814,GO:0046936,No Specific Relationship
+GO:0044068,GO:0051819,Sibling (兄弟节点)
+GO:0048522,GO:1903116,Grandparent-Grandchild (爷孙节点)
+GO:0019752,GO:0032788,Uncle/Nephew (叔侄节点)
+GO:0015350,GO:0072349,Uncle/Nephew (叔侄节点)
+GO:0019008,GO:1902494,Sibling (兄弟节点)
+GO:0097253,GO:1901702,No Specific Relationship
+GO:0031323,GO:1904726,Uncle/Nephew (叔侄节点)
+GO:0050679,GO:1901647,Sibling (兄弟节点)
+GO:0005216,GO:0022839,Uncle/Nephew (叔侄节点)
+GO:0046889,GO:1904278,Sibling (兄弟节点)
+GO:0006792,GO:0032107,No Specific Relationship
+GO:0009968,GO:0034148,Grandparent-Grandchild (爷孙节点)
+GO:0008518,GO:0015297,No Specific Relationship
+GO:0002342,GO:0010623,No Specific Relationship
+GO:0019049,GO:0039699,No Specific Relationship
+GO:0008514,GO:0046943,No Specific Relationship
+GO:0045570,GO:0048638,Grandparent-Grandchild (爷孙节点)
+GO:0009292,GO:0009987,Grandparent-Grandchild (爷孙节点)
+GO:1901009,GO:1901362,Grandparent-Grandchild (爷孙节点)
+GO:0000753,GO:0000902,Grandparent-Grandchild (爷孙节点)
+GO:0015199,GO:0090686,No Specific Relationship
+GO:0055075,GO:0055080,Grandparent-Grandchild (爷孙节点)
+GO:0035337,GO:1902858,Sibling (兄弟节点)
+GO:0009344,GO:1902494,Sibling (兄弟节点)
+GO:0070214,GO:1902494,Sibling (兄弟节点)
+GO:0000003,GO:1990277,No Specific Relationship
+GO:0042876,GO:0046943,No Specific Relationship
+GO:0019695,GO:1901564,Sibling (兄弟节点)
+GO:1902895,GO:2000630,No Specific Relationship
+GO:0050232,GO:0052597,Sibling (兄弟节点)
+GO:0001326,GO:0006261,Sibling (兄弟节点)
+GO:0008234,GO:0019785,Grandparent-Grandchild (爷孙节点)
+GO:0071399,GO:1902075,No Specific Relationship
+GO:0010562,GO:0045949,No Specific Relationship
+GO:0017148,GO:0070549,Grandparent-Grandchild (爷孙节点)
+GO:0010647,GO:1901390,No Specific Relationship
+GO:0034755,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0055075,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0006412,GO:0019538,Grandparent-Grandchild (爷孙节点)
+GO:0001546,GO:0048589,Sibling (兄弟节点)
+GO:0031060,GO:0031323,No Specific Relationship
+GO:0097361,GO:0140535,Sibling (兄弟节点)
+GO:0099078,GO:0140535,Sibling (兄弟节点)
+GO:0006816,GO:0071702,No Specific Relationship
+GO:0015732,GO:0015908,Sibling (兄弟节点)
+GO:0031138,GO:0048519,Grandparent-Grandchild (爷孙节点)
+GO:0032109,GO:0045848,No Specific Relationship
+GO:0042177,GO:1901799,No Specific Relationship
+GO:0008292,GO:1901566,Uncle/Nephew (叔侄节点)
+GO:0071417,GO:1905145,Sibling (兄弟节点)
+GO:0046687,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0062014,GO:1900659,No Specific Relationship
+GO:0009308,GO:0018981,Grandparent-Grandchild (爷孙节点)
+GO:0048523,GO:1904360,Grandparent-Grandchild (爷孙节点)
+GO:0071249,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0015078,GO:0015310,Grandparent-Grandchild (爷孙节点)
+GO:0002629,GO:0042177,No Specific Relationship
+GO:1902689,GO:1905013,No Specific Relationship
+GO:0035785,GO:0098771,No Specific Relationship
+GO:0003006,GO:0097736,Uncle/Nephew (叔侄节点)
+GO:0031496,GO:0051094,Uncle/Nephew (叔侄节点)
+GO:0034764,GO:1903797,No Specific Relationship
+GO:0006631,GO:1903964,Uncle/Nephew (叔侄节点)
+GO:0008104,GO:1990146,Grandparent-Grandchild (爷孙节点)
+GO:0034248,GO:2000211,No Specific Relationship
+GO:0000966,GO:0106410,Grandparent-Grandchild (爷孙节点)
+GO:0070559,GO:1902494,Sibling (兄弟节点)
+GO:0051173,GO:1900179,Uncle/Nephew (叔侄节点)
+GO:0010523,GO:0051481,No Specific Relationship
+GO:0031327,GO:1900469,Grandparent-Grandchild (爷孙节点)
+GO:0006795,GO:0051174,No Specific Relationship
+GO:1902075,GO:1903545,No Specific Relationship
+GO:0140485,GO:1901702,No Specific Relationship
+GO:0016616,GO:0047935,Grandparent-Grandchild (爷孙节点)
+GO:0015189,GO:1901702,No Specific Relationship
+GO:0002753,GO:0039530,Grandparent-Grandchild (爷孙节点)
+GO:0003674,GO:0008603,No Specific Relationship
+GO:0009685,GO:0019752,Uncle/Nephew (叔侄节点)
+GO:0016597,GO:0031406,No Specific Relationship
+GO:0044659,GO:0090680,No Specific Relationship
+GO:0044027,GO:0045814,No Specific Relationship
+GO:0008209,GO:0042445,Grandparent-Grandchild (爷孙节点)
+GO:0019532,GO:0071705,No Specific Relationship
+GO:1901562,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0010852,GO:0010855,Grandparent-Grandchild (爷孙节点)
+GO:0034471,GO:0036260,Uncle/Nephew (叔侄节点)
+GO:0140723,GO:1901336,No Specific Relationship
+GO:0035929,GO:0035943,Sibling (兄弟节点)
+GO:0015297,GO:0070907,Grandparent-Grandchild (爷孙节点)
+GO:0071505,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0034169,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0060402,GO:0097553,Uncle/Nephew (叔侄节点)
+GO:0015152,GO:0061513,No Specific Relationship
+GO:0070937,GO:0140535,Sibling (兄弟节点)
+GO:0009063,GO:0009068,Uncle/Nephew (叔侄节点)
+GO:0001671,GO:0060590,Uncle/Nephew (叔侄节点)
+GO:0098655,GO:1902600,Grandparent-Grandchild (爷孙节点)
+GO:0090452,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0010266,GO:1902074,No Specific Relationship
+GO:0050665,GO:1901576,Uncle/Nephew (叔侄节点)
+GO:0043494,GO:0080008,Grandparent-Grandchild (爷孙节点)
+GO:0005697,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0015603,GO:0015624,No Specific Relationship
+GO:0045862,GO:0051247,Grandparent-Grandchild (爷孙节点)
+GO:0031324,GO:0045914,Grandparent-Grandchild (爷孙节点)
+GO:0051984,GO:0090068,Uncle/Nephew (叔侄节点)
+GO:0002049,GO:0018130,No Specific Relationship
+GO:0015297,GO:0015309,No Specific Relationship
+GO:0052597,GO:0052600,Sibling (兄弟节点)
+GO:0009058,GO:0048543,No Specific Relationship
+GO:0006883,GO:0030003,Grandparent-Grandchild (爷孙节点)
+GO:0055085,GO:1901962,No Specific Relationship
+GO:0008104,GO:0060476,Grandparent-Grandchild (爷孙节点)
+GO:0010331,GO:0031406,No Specific Relationship
+GO:1901425,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0043168,GO:0140703,No Specific Relationship
+GO:0030097,GO:0048468,No Specific Relationship
+GO:0048523,GO:0106135,Grandparent-Grandchild (爷孙节点)
+GO:0005277,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0015297,GO:0062057,No Specific Relationship
+GO:0036280,GO:1902075,No Specific Relationship
+GO:0015709,GO:0071705,Uncle/Nephew (叔侄节点)
+GO:1902075,GO:1905145,Uncle/Nephew (叔侄节点)
+GO:0035835,GO:1900805,No Specific Relationship
+GO:0015276,GO:0022839,Uncle/Nephew (叔侄节点)
+GO:0008528,GO:0038048,Grandparent-Grandchild (爷孙节点)
+GO:0043168,GO:0120227,No Specific Relationship
+GO:0019531,GO:1901702,No Specific Relationship
+GO:0098659,GO:0140157,Uncle/Nephew (叔侄节点)
+GO:0004565,GO:0033943,Sibling (兄弟节点)
+GO:0035295,GO:0072189,Uncle/Nephew (叔侄节点)
+GO:0031326,GO:2001245,Grandparent-Grandchild (爷孙节点)
+GO:0034743,GO:0140535,Sibling (兄弟节点)
+GO:0009415,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0047429,GO:0106377,Uncle/Nephew (叔侄节点)
+GO:0008486,GO:0052842,Sibling (兄弟节点)
+GO:0034746,GO:0140535,Sibling (兄弟节点)
+GO:0006537,GO:0043604,No Specific Relationship
+GO:0005471,GO:0015297,No Specific Relationship
+GO:0030929,GO:0140535,Sibling (兄弟节点)
+GO:0008234,GO:0019786,Grandparent-Grandchild (爷孙节点)
+GO:0031327,GO:2001246,Grandparent-Grandchild (爷孙节点)
+GO:0032107,GO:0043609,No Specific Relationship
+GO:1901605,GO:1903254,No Specific Relationship
+GO:0098656,GO:1902476,Grandparent-Grandchild (爷孙节点)
+GO:0006308,GO:0006309,Grandparent-Grandchild (爷孙节点)
+GO:0019538,GO:0046154,Grandparent-Grandchild (爷孙节点)
+GO:0044676,GO:1902494,Sibling (兄弟节点)
+GO:1903706,GO:2001204,No Specific Relationship
+GO:0062013,GO:1900660,No Specific Relationship
+GO:0045732,GO:1901800,No Specific Relationship
+GO:0018246,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0030163,GO:0032802,Grandparent-Grandchild (爷孙节点)
+GO:0031330,GO:2001157,Grandparent-Grandchild (爷孙节点)
+GO:0019674,GO:0019677,No Specific Relationship
+GO:0008509,GO:0015108,No Specific Relationship
+GO:1900542,GO:1902688,No Specific Relationship
+GO:0004843,GO:0061815,Sibling (兄弟节点)
+GO:0003995,GO:0102035,Uncle/Nephew (叔侄节点)
+GO:0034250,GO:2000213,No Specific Relationship
+GO:0044001,GO:0046739,Sibling (兄弟节点)
+GO:0021905,GO:0048859,Sibling (兄弟节点)
+GO:1901701,GO:1902618,Sibling (兄弟节点)
+GO:0042759,GO:1901753,Uncle/Nephew (叔侄节点)
+GO:0016462,GO:0047710,Grandparent-Grandchild (爷孙节点)
+GO:0030643,GO:0055082,No Specific Relationship
+GO:0031330,GO:0033248,Grandparent-Grandchild (爷孙节点)
+GO:0060919,GO:0098657,No Specific Relationship
+GO:0018352,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0033739,GO:0046857,No Specific Relationship
+GO:0006171,GO:0009190,Grandparent-Grandchild (爷孙节点)
+GO:0016717,GO:0050184,No Specific Relationship
+GO:0031324,GO:2000540,No Specific Relationship
+GO:0042446,GO:0045456,Grandparent-Grandchild (爷孙节点)
+GO:0009312,GO:0046178,No Specific Relationship
+GO:0015386,GO:0051139,Uncle/Nephew (叔侄节点)
+GO:0051327,GO:0098768,Uncle/Nephew (叔侄节点)
+GO:0030003,GO:0035785,Grandparent-Grandchild (爷孙节点)
+GO:0003995,GO:0004085,Uncle/Nephew (叔侄节点)
+GO:0031048,GO:0031508,Uncle/Nephew (叔侄节点)
+GO:0010909,GO:0051176,No Specific Relationship
+GO:0016581,GO:0070824,Sibling (兄弟节点)
+GO:0015798,GO:0015850,Grandparent-Grandchild (爷孙节点)
+GO:0008486,GO:0052840,Sibling (兄弟节点)
+GO:0009366,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0019054,GO:0039656,Sibling (兄弟节点)
+GO:0003995,GO:0017099,Grandparent-Grandchild (爷孙节点)
+GO:0140638,GO:1902555,Uncle/Nephew (叔侄节点)
+GO:0035730,GO:0043168,No Specific Relationship
+GO:0007190,GO:0045762,No Specific Relationship
+GO:0019752,GO:0042857,Uncle/Nephew (叔侄节点)
+GO:1900544,GO:1905857,Uncle/Nephew (叔侄节点)
+GO:0032943,GO:0044565,Grandparent-Grandchild (爷孙节点)
+GO:0055085,GO:0072489,No Specific Relationship
+GO:0008193,GO:0140101,No Specific Relationship
+GO:1902074,GO:1902617,Uncle/Nephew (叔侄节点)
+GO:0002760,GO:0031349,Uncle/Nephew (叔侄节点)
+GO:0051053,GO:0120291,No Specific Relationship
+GO:0034172,GO:0039532,No Specific Relationship
+GO:0071704,GO:1901055,No Specific Relationship
+GO:0015108,GO:0015377,No Specific Relationship
+GO:0019556,GO:0043605,Uncle/Nephew (叔侄节点)
+GO:0036211,GO:0036525,Grandparent-Grandchild (爷孙节点)
+GO:0018546,GO:0046857,No Specific Relationship
+GO:0097240,GO:0140464,No Specific Relationship
+GO:0015309,GO:0022853,No Specific Relationship
+GO:0008528,GO:0038046,Grandparent-Grandchild (爷孙节点)
+GO:0007519,GO:0060537,Grandparent-Grandchild (爷孙节点)
+GO:0031925,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0022804,GO:0046715,Grandparent-Grandchild (爷孙节点)
+GO:0015819,GO:1902022,Sibling (兄弟节点)
+GO:0034418,GO:0072522,Uncle/Nephew (叔侄节点)
+GO:0032807,GO:0070419,No Specific Relationship
+GO:0019605,GO:0030645,Grandparent-Grandchild (爷孙节点)
+GO:0015107,GO:1901702,No Specific Relationship
+GO:0031331,GO:2001158,Grandparent-Grandchild (爷孙节点)
+GO:0042304,GO:1902322,Sibling (兄弟节点)
+GO:0010975,GO:1902667,No Specific Relationship
+GO:0001716,GO:0008131,Sibling (兄弟节点)
+GO:0005452,GO:0015383,Uncle/Nephew (叔侄节点)
+GO:0019008,GO:0140535,Sibling (兄弟节点)
+GO:0034764,GO:1905589,No Specific Relationship
+GO:0072337,GO:1903826,Uncle/Nephew (叔侄节点)
+GO:0033070,GO:0072339,Sibling (兄弟节点)
+GO:0015849,GO:0046942,Uncle/Nephew (叔侄节点)
+GO:0005955,GO:0008287,Grandparent-Grandchild (爷孙节点)
+GO:0071239,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0045732,GO:1904352,Grandparent-Grandchild (爷孙节点)
+GO:0051476,GO:1905039,Uncle/Nephew (叔侄节点)
+GO:0005343,GO:0015498,Sibling (兄弟节点)
+GO:0030209,GO:0046365,No Specific Relationship
+GO:0015735,GO:1905039,No Specific Relationship
+GO:0032879,GO:0060069,Grandparent-Grandchild (爷孙节点)
+GO:0021547,GO:0048859,Sibling (兄弟节点)
+GO:0005452,GO:0015364,Uncle/Nephew (叔侄节点)
+GO:0044815,GO:0106069,Uncle/Nephew (叔侄节点)
+GO:0005372,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0034149,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0072340,GO:1900556,Uncle/Nephew (叔侄节点)
+GO:0006101,GO:0006807,No Specific Relationship
+GO:0042445,GO:0120122,Grandparent-Grandchild (爷孙节点)
+GO:0030186,GO:0042445,Grandparent-Grandchild (爷孙节点)
+GO:0036054,GO:0140096,No Specific Relationship
+GO:0000030,GO:0103064,Sibling (兄弟节点)
+GO:0070214,GO:0140535,Sibling (兄弟节点)
+GO:0002683,GO:0034136,No Specific Relationship
+GO:0008324,GO:0046873,Grandparent-Grandchild (爷孙节点)
+GO:0030047,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0051094,GO:1904361,Grandparent-Grandchild (爷孙节点)
+GO:0031501,GO:1990529,Sibling (兄弟节点)
+GO:0017148,GO:0051248,Grandparent-Grandchild (爷孙节点)
+GO:0015556,GO:0046943,No Specific Relationship
+GO:0046202,GO:1901566,Sibling (兄弟节点)
+GO:0015109,GO:1901702,No Specific Relationship
+GO:0043132,GO:0051503,Uncle/Nephew (叔侄节点)
+GO:0016598,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0042869,GO:1905039,No Specific Relationship
+GO:0097184,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0070765,GO:1902494,No Specific Relationship
+GO:0046395,GO:1901729,Sibling (兄弟节点)
+GO:0070331,GO:1902494,Sibling (兄弟节点)
+GO:0043682,GO:1901682,No Specific Relationship
+GO:0048523,GO:0061875,Grandparent-Grandchild (爷孙节点)
+GO:0015078,GO:0042962,Grandparent-Grandchild (爷孙节点)
+GO:0031139,GO:0048518,Grandparent-Grandchild (爷孙节点)
+GO:0051173,GO:1900341,Uncle/Nephew (叔侄节点)
+GO:0022839,GO:1990760,Sibling (兄弟节点)
+GO:0018184,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0006807,GO:0015942,No Specific Relationship
+GO:0002050,GO:0046700,No Specific Relationship
+GO:0008104,GO:0070727,Sibling (兄弟节点)
+GO:0034173,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0072339,GO:1900790,Sibling (兄弟节点)
+GO:0051920,GO:0102039,No Specific Relationship
+GO:0018872,GO:0019752,Uncle/Nephew (叔侄节点)
+GO:0071462,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0055085,GO:0070811,No Specific Relationship
+GO:2000832,GO:2000865,Sibling (兄弟节点)
+GO:0015908,GO:0015912,Sibling (兄弟节点)
+GO:0006700,GO:0042446,Grandparent-Grandchild (爷孙节点)
+GO:0042166,GO:0050997,Uncle/Nephew (叔侄节点)
+GO:0060284,GO:1903706,No Specific Relationship
+GO:0014047,GO:0042886,No Specific Relationship
+GO:0008418,GO:0140096,No Specific Relationship
+GO:0018411,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0006653,GO:0046470,Uncle/Nephew (叔侄节点)
+GO:0006417,GO:0051246,Grandparent-Grandchild (爷孙节点)
+GO:0015233,GO:0046943,No Specific Relationship
+GO:0031331,GO:2000060,No Specific Relationship
+GO:0120292,GO:1903221,Uncle/Nephew (叔侄节点)
+GO:0006807,GO:0019541,No Specific Relationship
+GO:0034745,GO:0140535,Sibling (兄弟节点)
+GO:0140271,GO:0140425,Uncle/Nephew (叔侄节点)
+GO:0004930,GO:0004985,Grandparent-Grandchild (爷孙节点)
+GO:0047883,GO:0052595,Sibling (兄弟节点)
+GO:0072706,GO:1901700,Uncle/Nephew (叔侄节点)
+GO:0006879,GO:0030003,No Specific Relationship
+GO:0042445,GO:0045455,Grandparent-Grandchild (爷孙节点)
+GO:0009968,GO:0034152,Grandparent-Grandchild (爷孙节点)
+GO:0019752,GO:1900606,Uncle/Nephew (叔侄节点)
+GO:0000226,GO:1990933,Sibling (兄弟节点)
+GO:0015101,GO:0015566,No Specific Relationship
+GO:0019048,GO:0075528,Grandparent-Grandchild (爷孙节点)
+GO:0031325,GO:0060409,Grandparent-Grandchild (爷孙节点)
+GO:0016462,GO:0120108,No Specific Relationship
+GO:0036255,GO:1902074,No Specific Relationship
+GO:0098711,GO:1904334,Uncle/Nephew (叔侄节点)
+GO:0016728,GO:0047058,No Specific Relationship
+GO:0019752,GO:1900576,Uncle/Nephew (叔侄节点)
+GO:0048544,GO:1990109,Sibling (兄弟节点)
+GO:0071089,GO:1902494,No Specific Relationship
+GO:0015297,GO:0015310,No Specific Relationship
+GO:0006536,GO:0043603,No Specific Relationship
+GO:0006338,GO:0140673,No Specific Relationship
+GO:0071521,GO:1905360,Uncle/Nephew (叔侄节点)
+GO:0016791,GO:0046403,Grandparent-Grandchild (爷孙节点)
+GO:0031329,GO:1900081,Grandparent-Grandchild (爷孙节点)
+GO:0000966,GO:0099116,Grandparent-Grandchild (爷孙节点)
+GO:0034763,GO:1900924,No Specific Relationship
+GO:0009150,GO:0046034,No Specific Relationship
+GO:0010731,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0004152,GO:0050158,No Specific Relationship
+GO:0009337,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0016462,GO:0050333,Grandparent-Grandchild (爷孙节点)
+GO:0048856,GO:0060525,Grandparent-Grandchild (爷孙节点)
+GO:0032849,GO:0048518,Grandparent-Grandchild (爷孙节点)
+GO:0071067,GO:1902494,No Specific Relationship
+GO:2000833,GO:2000866,Sibling (兄弟节点)
+GO:0035352,GO:0072530,Uncle/Nephew (叔侄节点)
+GO:0098709,GO:0098739,No Specific Relationship
+GO:0015539,GO:0046943,No Specific Relationship
+GO:0006067,GO:0019656,Grandparent-Grandchild (爷孙节点)
+GO:0140513,GO:1990622,Sibling (兄弟节点)
+GO:0009356,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0035821,GO:0044003,No Specific Relationship
+GO:0015297,GO:0015327,Grandparent-Grandchild (爷孙节点)
+GO:0046394,GO:1900541,Sibling (兄弟节点)
+GO:0034762,GO:0090371,Sibling (兄弟节点)
+GO:0055082,GO:1902266,No Specific Relationship
+GO:0010854,GO:0010856,Uncle/Nephew (叔侄节点)
+GO:1900542,GO:1902031,No Specific Relationship
+GO:0070421,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0140735,GO:1901570,Uncle/Nephew (叔侄节点)
+GO:0014075,GO:1904313,No Specific Relationship
+GO:0016053,GO:0046305,Sibling (兄弟节点)
+GO:0046679,GO:1901698,Uncle/Nephew (叔侄节点)
+GO:0033647,GO:0044159,Uncle/Nephew (叔侄节点)
+GO:0015887,GO:1905039,No Specific Relationship
+GO:0033484,GO:0055082,Uncle/Nephew (叔侄节点)
+GO:0055082,GO:0080144,Sibling (兄弟节点)
+GO:0042759,GO:0106295,Sibling (兄弟节点)
+GO:0009968,GO:2000441,Grandparent-Grandchild (爷孙节点)
+GO:0019752,GO:1900600,Uncle/Nephew (叔侄节点)
+GO:0039595,GO:0039604,Uncle/Nephew (叔侄节点)
+GO:0019618,GO:1901568,No Specific Relationship
+GO:0006865,GO:0015807,Sibling (兄弟节点)
+GO:0015685,GO:0033214,Sibling (兄弟节点)
+GO:0006790,GO:0018984,No Specific Relationship
+GO:0017177,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0048643,GO:1901863,Grandparent-Grandchild (爷孙节点)
+GO:0015078,GO:0015311,Grandparent-Grandchild (爷孙节点)
+GO:0010948,GO:0075297,Grandparent-Grandchild (爷孙节点)
+GO:0055073,GO:0055080,Grandparent-Grandchild (爷孙节点)
+GO:0040029,GO:1901538,No Specific Relationship
+GO:0032848,GO:0048519,Grandparent-Grandchild (爷孙节点)
+GO:0015813,GO:0089704,Sibling (兄弟节点)
+GO:0090296,GO:1901858,No Specific Relationship
+GO:0032410,GO:0070927,Grandparent-Grandchild (爷孙节点)
+GO:1901568,GO:1902898,Uncle/Nephew (叔侄节点)
+GO:0002049,GO:1901362,No Specific Relationship
+GO:0010317,GO:1902494,Sibling (兄弟节点)
+GO:0004601,GO:0051920,Sibling (兄弟节点)
+GO:0015200,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:1902494,GO:1990221,Sibling (兄弟节点)
+GO:0022414,GO:0090220,Grandparent-Grandchild (爷孙节点)
+GO:0062012,GO:1900658,No Specific Relationship
+GO:0034160,GO:0039532,No Specific Relationship
+GO:0055073,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0045734,GO:0051171,No Specific Relationship
+GO:0006163,GO:0052652,Grandparent-Grandchild (爷孙节点)
+GO:0034741,GO:1905360,Uncle/Nephew (叔侄节点)
+GO:0046395,GO:1900577,Sibling (兄弟节点)
+GO:0018282,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0045091,GO:2001141,No Specific Relationship
+GO:0015081,GO:1901702,No Specific Relationship
+GO:1902074,GO:1902438,Uncle/Nephew (叔侄节点)
+GO:0061576,GO:1902494,Sibling (兄弟节点)
+GO:0055103,GO:1990609,Sibling (兄弟节点)
+GO:0009063,GO:0009065,Uncle/Nephew (叔侄节点)
+GO:0055085,GO:0080162,Uncle/Nephew (叔侄节点)
+GO:0010977,GO:1902668,No Specific Relationship
+GO:0032502,GO:0090693,Grandparent-Grandchild (爷孙节点)
+GO:1903798,GO:2000631,Uncle/Nephew (叔侄节点)
+GO:0015108,GO:0062158,Uncle/Nephew (叔侄节点)
+GO:0033635,GO:0033638,Grandparent-Grandchild (爷孙节点)
+GO:0071301,GO:1902075,No Specific Relationship
+GO:0008410,GO:0033881,No Specific Relationship
+GO:0051604,GO:0072376,Sibling (兄弟节点)
+GO:1903960,GO:1904213,Grandparent-Grandchild (爷孙节点)
+GO:0010033,GO:0072706,Uncle/Nephew (叔侄节点)
+GO:0031427,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0031327,GO:1900647,Grandparent-Grandchild (爷孙节点)
+GO:0031325,GO:0045915,Grandparent-Grandchild (爷孙节点)
+GO:0018864,GO:0018942,Uncle/Nephew (叔侄节点)
+GO:0071277,GO:1902075,No Specific Relationship
+GO:0002683,GO:0034168,No Specific Relationship
+GO:1902065,GO:1902074,No Specific Relationship
+GO:0009063,GO:2001299,Uncle/Nephew (叔侄节点)
+GO:0062207,GO:2000440,Grandparent-Grandchild (爷孙节点)
+GO:0015310,GO:0022853,No Specific Relationship
+GO:0005886,GO:0120001,No Specific Relationship
+GO:0008210,GO:0042445,Grandparent-Grandchild (爷孙节点)
+GO:1902074,GO:1905242,No Specific Relationship
+GO:0061059,GO:0062208,Sibling (兄弟节点)
+GO:0018180,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0030163,GO:0036205,Grandparent-Grandchild (爷孙节点)
+GO:0031329,GO:2001156,Grandparent-Grandchild (爷孙节点)
+GO:0035279,GO:0061157,No Specific Relationship
+GO:0036211,GO:0070084,Grandparent-Grandchild (爷孙节点)
+GO:0032108,GO:0045847,No Specific Relationship
+GO:0014726,GO:0048635,No Specific Relationship
+GO:0015129,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0046394,GO:1901730,Sibling (兄弟节点)
+GO:0008192,GO:0140098,No Specific Relationship
+GO:0006082,GO:0018984,Sibling (兄弟节点)
+GO:0032413,GO:1904782,Grandparent-Grandchild (爷孙节点)
+GO:0072339,GO:1901566,No Specific Relationship
+GO:0022839,GO:0097603,Sibling (兄弟节点)
+GO:0008074,GO:1902494,Sibling (兄弟节点)
+GO:0034763,GO:1905009,No Specific Relationship
+GO:0043177,GO:0043210,No Specific Relationship
+GO:0015791,GO:0055085,No Specific Relationship
+GO:0101031,GO:0140535,Sibling (兄弟节点)
+GO:0003842,GO:0016620,No Specific Relationship
+GO:0015830,GO:1901571,No Specific Relationship
+GO:0019289,GO:0046394,Sibling (兄弟节点)
+GO:0044000,GO:0044409,Sibling (兄弟节点)
+GO:0006790,GO:0071272,No Specific Relationship
+GO:0017111,GO:0103023,Uncle/Nephew (叔侄节点)
+GO:0006486,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0048522,GO:1903829,Sibling (兄弟节点)
+GO:0015078,GO:0015308,Grandparent-Grandchild (爷孙节点)
+GO:0036103,GO:1901568,No Specific Relationship
+GO:0016814,GO:0090614,No Specific Relationship
+GO:0031326,GO:1900468,Grandparent-Grandchild (爷孙节点)
+GO:0097185,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0006810,GO:0015698,No Specific Relationship
+GO:0005186,GO:0048018,Sibling (兄弟节点)
+GO:0015797,GO:0034219,Sibling (兄弟节点)
+GO:0034219,GO:0051475,Sibling (兄弟节点)
+GO:1903798,GO:2000634,Uncle/Nephew (叔侄节点)
+GO:0009821,GO:0044550,No Specific Relationship
+GO:0071319,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0006791,GO:0031667,No Specific Relationship
+GO:0015098,GO:1901702,No Specific Relationship
+GO:0042925,GO:1901702,Uncle/Nephew (叔侄节点)
+GO:0044659,GO:0051673,No Specific Relationship
+GO:0006790,GO:0046343,No Specific Relationship
+GO:0046618,GO:0055085,Uncle/Nephew (叔侄节点)
+GO:0051926,GO:1902081,Grandparent-Grandchild (爷孙节点)
+GO:0015220,GO:1901702,No Specific Relationship
+GO:0048878,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0002683,GO:0039532,No Specific Relationship
+GO:0015297,GO:0015516,No Specific Relationship
+GO:0046890,GO:1904276,Sibling (兄弟节点)
+GO:0031123,GO:0042780,Grandparent-Grandchild (爷孙节点)
+GO:0048871,GO:0048872,Sibling (兄弟节点)
+GO:0052594,GO:0052595,Sibling (兄弟节点)
+GO:0003674,GO:0016538,No Specific Relationship
+GO:0031324,GO:0045763,Grandparent-Grandchild (爷孙节点)
+GO:0034556,GO:0046857,No Specific Relationship
+GO:0019751,GO:1901150,No Specific Relationship
+GO:0070331,GO:0140535,Sibling (兄弟节点)
+GO:0033239,GO:1900331,Sibling (兄弟节点)
+GO:0052183,GO:0052337,Grandparent-Grandchild (爷孙节点)
+GO:0004651,GO:0016791,Grandparent-Grandchild (爷孙节点)
+GO:0030371,GO:1903231,No Specific Relationship
+GO:0034246,GO:0140110,Grandparent-Grandchild (爷孙节点)
+GO:0015108,GO:1901702,No Specific Relationship
+GO:0002049,GO:0019438,No Specific Relationship
+GO:0015436,GO:0033284,No Specific Relationship
+GO:0015697,GO:0015871,Sibling (兄弟节点)
+GO:0039531,GO:0070424,Sibling (兄弟节点)
+GO:0046483,GO:1900567,Uncle/Nephew (叔侄节点)
+GO:0032879,GO:0106020,Grandparent-Grandchild (爷孙节点)
+GO:0004344,GO:0047934,Grandparent-Grandchild (爷孙节点)
+GO:0001676,GO:1901751,Uncle/Nephew (叔侄节点)
+GO:0046394,GO:1900602,Sibling (兄弟节点)
+GO:0071298,GO:1902075,No Specific Relationship
+GO:0030583,GO:0032502,No Specific Relationship
+GO:0031049,GO:0031052,No Specific Relationship
+GO:0042743,GO:0071704,No Specific Relationship
+GO:0005085,GO:0140678,No Specific Relationship
+GO:0001676,GO:0036102,Uncle/Nephew (叔侄节点)
+GO:0008104,GO:0034394,Grandparent-Grandchild (爷孙节点)
+GO:0022898,GO:0070926,Grandparent-Grandchild (爷孙节点)
+GO:0031323,GO:0042069,Grandparent-Grandchild (爷孙节点)
+GO:0005313,GO:0042887,No Specific Relationship
+GO:0018130,GO:0035831,Grandparent-Grandchild (爷孙节点)
+GO:1901010,GO:1901360,No Specific Relationship
+GO:0015078,GO:0051139,Grandparent-Grandchild (爷孙节点)
+GO:1901530,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0010908,GO:0042762,No Specific Relationship
+GO:0018175,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0010836,GO:0051348,No Specific Relationship
+GO:0000295,GO:0051724,Uncle/Nephew (叔侄节点)
+GO:0003353,GO:0048522,Grandparent-Grandchild (爷孙节点)
+GO:0050867,GO:0051240,Uncle/Nephew (叔侄节点)
+GO:0003674,GO:0030291,No Specific Relationship
+GO:0036211,GO:1990743,Grandparent-Grandchild (爷孙节点)
+GO:0002683,GO:0034132,No Specific Relationship
+GO:0036386,GO:0051276,No Specific Relationship
+GO:0010646,GO:1901388,No Specific Relationship
+GO:0018030,GO:0140096,No Specific Relationship
+GO:0009313,GO:0046177,No Specific Relationship
+GO:0045753,GO:0051172,Uncle/Nephew (叔侄节点)
+GO:1901566,GO:1902063,Sibling (兄弟节点)
+GO:0015701,GO:0019755,Uncle/Nephew (叔侄节点)
+GO:0033238,GO:1900330,Sibling (兄弟节点)
+GO:0031518,GO:0140513,Sibling (兄弟节点)
+GO:0010586,GO:0061614,No Specific Relationship
+GO:0097268,GO:0099512,No Specific Relationship
+GO:0098797,GO:0120101,No Specific Relationship
+GO:0008509,GO:0015296,Grandparent-Grandchild (爷孙节点)
+GO:0090297,GO:1901860,No Specific Relationship
+GO:0015913,GO:1902001,Sibling (兄弟节点)
+GO:0033202,GO:0044815,Uncle/Nephew (叔侄节点)
+GO:0075296,GO:0090068,Grandparent-Grandchild (爷孙节点)
+GO:0032891,GO:0120190,Uncle/Nephew (叔侄节点)
+GO:0008324,GO:0015078,Grandparent-Grandchild (爷孙节点)
+GO:0034143,GO:0062207,Grandparent-Grandchild (爷孙节点)
+GO:0004972,GO:0005244,Grandparent-Grandchild (爷孙节点)
+GO:0015799,GO:0015850,Grandparent-Grandchild (爷孙节点)
+GO:0046394,GO:1900608,Sibling (兄弟节点)
+GO:0008104,GO:0090251,Grandparent-Grandchild (爷孙节点)
+GO:0071239,GO:1901699,Uncle/Nephew (叔侄节点)
+GO:0031325,GO:0045764,Grandparent-Grandchild (爷孙节点)
+GO:0008104,GO:1990778,Grandparent-Grandchild (爷孙节点)
+GO:0051051,GO:2000119,No Specific Relationship
+GO:0015103,GO:0140413,Grandparent-Grandchild (爷孙节点)
+GO:0019740,GO:0031667,No Specific Relationship
+GO:0007318,GO:0022412,Sibling (兄弟节点)
+GO:0019628,GO:0072523,Uncle/Nephew (叔侄节点)
+GO:0006793,GO:0006794,No Specific Relationship
+GO:1901057,GO:1901576,No Specific Relationship
+GO:0055085,GO:0098660,Grandparent-Grandchild (爷孙节点)
+GO:0050793,GO:0075030,No Specific Relationship
+GO:0071421,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0035436,GO:0055085,No Specific Relationship
+GO:0006522,GO:0046436,Grandparent-Grandchild (爷孙节点)
+GO:0031049,GO:0040029,No Specific Relationship
+GO:0034763,GO:0140216,No Specific Relationship
+GO:0018130,GO:0035833,No Specific Relationship
+GO:0098665,GO:1904602,No Specific Relationship
+GO:0048878,GO:0140576,No Specific Relationship
+GO:0106254,GO:0140550,Sibling (兄弟节点)
+GO:0004363,GO:1904091,No Specific Relationship
+GO:0044272,GO:0046305,No Specific Relationship
+GO:1902494,GO:1990391,Sibling (兄弟节点)
+GO:0050794,GO:1902908,Grandparent-Grandchild (爷孙节点)
+GO:0015718,GO:0015908,No Specific Relationship
+GO:0042697,GO:1990636,No Specific Relationship
+GO:0015345,GO:0015603,No Specific Relationship
+GO:0018149,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0070252,GO:0099129,Uncle/Nephew (叔侄节点)
+GO:0006885,GO:0065007,No Specific Relationship
+GO:0034763,GO:0035431,No Specific Relationship
+GO:0008131,GO:0052594,Sibling (兄弟节点)
+GO:0046395,GO:1900540,Sibling (兄弟节点)
+GO:0051171,GO:1900177,Uncle/Nephew (叔侄节点)
+GO:1902074,GO:1903927,Uncle/Nephew (叔侄节点)
+GO:0042887,GO:0070909,No Specific Relationship
+GO:0042886,GO:0051938,Uncle/Nephew (叔侄节点)
+GO:0034249,GO:2000212,No Specific Relationship
+GO:0044406,GO:0051701,Sibling (兄弟节点)
+GO:0046394,GO:1902086,Sibling (兄弟节点)
+GO:0044029,GO:0045815,No Specific Relationship
+GO:0006705,GO:0042446,Grandparent-Grandchild (爷孙节点)
+GO:0006338,GO:0062176,No Specific Relationship
+GO:0097149,GO:0140535,Sibling (兄弟节点)
+GO:0015850,GO:0033271,Grandparent-Grandchild (爷孙节点)
+GO:0019054,GO:0039506,Sibling (兄弟节点)
+GO:0005309,GO:0005343,Sibling (兄弟节点)
+GO:0010348,GO:1901702,No Specific Relationship
+GO:0015718,GO:0034659,Uncle/Nephew (叔侄节点)
+GO:0001648,GO:0015057,Sibling (兄弟节点)
+GO:0006716,GO:0042445,Grandparent-Grandchild (爷孙节点)
+GO:0042177,GO:1904351,Grandparent-Grandchild (爷孙节点)
+GO:0061507,GO:0140702,Sibling (兄弟节点)
+GO:0034762,GO:1903795,No Specific Relationship
+GO:0044281,GO:0046415,Grandparent-Grandchild (爷孙节点)
+GO:0010648,GO:1901389,No Specific Relationship
+GO:0051049,GO:1900071,No Specific Relationship
+GO:0009719,GO:0070848,No Specific Relationship
+GO:0015418,GO:0033266,Sibling (兄弟节点)
+GO:0033240,GO:1900350,Sibling (兄弟节点)
+GO:0120247,GO:1901576,Sibling (兄弟节点)
+GO:0010964,GO:0060966,Uncle/Nephew (叔侄节点)
+GO:0015881,GO:1905039,No Specific Relationship
+GO:0031326,GO:1905693,Grandparent-Grandchild (爷孙节点)
+GO:0048641,GO:1901861,Grandparent-Grandchild (爷孙节点)
+GO:0030554,GO:0050661,Uncle/Nephew (叔侄节点)
+GO:0006195,GO:0006742,Uncle/Nephew (叔侄节点)
+GO:0009062,GO:1903965,Uncle/Nephew (叔侄节点)
+GO:0015085,GO:1901702,No Specific Relationship
+GO:0036211,GO:0044524,Grandparent-Grandchild (爷孙节点)
+GO:0071091,GO:1902494,No Specific Relationship
+GO:0017006,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0071506,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0019049,GO:0039503,Grandparent-Grandchild (爷孙节点)
+GO:0042759,GO:2001303,Uncle/Nephew (叔侄节点)
+GO:0034762,GO:0035430,No Specific Relationship
+GO:0022853,GO:0042962,No Specific Relationship
+GO:0008796,GO:0016462,Grandparent-Grandchild (爷孙节点)
+GO:0009968,GO:0034144,Grandparent-Grandchild (爷孙节点)
+GO:0033265,GO:0050997,No Specific Relationship
+GO:0031048,GO:0080188,Uncle/Nephew (叔侄节点)
+GO:0015297,GO:0015311,No Specific Relationship
+GO:0061697,GO:0140096,No Specific Relationship
+GO:0032879,GO:0120264,Grandparent-Grandchild (爷孙节点)
+GO:0052593,GO:0052595,Sibling (兄弟节点)
+GO:0009758,GO:0031667,No Specific Relationship
+GO:0009346,GO:0140535,Uncle/Nephew (叔侄节点)
+GO:0044000,GO:0051701,Grandparent-Grandchild (爷孙节点)
+GO:0010564,GO:0034307,Grandparent-Grandchild (爷孙节点)
+GO:0005313,GO:1901702,No Specific Relationship
+GO:0048523,GO:0062168,Grandparent-Grandchild (爷孙节点)
+GO:0046173,GO:1901152,No Specific Relationship
+GO:0008104,GO:0035750,Grandparent-Grandchild (爷孙节点)
+GO:0015697,GO:0015870,Sibling (兄弟节点)
+GO:0032849,GO:0051452,Uncle/Nephew (叔侄节点)
+GO:0019442,GO:0043605,No Specific Relationship
+GO:0019098,GO:0022414,Grandparent-Grandchild (爷孙节点)
+GO:0016747,GO:0043714,Uncle/Nephew (叔侄节点)
+GO:0008047,GO:0010853,Uncle/Nephew (叔侄节点)
+GO:0031330,GO:2000059,No Specific Relationship
+GO:0015654,GO:1901702,No Specific Relationship
+GO:0046394,GO:1900815,Sibling (兄弟节点)
+GO:0034743,GO:1905360,Uncle/Nephew (叔侄节点)
+GO:0050678,GO:1901645,Sibling (兄弟节点)
+GO:0019054,GO:0019087,Sibling (兄弟节点)
+GO:0006264,GO:0032042,No Specific Relationship
+GO:0034746,GO:1905360,Uncle/Nephew (叔侄节点)
+GO:0010348,GO:0051139,Sibling (兄弟节点)
+GO:0032879,GO:2000807,Grandparent-Grandchild (爷孙节点)
+GO:0017110,GO:0097383,Uncle/Nephew (叔侄节点)
+GO:0034763,GO:1900930,No Specific Relationship
+GO:0036249,GO:0098655,Grandparent-Grandchild (爷孙节点)
+GO:0005667,GO:0089713,Sibling (兄弟节点)
+GO:0110067,GO:1902495,No Specific Relationship
+GO:0010513,GO:0031328,Grandparent-Grandchild (爷孙节点)
+GO:0008324,GO:0015294,Grandparent-Grandchild (爷孙节点)
+GO:0046395,GO:1900601,Sibling (兄弟节点)
+GO:0030647,GO:1901150,Sibling (兄弟节点)
+GO:0016054,GO:0046306,Sibling (兄弟节点)
+GO:0010243,GO:1905144,Sibling (兄弟节点)
+GO:0015810,GO:0070778,Sibling (兄弟节点)
+GO:0000744,GO:0022414,No Specific Relationship
+GO:0009535,GO:0031968,No Specific Relationship
+GO:0046679,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0030261,GO:0070550,Sibling (兄弟节点)
+GO:0035865,GO:1901701,No Specific Relationship
+GO:0019049,GO:0039573,Grandparent-Grandchild (爷孙节点)
+GO:0002759,GO:0031347,No Specific Relationship
+GO:0036211,GO:0051697,Grandparent-Grandchild (爷孙节点)
+GO:0032805,GO:0045732,Grandparent-Grandchild (爷孙节点)
+GO:0015695,GO:0015894,No Specific Relationship
+GO:0015454,GO:0022853,Uncle/Nephew (叔侄节点)
+GO:0002178,GO:0002179,No Specific Relationship
+GO:0046483,GO:1901010,No Specific Relationship
+GO:0030002,GO:0030644,Grandparent-Grandchild (爷孙节点)
+GO:0005452,GO:0015315,Uncle/Nephew (叔侄节点)
+GO:0015078,GO:0062158,Grandparent-Grandchild (爷孙节点)
+GO:0010216,GO:0045814,No Specific Relationship
+GO:0002629,GO:0031330,No Specific Relationship
+GO:0036211,GO:0080058,Grandparent-Grandchild (爷孙节点)
+GO:0006631,GO:0097089,Uncle/Nephew (叔侄节点)
+GO:0022890,GO:1990760,Grandparent-Grandchild (爷孙节点)
+GO:0071404,GO:0140052,Sibling (兄弟节点)
+GO:0089707,GO:1904916,Sibling (兄弟节点)
+GO:0008514,GO:0015607,No Specific Relationship
+GO:0006575,GO:0046439,No Specific Relationship
+GO:0055070,GO:0055080,No Specific Relationship
+GO:0006338,GO:0045815,No Specific Relationship
+GO:0010316,GO:1902494,Sibling (兄弟节点)
+GO:0016462,GO:0034431,Grandparent-Grandchild (爷孙节点)
+GO:0005839,GO:1902494,Sibling (兄弟节点)
+GO:0015101,GO:0022857,No Specific Relationship
+GO:0071093,GO:1902494,No Specific Relationship
+GO:0015101,GO:1905131,No Specific Relationship
+GO:0009082,GO:0046394,Sibling (兄弟节点)
+GO:0005371,GO:0046943,No Specific Relationship
+GO:0015217,GO:1901702,No Specific Relationship
+GO:1901681,GO:1903135,No Specific Relationship
+GO:0031422,GO:1902494,Sibling (兄弟节点)
+GO:0072341,GO:1902485,Uncle/Nephew (叔侄节点)
+GO:0036211,GO:0046944,Grandparent-Grandchild (爷孙节点)
+GO:0035830,GO:1901360,Grandparent-Grandchild (爷孙节点)
+GO:1902075,GO:1905795,Uncle/Nephew (叔侄节点)
+GO:0002683,GO:0034122,No Specific Relationship
+GO:0008212,GO:0042445,Grandparent-Grandchild (爷孙节点)
+GO:0004153,GO:0016814,No Specific Relationship
+GO:0032299,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0034147,GO:0062207,Grandparent-Grandchild (爷孙节点)
+GO:0007174,GO:0030163,Grandparent-Grandchild (爷孙节点)
+GO:0001775,GO:0032501,Uncle/Nephew (叔侄节点)
+GO:0008234,GO:0016929,Grandparent-Grandchild (爷孙节点)
+GO:0015101,GO:0015240,No Specific Relationship
+GO:0032880,GO:0060341,Sibling (兄弟节点)
+GO:0140702,GO:0140703,Sibling (兄弟节点)
+GO:0036115,GO:1902859,Sibling (兄弟节点)
+GO:0015297,GO:0015308,No Specific Relationship
+GO:0009616,GO:0035194,Sibling (兄弟节点)
+GO:0071363,GO:0071495,No Specific Relationship
+GO:0072338,GO:1901564,No Specific Relationship
+GO:0010721,GO:1903707,Uncle/Nephew (叔侄节点)
+GO:0015311,GO:0022853,Uncle/Nephew (叔侄节点)
+GO:0061157,GO:0090625,No Specific Relationship
+GO:0070909,GO:1901702,No Specific Relationship
+GO:0097079,GO:1901702,No Specific Relationship
+GO:0009063,GO:0009071,Uncle/Nephew (叔侄节点)
+GO:1902075,GO:1902618,Sibling (兄弟节点)
+GO:0019544,GO:0043605,No Specific Relationship
+GO:0000151,GO:0034657,Sibling (兄弟节点)
+GO:0008518,GO:0022853,No Specific Relationship
+GO:0015078,GO:0140407,Grandparent-Grandchild (爷孙节点)
+GO:1900371,GO:1905012,Sibling (兄弟节点)
+GO:0050680,GO:1901646,Sibling (兄弟节点)
+GO:0019557,GO:0043605,No Specific Relationship
+GO:0032411,GO:1905409,Grandparent-Grandchild (爷孙节点)
+GO:0030261,GO:0051276,No Specific Relationship
+GO:0072669,GO:1902494,Uncle/Nephew (叔侄节点)
+GO:0048523,GO:1903828,Sibling (兄弟节点)
+GO:0032410,GO:1905408,Grandparent-Grandchild (爷孙节点)
+GO:0070887,GO:0072753,No Specific Relationship
+GO:0140724,GO:1902932,No Specific Relationship
+GO:0009311,GO:0019521,No Specific Relationship
+GO:0018130,GO:0019472,No Specific Relationship
+GO:0010509,GO:0055082,Sibling (兄弟节点)
+GO:0043682,GO:1901702,No Specific Relationship
+GO:0000254,GO:0016716,Uncle/Nephew (叔侄节点)
+GO:0009695,GO:0042759,Uncle/Nephew (叔侄节点)
+GO:0051171,GO:1900339,No Specific Relationship
+GO:0036211,GO:0043686,Grandparent-Grandchild (爷孙节点)
+GO:0019752,GO:1902084,Uncle/Nephew (叔侄节点)
+GO:0003006,GO:0061108,Grandparent-Grandchild (爷孙节点)
+GO:0015119,GO:0015152,Uncle/Nephew (叔侄节点)
+GO:0061459,GO:0072349,No Specific Relationship
+GO:0061838,GO:0140513,Sibling (兄弟节点)
+GO:0034161,GO:0062208,Grandparent-Grandchild (爷孙节点)
+GO:0019752,GO:1900813,Uncle/Nephew (叔侄节点)
+GO:0002695,GO:0150102,Sibling (兄弟节点)
+GO:0010315,GO:0140115,No Specific Relationship
+GO:0006576,GO:0009308,Grandparent-Grandchild (爷孙节点)
+GO:0045239,GO:1902494,Sibling (兄弟节点)
+GO:0006497,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0001907,GO:0039634,Grandparent-Grandchild (爷孙节点)
+GO:0019054,GO:0039521,Grandparent-Grandchild (爷孙节点)
+GO:0050795,GO:0051239,Sibling (兄弟节点)
+GO:0098590,GO:0120001,No Specific Relationship
+GO:0055078,GO:0055080,Grandparent-Grandchild (爷孙节点)
+GO:0097539,GO:0140535,Sibling (兄弟节点)
+GO:0002753,GO:0039529,Grandparent-Grandchild (爷孙节点)
+GO:0022898,GO:1905407,Grandparent-Grandchild (爷孙节点)
+GO:0046395,GO:1902085,Sibling (兄弟节点)
+GO:0031162,GO:0036211,Grandparent-Grandchild (爷孙节点)
+GO:0047429,GO:0106379,Uncle/Nephew (叔侄节点)
+GO:0022839,GO:0061797,Sibling (兄弟节点)
+GO:0071311,GO:1902075,Uncle/Nephew (叔侄节点)
+GO:0015695,GO:1905130,Uncle/Nephew (叔侄节点)
+GO:0010675,GO:0070873,Grandparent-Grandchild (爷孙节点)
+GO:0051093,GO:0075032,No Specific Relationship
+GO:0071057,GO:1902494,No Specific Relationship
+GO:1902075,GO:1905243,No Specific Relationship
+GO:0010948,GO:0051985,Uncle/Nephew (叔侄节点)
+GO:0002037,GO:0034763,No Specific Relationship
+GO:0001541,GO:0048856,Grandparent-Grandchild (爷孙节点)
+GO:0008381,GO:0022839,Sibling (兄弟节点)
+GO:0035831,GO:1901362,Grandparent-Grandchild (爷孙节点)
+GO:0031413,GO:0065007,Grandparent-Grandchild (爷孙节点)
+GO:0018130,GO:1900569,Uncle/Nephew (叔侄节点)
+GO:1903318,GO:2000258,Sibling (兄弟节点)
+GO:0008104,GO:0034497,Grandparent-Grandchild (爷孙节点)
+GO:0004703,GO:0050254,Uncle/Nephew (叔侄节点)
+GO:0003006,GO:0097738,Uncle/Nephew (叔侄节点)
+GO:1903799,GO:2000632,Sibling (兄弟节点)
+GO:0015745,GO:0072348,No Specific Relationship
+GO:0055078,GO:0098771,Grandparent-Grandchild (爷孙节点)
+GO:0015695,GO:0015843,Sibling (兄弟节点)
+GO:0050994,GO:1905828,Sibling (兄弟节点)
+GO:0008104,GO:0043143,Grandparent-Grandchild (爷孙节点)
+GO:0098654,GO:0140513,Sibling (兄弟节点)
+GO:0005308,GO:0046943,No Specific Relationship
+GO:0004810,GO:0140101,No Specific Relationship
+GO:0006751,GO:1901575,No Specific Relationship
+GO:0001541,GO:0003006,Grandparent-Grandchild (爷孙节点)
+GO:1905360,GO:1990131,Uncle/Nephew (叔侄节点)
+GO:0033198,GO:1902074,Uncle/Nephew (叔侄节点)
+GO:0006885,GO:0055080,Grandparent-Grandchild (爷孙节点)
+GO:0010034,GO:1901698,Uncle/Nephew (叔侄节点)
+GO:0015498,GO:0046943,No Specific Relationship
+GO:0022414,GO:0071835,No Specific Relationship
+GO:0000164,GO:0072357,Sibling (兄弟节点)
+GO:0034167,GO:0062207,Grandparent-Grandchild (爷孙节点)
+GO:0070773,GO:0140096,No Specific Relationship
+GO:1902075,GO:1902439,Uncle/Nephew (叔侄节点)
+GO:1901607,GO:1903253,No Specific Relationship
+GO:0002683,GO:0061060,No Specific Relationship
+GO:0009894,GO:0034251,Grandparent-Grandchild (爷孙节点)
+GO:0015308,GO:0022853,No Specific Relationship
+GO:0019500,GO:1901565,Sibling (兄弟节点)
+GO:0034744,GO:1905360,Uncle/Nephew (叔侄节点)
+GO:1903799,GO:2000635,Sibling (兄弟节点)
+GO:0023057,GO:1901389,No Specific Relationship
+GO:0019730,GO:0098542,Sibling (兄弟节点)
+GO:0036211,GO:0043687,Grandparent-Grandchild (爷孙节点)
+GO:0008104,GO:1902463,Grandparent-Grandchild (爷孙节点)
+GO:0032449,GO:0140535,Sibling (兄弟节点)
+GO:0005469,GO:0015297,No Specific Relationship
+GO:0042858,GO:0046394,Sibling (兄弟节点)
+GO:0010226,GO:1901700,No Specific Relationship
+GO:0140656,GO:1990600,Sibling (兄弟节点)
+GO:0015795,GO:0034219,Sibling (兄弟节点)
+GO:0001676,GO:2001304,Uncle/Nephew (叔侄节点)
+GO:0003920,GO:0046857,No Specific Relationship

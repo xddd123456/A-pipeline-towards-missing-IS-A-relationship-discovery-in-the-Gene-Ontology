@@ -1,0 +1,37 @@
+import pandas as pd
+from collections import defaultdict
+
+# 读取数据
+df = pd.read_csv('../data/go_2022/is_a_relations_indexed.csv', usecols=[0, 1], sep='\t', header=None)
+df.columns = ["child", "parent"]
+
+# 使用 defaultdict 来存储父节点的子节点数组
+parents_to_children = defaultdict(list)
+
+# 填充父节点的子节点数组
+for _, row in df.iterrows():
+    child, parent = row['child'], row['parent']
+    parents_to_children[parent].append(child)
+
+# 记录父节点和子节点之间的关系
+# 对于每个父节点，输出其所有的子节点
+for parent, children in parents_to_children.items():
+    print(f"父节点 {parent} 的子节点：{children}")
+
+# 将父节点和子节点的关系保存到CSV文件
+siblings = []
+
+# 遍历所有父节点的子节点，生成兄弟节点对
+for parent, children in parents_to_children.items():
+    for child in children:
+        # 生成兄弟节点对（子节点与父节点的其他子节点）
+        siblings_list = [sibling for sibling in children if sibling != child]
+        for sibling in siblings_list:
+            siblings.append([child, sibling])
+
+# 保存为 CSV 文件
+siblings_df = pd.DataFrame(siblings, columns=["Node", "Sibling"])
+siblings_df.to_csv('prediction_data/go_2022/siblings.csv', index=False, sep='\t')
+print()
+# 打印前几个兄弟节点对作为示例
+print(siblings_df.head())

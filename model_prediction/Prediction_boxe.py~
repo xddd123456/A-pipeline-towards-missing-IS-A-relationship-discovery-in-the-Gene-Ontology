@@ -1,0 +1,141 @@
+import torch
+import pandas as pd
+from torch.utils.data import Dataset, DataLoader
+from co_attention import SA
+from co_attention import SGA
+import torch.nn as nn
+import torch.nn.functional as F
+import numpy as np
+class TextPairDataset(Dataset):
+    def __init__(self, x1_data, x2_data, labels):
+        if isinstance(x1_data, pd.Series):
+            x1_data = x1_data.to_numpy()  # 或者 x1_data.values
+        if isinstance(x2_data, pd.Series):
+            x2_data = x2_data.to_numpy()  # 或者 x2_data.values
+        if isinstance(labels, pd.Series):
+            labels = labels.to_numpy()
+
+        self.x1_data = torch.tensor(x1_data, dtype=torch.long)  # 将 numpy.ndarray 转为 Tensor
+        self.x2_data = torch.tensor(x2_data, dtype=torch.long)  # 同理
+        self.labels = torch.tensor(labels, dtype=torch.long)
+
+    def __len__(self):
+        return len(self.x1_data)
+
+    def __getitem__(self, idx):
+        x1 = self.x1_data[idx]  # 获取 x1
+        x2 = self.x2_data[idx]  # 获取 x2
+        label = self.labels[idx]  # 获取标签
+        return x1, x2, label
+
+
+def create_dataloader(x1_data, x2_data, labels, batch_size=256, shuffle=True):
+    # 构造自定义的 Dataset
+    dataset = TextPairDataset(x1_data, x2_data, labels)
+    # 创建 DataLoader
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
+    return dataloader
+# 定义预测函数
+def predict(model, dataloader, device):
+    model.eval()
+    predictions = []
+    probabilities = []
+
+    with torch.no_grad():
+        for x1, x2, _ in dataloader:
+            x1, x2 = x1.to(device), x2.to(device)
+            outputs = model(x1, x2)
+            probs = torch.softmax(outputs, dim=1)[:, 1]
+            _, predicted = torch.max(outputs, 1)
+
+            predictions.extend(predicted.cpu().numpy())
+            probabilities.extend(probs.cpu().numpy())
+
+    return predictions, probabilities
+
+class CNN(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, pretrained_embeddings=None):
+        super(CNN, self).__init__()
+
+        # 预训练嵌入层
+        if pretrained_embeddings is not None:
+            self.embedding = nn.Embedding.from_pretrained(pretrained_embeddings, freeze=False)
+        else:
+            self.embedding = nn.Embedding(vocab_size, embedding_dim)
+        # LSTM 层
+        self.lstm = nn.LSTM(embedding_dim, hidden_size=2, num_layers=2, batch_first=True, bidirectional=True)
+
+        # 定义卷积层
+        self.conv1 = nn.Conv1d(in_channels=1, out_channels=64, kernel_size=3, stride=1, padding=1)
+        self.conv2 = nn.Conv1d(in_channels=64, out_channels=128, kernel_size=3, stride=1, padding=1)
+        self.conv3 = nn.Conv1d(in_channels=128, out_channels=256, kernel_size=3, stride=1, padding=1)
+        self.SGA = SGA()
+        self.SA = SA()
+        self.fc1 = nn.Linear(embedding_dim*256, 512)
+        self.dropout2 = nn.Dropout(0.2)
+        self.fc2 = nn.Linear(512, 128)
+        self.fc3 = nn.Linear(128, 2)
+
+    def forward(self, x1, x2):
+        # 获取嵌入
+        x1 = x1.to(device)
+        x2 = x2.to(device)
+        x1_embedding = self.embedding(x1)
+        x2_embedding = self.embedding(x2)
+        # 拼接 x1 和 x2 的嵌入向量
+        x = x2_embedding - x1_embedding
+        x = x.unsqueeze(1)  # 增加一个维度，从[batch_size, embedding_dim]变为[batch_size, 1, embedding_dim]
+        # x, _ = self.lstm(x)  # x: [batch_size, seq_len, hidden_size*2], _=
+        # 通过卷积层
+        x = self.conv1(x)
+        x = F.relu(x)
+        x = self.conv2(x)
+        x = F.relu(x)
+        x = self.conv3(x)
+        x = F.relu(x)
+        x = self.SA(x)
+        x = x.view(x.size(0), -1)
+        # 全连接层
+        x = self.fc1(x)
+        x = F.relu(x)
+        x = self.dropout2(x)
+        x = self.fc2(x)
+        out = self.fc3(x)
+
+        return out
+
+
+# 加载保存的模型权重
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# model_path = "model_results/go_2022/prediction_model_weight_train_1_change.pth"
+model_path = "model_results/go_2022/prediction_model_train_2.pth"
+model = CNN(vocab_size=47265, embedding_dim=768, pretrained_embeddings=None).to(device)
+model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
+
+# 读取新的数据集 filtered_top3_relation.csv
+# filtered_data_path = "prediction_data/go_2023/ndr_pairs_index.csv"
+for i in range(1, 51):
+    filtered_data_path = f"prediction_data/go_2022/fillter/example/combined_top_iter{i}_index.csv"
+    # filtered_data_path = "prediction_data/analysis_results_2023_indexed.csv"
+    filtered_data = pd.read_csv(filtered_data_path, header=None, sep='\t', names=["X1", "X2"])
+
+    # 准备数据集（构造假的标签以适配 DataLoader）
+    filtered_x1 = filtered_data["X1"].values
+    filtered_x2 = filtered_data["X2"].values
+    dummy_labels = [0] * len(filtered_data)  # 伪标签
+
+    # 创建 DataLoader
+    filtered_loader = create_dataloader(filtered_x1, filtered_x2, dummy_labels, batch_size=256, shuffle=False)
+
+    # 对新数据集进行预测
+    predictions, probabilities = predict(model, filtered_loader, device)
+
+    # 保存预测结果到文本文件
+    # output_file = "prediction_data/go_2023/ndr_pairs_index_pre_train1.txt"
+    output_file = f"prediction_data/go_2022/fillter/example/combined_top_iter{i}_index_pre.txt"
+    with open(output_file, "w") as f:
+        f.write("X1\tX2\tPrediction\n")
+        for x1, x2, pred in zip(filtered_x1, filtered_x2, predictions):
+            f.write(f"{x1}\t{x2}\t{pred}\n")
+
+    print(f"预测完成，结果已保存到 {output_file}")

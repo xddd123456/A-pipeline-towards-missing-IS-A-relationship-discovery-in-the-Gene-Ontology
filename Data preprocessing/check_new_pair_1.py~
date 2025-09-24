@@ -1,0 +1,106 @@
+import pandas as pd
+import networkx as nx
+
+
+def load_go_graph(is_a_file):
+    """
+    从 is_a 关系文件加载 GO 图。
+    :param is_a_file: 包含 GO is_a 关系的文件路径，CSV 格式，列为 'id' 和 'related_id'。
+    :return: 构建的有向图 (DiGraph)。
+    """
+    go_data = pd.read_csv(is_a_file, sep='\t', encoding='utf-8')
+
+    # 构建 GO 图
+    go_graph = nx.DiGraph()
+    for _, row in go_data.iterrows():
+        child, parent = row['id'], row['related_id']
+        go_graph.add_edge(parent, child)
+
+    return go_graph
+
+
+def load_new_pairs(new_pair_file):
+    """
+    读取 new_pair 文件，返回一个 set，包含 (id, related_id) 对
+    假设 new_pair 文件列顺序为：id, related_id
+    """
+    df = pd.read_csv(new_pair_file, sep='\t', header=None, names=['id', 'related_id'])
+    return set(zip(df['related_id'], df['id']))  # 父节点在前，子节点在后
+
+
+def get_common_children(graph, node1, node2):
+    """
+    获取两个节点的共同子节点
+    """
+    children1 = set(graph.successors(node1))
+    children2 = set(graph.successors(node2))
+    return children1 & children2
+
+
+def check_relationship_changes(graph_2022, graph_new, pairs):
+    """
+    检查节点对之间的关系变化：
+    1. 兄弟变 IS_A
+    2. 爷孙变 IS_A
+    3. 新共子节点
+    """
+    relationships = {}
+
+    for parent, child in pairs:
+        relation_list = []
+
+        # 在 2022 中获取兄弟节点
+        parents_of_child_2022 = set(graph_2022.predecessors(child))
+        siblings_in_2022 = set()
+        for p in parents_of_child_2022:
+            siblings_in_2022.update(graph_2022.successors(p))
+        siblings_in_2022.discard(child)  # 移除自己
+
+        # 1. 兄弟变 IS_A：在 2022 中是兄弟，但在 new_pair 中变成 IS_A
+        if parent in siblings_in_2022:
+            relation_list.append("Sibling → IS_A (兄弟变 IS_A)")
+
+        # 2. 爷孙变 IS_A：在 2022 中是爷孙，但在 new_pair 中变成 IS_A
+        grandparents_2022 = set(graph_2022.predecessors(parent))
+        if grandparents_2022 & parents_of_child_2022:
+            relation_list.append("Grandparent-Grandchild → IS_A (爷孙变 IS_A)")
+
+        # 3. 新共子节点：在 new_pair 中有共同子节点，但在 2022 中没有
+        common_children_new = get_common_children(graph_new, parent, child)
+        common_children_2022 = get_common_children(graph_2022, parent, child)
+        if common_children_new and not common_children_2022:
+            relation_list.append("New Common Child (新共子节点)")
+
+        # 如果以上关系都不满足，则无特定关系
+        if not relation_list:
+            relation_list.append("No Specific Change")
+
+        # 保存关系
+        relationships[(parent, child)] = relation_list
+
+    return relationships
+
+
+def main():
+    # 文件路径（请根据实际情况修改）
+    is_a_file_2022 = '../data/go_2022/is_a_relations.csv'  # 2022 版本的 is_a 关系文件
+    new_pair_file = 'new_go_pairs_2023.csv'  # new_pair 中的 IS_A 关系文件
+
+    # 加载 2022 版本的 GO 图
+    go_graph_2022 = load_go_graph(is_a_file_2022)
+    # 加载 new_pair 中的 GO 图
+    go_graph_new = load_go_graph(new_pair_file)
+    # 加载 new_pair 中的关系对
+    new_pairs = load_new_pairs(new_pair_file)
+
+    # 检查关系变化
+    relationship_results = check_relationship_changes(go_graph_2022, go_graph_new, new_pairs)
+
+    print("\n关系变化检查结果：")
+    for pair, relations in relationship_results.items():
+        relation_str = ", ".join(relations)
+        print(f"{pair}: {relation_str}")
+
+
+if __name__ == "__main__":
+    main()

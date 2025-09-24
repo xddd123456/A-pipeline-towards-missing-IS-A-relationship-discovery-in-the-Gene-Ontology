@@ -1,0 +1,31 @@
+import re
+import csv
+# 初始化变量
+is_a_relations = []
+
+# 打开并读取 OBO 文件
+go_id_pattern = re.compile(r"GO:\d{7}")  # 确保 ID 格式正确
+
+with open("../data/go_2022/go_202201.obo", "r") as file:
+    current_id = None
+    for line in file:
+        # 找到 id 字段
+        if line.startswith("id: GO:"):
+            current_id = line.strip().split(": ")[1]
+
+        # 找到 is_a 字段并记录关系
+        elif line.startswith("is_a:") and current_id:
+            related_id = line.split("!")[0].strip().split(": ")[1]
+            if go_id_pattern.fullmatch(related_id):  # 确保是有效的 GO ID
+                is_a_relations.append([current_id, related_id, "is_a"])
+
+        # 遇到空行或 [Term] 标识符，清除当前 id，开始下一个概念
+        elif line.strip() == "" or line.startswith("[Term]"):
+            current_id = None
+
+# 将关系列表保存为 JSON 文件
+with open("../data/go_2022/is_a_relations.csv", "w", newline="") as csvfile:
+    writer = csv.writer(csvfile, delimiter='\t')
+    writer.writerow(["id", "related_id", "relation"])  # 写入表头
+    writer.writerows(is_a_relations)
+print("所有 'is_a' 关系已提取并保存到 is_a_relations.csv")

@@ -1,0 +1,101 @@
+import networkx as nx
+import pandas as pd
+import csv
+
+# 1. 加载 is_a 关系文件
+def load_is_a_relations(file_path):
+    df = pd.read_csv(file_path, sep='\t')
+    G = nx.DiGraph()
+    for _, row in df.iterrows():
+        child, parent = row['id'], row['related_id']
+        G.add_edge(parent, child)  # 构建 is_a 关系的有向图
+    return G
+
+
+# 2. 计算节点到根的距离
+def get_node_level(graph, node):
+    root_nodes = [n for n, d in graph.in_degree() if d == 0]  # 找到所有根节点
+    max_level = 0
+    for root in root_nodes:
+        try:
+            length = nx.shortest_path_length(graph, source=root, target=node)
+            max_level = max(max_level, length)
+        except nx.NetworkXNoPath:
+            continue
+    return max_level
+
+
+# 3. 获取节点的祖先和后代
+def get_ancestors(graph, node):
+    return nx.ancestors(graph, node)
+
+
+def get_descendants(graph, node):
+    return nx.descendants(graph, node)
+
+
+# 4. 判断两个节点之间的共同父亲或共同子孙是否不超过5个
+def is_within_shared_limit(graph, node1, node2, max_shared_nodes=5):
+    common_ancestors = get_ancestors(graph, node1) & get_ancestors(graph, node2)
+    common_descendants = get_descendants(graph, node1) & get_descendants(graph, node2)
+    if len(common_ancestors) <= max_shared_nodes or len(common_descendants) <= max_shared_nodes:
+        return True
+    return False
+
+
+# 5. 提取候选对并进行筛选
+def extract_filtered_candidate_pairs(graph, candidate_pairs, min_level=10, max_shared_nodes=5):
+    filtered_pairs = []
+    for node1, node2 in candidate_pairs:
+        if get_node_level(graph, node1) >= min_level and get_node_level(graph, node2) >= min_level:
+            if is_within_shared_limit(graph, node1, node2, max_shared_nodes):
+                filtered_pairs.append((node1, node2))
+    return filtered_pairs
+
+
+# 6. 从 CSV 文件加载候选对
+def load_candidate_pairs_from_csv(file_path):
+    candidate_pairs = []
+    with open(file_path, 'r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        next(reader)  # 跳过表头
+        for row in reader:
+            if len(row) < 2:  # 跳过空行或格式不正确的行
+                continue
+            candidate_pairs.append((row[0].strip(), row[1].strip()))  # 去掉前后空格
+    return candidate_pairs
+
+
+# 7. 保存结果到 CSV 文件
+def save_candidate_pairs_to_csv(candidate_pairs, output_file):
+    with open(output_file, 'w', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Node1", "Node2"])
+        for pair in candidate_pairs:
+            writer.writerow(pair)
+
+
+# 主程序
+def main():
+    # 输入文件路径
+    is_a_file = '../data/go_2022/is_a_relations.csv'  # 替换为 is_a 关系文件路径
+    candidate_file = 'non_lattice_pairs_1.csv'  # 替换为候选对 CSV 文件路径
+    output_file = 'filtered_candidate_pairs.csv'  # 输出文件路径
+
+    # 1. 加载 is_a 关系文件
+    graph = load_is_a_relations(is_a_file)
+
+    # 2. 从 CSV 文件加载候选对
+    candidate_pairs = load_candidate_pairs_from_csv(candidate_file)
+
+    # 3. 进行进一步筛选
+    filtered_pairs = extract_filtered_candidate_pairs(graph, candidate_pairs)
+
+    # 4. 保存筛选后的候选对到 CSV 文件
+    save_candidate_pairs_to_csv(filtered_pairs, output_file)
+    print(f"已保存 {len(filtered_pairs)} 个筛选后的候选对到 {output_file}")
+
+
+# 运行主程序
+if __name__ == "__main__":
+    main()

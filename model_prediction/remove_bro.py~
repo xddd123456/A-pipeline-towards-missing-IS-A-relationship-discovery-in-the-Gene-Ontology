@@ -1,0 +1,39 @@
+import pandas as pd
+
+# 读取两个 CSV 文件
+sibling_relation = pd.read_csv("prediction_data/go_2023/siblings.csv", header=None, sep='\t', usecols=[0, 1], skiprows=1)
+top3_nf1_relation = pd.read_csv("prediction_data/go_2023/filtered_top1.csv", header=None, sep='\t', skiprows=1)
+# top5_nf1_relation = pd.read_csv("prediction_data/go_2024/filtered_top2_relation.csv", header=None, sep='\t', skiprows=1)
+
+# 重命名列以便对比
+sibling_relation.columns = ["Col1", "Col2"]
+top3_nf1_relation.columns = ["Col1", "Col2"]
+# top5_nf1_relation.columns = ["Col1", "Col2"]
+
+# 转换为集合以提高查找效率
+is_a_set = set(sibling_relation.apply(tuple, axis=1))
+
+# 定义一个函数，用于去除重复项并逐条打印
+def remove_duplicates_with_logging(relation_df, relation_name):
+    filtered_relation = []
+    x=0
+    for idx, row in relation_df.iterrows():
+        row_tuple = tuple(row)
+        if row_tuple in is_a_set:
+            print(f"{relation_name}: Removed duplicate row {row_tuple}")
+            x += 1
+        else:
+            filtered_relation.append(row_tuple)
+    print(x)
+    return pd.DataFrame(filtered_relation, columns=["Col1", "Col2"])
+
+
+# 去掉重复部分
+filtered_top3_nf1_relation = remove_duplicates_with_logging(top3_nf1_relation, "Top1")
+# filtered_top5_nf1_relation = remove_duplicates_with_logging(top5_nf1_relation, "Top2")
+
+# 保存去重后的结果
+filtered_top3_nf1_relation.to_csv("prediction_data/go_2023/filtered_top1.csv", index=False, header=False, sep='\t')
+# filtered_top5_nf1_relation.to_csv("prediction_data/GO_202409/filtered_top2_relation.csv", index=False, header=False, sep='\t')
+
+print("去重完成，结果已保存")

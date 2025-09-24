@@ -1,8 +1,7 @@
 __pycache__/
 build/
 *.npy
-data/
-Data preprocessing/
+*.obo
 data_init/
-model_prediction/
+model_prediction/prediction_data/
 model_results/

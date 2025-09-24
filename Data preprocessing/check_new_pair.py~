@@ -1,0 +1,201 @@
+import networkx as nx
+import pandas as pd
+
+def load_go_graph(is_a_file):
+    """
+    从 is_a 关系文件加载 GO 图。
+    :param is_a_file: 包含 GO is_a 关系的文件路径，CSV 格式，列为 'child' 和 'parent'。
+    :return: 构建的有向图 (DiGraph)。
+    """
+    go_data = pd.read_csv(is_a_file, sep='\t')
+
+    # 构建 GO 图
+    go_graph = nx.DiGraph()
+    for _, row in go_data.iterrows():
+        child, parent = row['id'], row['related_id']
+        go_graph.add_edge(parent, child)
+
+    return go_graph
+
+
+def load_node_pairs_from_csv(file_path):
+    """
+    从 CSV 文件中加载目标节点对。
+    :param file_path: 文件路径，CSV 文件，包含两列：'Node1' 和 'Node2'。
+    :return: 节点对列表 [(node1, node2), ...]。
+    """
+    pairs_data = pd.read_csv(file_path, sep='\t')
+    return list(zip(pairs_data['id'], pairs_data['related_id']))
+
+
+def check_node_relationships(graph, pairs):
+    """
+    检查节点对之间的关系（兄弟节点、叔侄节点、爷孙节点）。
+    :param graph: GO 图 (DiGraph)。
+    :param pairs: 目标节点对列表 [(node1, node2), ...]。
+    :return: 每对节点的关系 {pair: relationship}。
+    """
+    relationships = {}
+
+    for node1, node2 in pairs:
+        # 获取节点的所有父节点
+        parents1 = set(graph.predecessors(node1))
+        parents2 = set(graph.predecessors(node2))
+
+        # 兄弟节点：如果两个节点有共同的父节点
+        if parents1 & parents2:
+            relationships[(node1, node2)] = "Sibling (兄弟节点)"
+            continue
+
+        # 获取节点的祖先
+        ancestors1 = nx.ancestors(graph, node1)
+        ancestors2 = nx.ancestors(graph, node2)
+
+        # 叔侄节点：一个节点的父节点是另一个节点的祖父节点
+        grandparents1 = set()
+        for p in parents1:
+            grandparents1.update(graph.predecessors(p))
+        if grandparents1 & parents2 or grandparents1 & ancestors2:
+            relationships[(node1, node2)] = "Uncle/Nephew：1 (叔侄节点)"
+            continue
+
+        grandparents2 = set()
+        for p in parents2:
+            grandparents2.update(graph.predecessors(p))
+        if grandparents2 & parents1 or grandparents2 & ancestors1:
+            relationships[(node1, node2)] = "Uncle：1/Nephew (叔侄节点)"
+            continue
+
+        # 爷孙节点：一个节点是另一个节点的祖先，且恰好隔两层
+        for p in parents1:
+            for gp in graph.predecessors(p):
+                if gp == node2:
+                    relationships[(node1, node2)] = "Grandparent-Grandchild (爷孙节点)"
+                    break
+            else:
+                continue
+            break
+
+        for p in parents2:
+            for gp in graph.predecessors(p):
+                if gp == node1:
+                    relationships[(node1, node2)] = "Grandparent-Grandchild (爷孙节点)"
+                    break
+            else:
+                continue
+            break
+
+        # 如果以上关系都不满足，则无特定关系
+        if (node1, node2) not in relationships:
+            relationships[(node1, node2)] = "No Specific Relationship"
+
+    return relationships
+
+def check_node_relationships_second(graph, pairs):
+    """
+    检查节点对之间的关系（兄弟节点、叔侄节点、爷孙节点）。
+    :param graph: GO 图 (DiGraph)。
+    :param pairs: 目标节点对列表 [(node1, node2), ...]。
+    :return: 每对节点的关系 {pair: relationship}。
+    """
+    relationships = {}
+
+    for node1, node2 in pairs:
+        # 对节点对进行排序，确保顺序一致
+        if node1 > node2:
+            node1, node2 = node2, node1
+
+        # 如果已标记关系，跳过
+        if (node1, node2) in relationships:
+            continue
+
+        # 获取父节点和祖先
+        parents1 = set(graph.predecessors(node1))
+        parents2 = set(graph.predecessors(node2))
+        ancestors1 = nx.ancestors(graph, node1)
+        ancestors2 = nx.ancestors(graph, node2)
+
+        # **检查兄弟节点关系**：如果两个节点有共同的父节点
+        if parents1 & parents2:
+            relationships[(node1, node2)] = "Sibling (兄弟节点)"
+            continue  # 如果是兄弟节点，跳过其他关系检查
+
+
+        if parents1 & parents2:
+            relationships[(node1, node2)] = "Sibling (兄弟节点)"
+            continue
+
+        # 优先检查爷孙关系
+        is_grandchild = False
+        for p in parents1:
+            for gp in graph.predecessors(p):
+                if gp == node2:
+                    relationships[(node1, node2)] = "Grandparent-Grandchild (爷孙节点)"
+                    is_grandchild = True
+                    break
+            if is_grandchild:
+                break
+
+        for p in parents2:
+            for gp in graph.predecessors(p):
+                if gp == node1:
+                    relationships[(node1, node2)] = "Grandparent-Grandchild (爷孙节点)"
+                    is_grandchild = True
+                    break
+            if is_grandchild:
+                break
+
+        if is_grandchild:
+            continue  # 如果已标记为爷孙关系，跳过后续检查
+
+        # 检查叔侄关系
+        grandparents1 = set()
+        for p in parents1:
+            grandparents1.update(graph.predecessors(p))
+        if grandparents1 & parents2:
+            relationships[(node1, node2)] = "Uncle/Nephew (叔侄节点)"
+            continue
+
+        grandparents2 = set()
+        for p in parents2:
+            grandparents2.update(graph.predecessors(p))
+        if grandparents2 & parents1:
+            relationships[(node1, node2)] = "Uncle/Nephew (叔侄节点)"
+            continue
+
+        # 如果没有特定关系，则标记为无关系
+        relationships[(node1, node2)] = "No Specific Relationship"
+
+    return relationships
+
+
+
+def save_relationships_to_csv(relationships, output_file):
+    """
+    将节点关系保存到 CSV 文件。
+    :param relationships: 节点对关系字典 {pair: relationship}。
+    :param output_file: 输出文件路径。
+    """
+    with open(output_file, 'w', encoding='utf-8') as file:
+        file.write("Node1,Node2,Relationship\n")
+        for (node1, node2), relation in relationships.items():
+            file.write(f"{node1},{node2},{relation}\n")
+            print(f"{node1},{node2},{relation}\n")
+
+
+# 加载 GO 图
+is_a_file = "../data/go_2022/is_a_relations.csv"  # 替换为你的 is_a 文件路径
+go_graph = load_go_graph(is_a_file)
+
+# 加载目标节点对
+new_go_pair_file = "new_go_pairs_2023.csv"  # 替换为你的目标文件路径
+target_pairs = load_node_pairs_from_csv(new_go_pair_file)
+
+# 检查节点关系
+relationships = check_node_relationships_second(go_graph, target_pairs)
+
+# 保存结果
+output_file = "relationships_output_second.csv"  # 替换为你的输出文件路径
+save_relationships_to_csv(relationships, output_file)
+
+print(f"节点关系结果已保存到 {output_file}")

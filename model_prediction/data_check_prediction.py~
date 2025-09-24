@@ -1,0 +1,24 @@
+import pandas as pd
+
+# 文件路径
+prediction_file = "prediction_data/go_2022/filtered_ndr_pairs.csv"  # 替换为你的 prediction 文件路径
+is_a_file = "../data/go_2023/is_a_relations.csv"                    # 替换为你的 is_a 关系文件路径
+output_file = "prediction_data/go_2022/filtered_ndr_repeated_relations_2023_notperdiction.tsv"              # 替换为你的输出文件路径
+
+# 加载 prediction_to_GO.tsv 文件
+prediction_data = pd.read_csv(prediction_file, delimiter="\t", header=None, names=["GO_X1", "GO_X2"])
+# prediction_data = pd.read_csv(prediction_file, delimiter="\t", header=None, names=["GO_X1", "GO_X2", "Relation"])
+print(f"加载 prediction 文件完成，数据形状: {prediction_data.shape}")
+
+# 加载 is_a_relations.csv 文件
+# is_a_data = pd.read_csv(is_a_file, delimiter="\t", header=None, names=["GO_X1", "GO_X2"])
+is_a_data = pd.read_csv(is_a_file, delimiter="\t", header=None, names=["GO_X1", "GO_X2", "Relation"])
+print(f"加载 is_a 文件完成，数据形状: {is_a_data.shape}")
+
+# 筛选重复关系（基于 GO_X1、GO_X2 和 Relation）
+# repeated_relations = pd.merge(prediction_data, is_a_data, on=["GO_X1", "GO_X2"], how="inner")
+repeated_relations = pd.merge(prediction_data, is_a_data, on=["GO_X1", "GO_X2", "Relation"], how="inner")
+
+# 保存重复项到文件
+repeated_relations.to_csv(output_file, sep="\t", index=False, header=False)
+print(f"筛选完成，共找到 {len(repeated_relations)} 条重复关系，已保存到 {output_file}")
