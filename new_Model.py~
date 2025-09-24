@@ -1,0 +1,35 @@
+import json
+from collections import Counter
+
+# 加载 JSON 文件
+with open('data/go_terms.json', 'r', encoding='utf-8') as file:
+    go_terms = json.load(file)
+
+# 提取每个 GO term 的名称并计算单词数量
+word_counts = []
+
+for term in go_terms:
+    name = term.get("name", "")
+    # 分词，去除空白字符
+    word_count = len(name.split())
+    word_counts.append(word_count)
+
+# 使用 Counter 来统计不同单词数量的出现频次
+word_count_distribution = Counter(word_counts)
+
+# 获取前八个单词数量的频次
+most_common_counts = word_count_distribution.most_common(9)
+
+# 计算前八个数量的总和
+total_terms = sum(word_count_distribution.values())
+top_eight_count = sum(freq for _, freq in most_common_counts)
+
+# 计算前八个数量的占比
+top_eight_percentage = (top_eight_count / total_terms) * 100
+
+# 打印统计结果
+print("Word count distribution:")
+for count, freq in sorted(word_count_distribution.items()):
+    print(f"{count} words: {freq} terms")
+
+print(f"\nTop 8 word counts occupy {top_eight_percentage:.2f}% of all terms.")

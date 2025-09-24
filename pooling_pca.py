@@ -1,0 +1,23 @@
+import numpy as np
+from sklearn.decomposition import PCA
+
+# Step 1: 加载数据 (47265, 27, 768)
+original_embeddings = np.load('data_init/go_2025/go_name_embeddings.npy')
+print("原始数据形状:", original_embeddings.shape)
+#
+# # Step 2: 对前 8 个时间步的向量乘以权重 5
+weights = np.ones((27, 1))  # 初始化权重为 1
+weights[:8] *= 5  # 前 8 个时间步的权重为 5
+weights = weights[np.newaxis, :, :]  # 调整权重形状为 (1, 27, 1)
+
+# # 对原始数据进行加权
+weighted_embeddings = original_embeddings * weights
+print("加权后数据形状:", weighted_embeddings.shape)
+
+# Step 3: 对每个样本进行平均池化
+pooled_embeddings = original_embeddings.mean(axis=1)  # 对时间步 (27) 求平均
+print("平均池化后数据形状:", pooled_embeddings.shape)  # 应为 (47265, 768)
+
+# Step 5: 保存降维后的结果到文件
+np.save('data_init/go_2025/go_name_embeddings_weight.npy', pooled_embeddings)
+print("降维后的嵌入数据已保存")

@@ -1,0 +1,66 @@
+import json
+import torch
+from transformers import BertTokenizer, BertModel
+import numpy as np
+import csv
+import os
+#os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+# 加载go_terms.json文件
+with open('data/go_terms.json', 'r') as file:
+    go_terms = json.load(file)
+
+# 提取所有的 "definition" 或 "name" 字段作为文本
+texts = [term['def'] for term in go_terms]
+
+
+model_path = 'F:/bert_base_uncare'
+
+# 加载本地的 BERT 模型和 tokenizer
+tokenizer = BertTokenizer.from_pretrained(model_path)
+model = BertModel.from_pretrained(model_path)
+
+
+# 函数：获取BERT的文本embedding
+def get_text_embedding(texts):
+    embeddings = []
+    for text in texts:
+        # Tokenize文本并转化为输入ID
+        inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
+
+        # 获取模型的输出
+        with torch.no_grad():
+            outputs = model(**inputs)
+
+        # 获取最后一层的隐藏状态（通常用来作为embedding）
+        last_hidden_states = outputs.last_hidden_state
+
+        # 获取[CLS] token对应的embedding，作为文本的整体表示
+        cls_embedding = last_hidden_states[:, 0, :].squeeze().numpy()  # 转换为numpy数组
+
+        # 或者获取平均池化的embedding（根据需求）
+        mean_pooling_embedding = last_hidden_states.mean(dim=1).squeeze().numpy()  # 转换为numpy数组
+
+        embeddings.append(mean_pooling_embedding)  # 你可以选择CLS或者平均池化作为embedding
+
+    return embeddings
+
+
+# 获取所有文本的embedding
+text_embeddings = get_text_embedding(texts)
+
+# 打印每个文本的embedding（例如每个embedding的形状）
+for embedding in text_embeddings:
+    print(embedding.shape)  # 每个embedding的形状是 (768,)
+
+
+# 将embedding列表保存为numpy数组
+np.save('go_term_embeddings.npy', np.array(text_embeddings))
+
+
+# 将embedding保存为CSV
+with open('go_term_embeddings.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['id', 'embedding'])
+    for idx, embedding in zip([term['id'] for term in go_terms], text_embeddings):
+        writer.writerow([idx, embedding.tolist()])  # 将embedding转换为列表

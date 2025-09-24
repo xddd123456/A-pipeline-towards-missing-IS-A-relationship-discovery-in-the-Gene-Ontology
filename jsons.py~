@@ -1,0 +1,36 @@
+import json
+import numpy as np
+
+
+
+
+# 读取 go_terms.json 文件
+with open('data/go_terms.json', 'r') as f:
+    go_terms = json.load(f)
+
+# 读取 embed_merge_relations.json 文件
+with open('data/embed_merge_relations.json', 'r') as f:
+    embed_data = json.load(f)
+
+# 创建一个 768 维的零向量
+zero_vector = [0.0] * 768
+
+# 提取 go_terms.json 中的 GO_id 列表
+go_ids = go_ids = [item['id'] for item in go_terms]
+
+# 创建一个列表存储所有的嵌入向量
+embeddings = []
+
+# 遍历 go_terms 中的 id，检查 embed_merge_relations.json 是否有对应的嵌入向量
+for go_id in go_ids:
+    # 如果 embed_data 中存在该 GO 编号，取其对应的向量；如果没有，使用零向量
+    vector = embed_data.get(go_id, zero_vector)
+    embeddings.append(vector)
+
+# 将嵌入向量列表转换为 NumPy 数组
+embeddings_array = np.array(embeddings)
+
+# 将 NumPy 数组保存为 .npy 文件
+np.save('embed_merge_relations_with_missing_filled.npy', embeddings_array)
+
+print("根据 go_terms.json 填充缺失数据，并保存为 .npy 文件：embed_merge_relations_with_missing_filled.npy")

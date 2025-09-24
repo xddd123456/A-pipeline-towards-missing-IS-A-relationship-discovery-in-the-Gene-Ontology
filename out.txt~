@@ -1,0 +1,7 @@
+Evaluate Loss: 0.2548 | Accuracy: 0.8762 | Precision: 0.8282 | Recall: 0.7930 | F1 Score: 0.8102
+  | AUC: 0.9397 | AUPR: 0.8766
+
+Average Accuracy: 0.8762785792350769
+Average F1 Score: 0.8180152773857117
+Average Precision: 0.803317666053772
+Average Recall: 0.834446907043457

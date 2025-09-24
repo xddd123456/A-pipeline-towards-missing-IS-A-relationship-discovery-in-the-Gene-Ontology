@@ -1,0 +1,18 @@
+import numpy as np
+
+# Step 1: 加载原始的 n-维向量（假设向量的形状是 (20736,)）
+original_embeddings = np.load('go_term_embeddings_N.npy')
+
+# Step 2: 检查向量的形状，确保它是 (20736,)
+print(f"Original shape: {original_embeddings.shape}")
+
+# Step 3: 重新调整形状，将 20736 维的向量分割成 27 * 768 的向量
+reshaped_embeddings = original_embeddings.reshape(47903, 27, 768)
+
+# Step 4: 打印新形状，确保正确分割
+print(f"Reshaped shape: {reshaped_embeddings.shape}")
+
+# Step 5: 将新的嵌入保存为 .npy 文件
+np.save('go_term_embeddings_N_reshaped.npy', reshaped_embeddings)
+
+

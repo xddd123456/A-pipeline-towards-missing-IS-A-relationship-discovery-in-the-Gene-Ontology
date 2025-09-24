@@ -1,0 +1,18 @@
+import pandas as pd
+
+# 读取CSV文件，假设没有列名
+df1 = pd.read_csv('is_a_relations_negative_samples_5.csv', header=None, skiprows=1, usecols=[0, 1, 2], delimiter='\t')
+df2 = pd.read_csv('uncle_nephew_relations_clear.csv', header=None, skiprows=1, usecols=[0, 1, 2], delimiter='\t')
+
+# 找到 df1 中与 df2 中相同的行
+common_rows = pd.merge(df1, df2, how='inner', left_on=df1.columns.tolist(), right_on=df2.columns.tolist())
+
+# 从 df1 中删除和 df2 中重复的行
+df1_filtered = df1[~df1.apply(tuple, axis=1).isin(common_rows.apply(tuple, axis=1))]
+de2_filtered = df2[~df2.apply(tuple, axis=1).isin(common_rows.apply(tuple, axis=1))]
+
+# 将结果保存到新的 CSV 文件
+# df1_filtered.to_csv('is_a_relations_negative_samples_5.csv', index=False, header=False, sep='\t')
+df2_filtered.to_csv('is_a_relations_negative_samples_5.csv', index=False, header=False, sep='\t')
+# 打印去重并添加负样本后的 df1
+print(df1_filtered)

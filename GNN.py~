@@ -1,0 +1,196 @@
+import torch
+import torch.nn as nn
+from torch_geometric.data import Data
+import torch.nn.functional as F
+from torch_geometric.nn import GCNConv,GATConv,SAGEConv
+import matplotlib.pyplot as plt
+import torch.optim as optim
+import pandas as pd
+from torch.utils.data import Dataset, DataLoader
+import numpy as np
+from sklearn.model_selection import train_test_split
+from tqdm import tqdm  # 导入 tqdm
+from sklearn.model_selection import KFold
+from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, average_precision_score, \
+    precision_recall_curve, roc_curve, roc_auc_score, auc
+
+import torch.nn.functional as F
+import matplotlib.pyplot as plt
+
+
+class GNNSAGE(nn.Module):
+    def __init__(self, pretrained_embeddings, embedding_dim, hidden_dim):
+        super(GNNSAGE, self).__init__()
+        # 预训练嵌入层
+        self.embedding = nn.Embedding.from_pretrained(pretrained_embeddings, freeze=False).to(device)
+        self.embedding_dim = embedding_dim
+        self.device = device
+        # 2. GraphSAGE 层
+        self.conv1 = SAGEConv(embedding_dim, 128)
+        self.conv2 = SAGEConv(128, hidden_dim)
+
+        # 3. 边预测部分：简单 MLP 用于预测边是否存在
+        self.edge_mlp = nn.Sequential(
+            nn.Linear(2 * hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, 1)  # 输出单值概率
+        )
+
+    def forward(self, edge_index, edge_data):
+        """
+                :param edge_index: 图的边索引，用于 GraphSAGE 聚合 [2, num_edges]
+                :param edge_data: 输入边数据 (source 和 target)
+                """
+        # 1. 获取所有节点嵌入
+        x = self.embedding.weight  # [num_nodes, embedding_dim]
+        edge_index = edge_index.to(self.device)
+        edge_data = edge_data.to(self.device)
+        # 2. GraphSAGE 聚合
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = self.conv2(x, edge_index)
+
+        # 3. 边特征拼接
+        source, target = edge_data  # [2, num_sampled_edges]
+        edge_features = torch.cat([x[source], x[target]], dim=-1)
+
+        # 4. 通过 MLP 预测边是否存在
+        edge_scores = self.edge_mlp(edge_features).squeeze(-1)  # [num_sampled_edges]
+        return edge_scores
+
+def calculate_metrics(y_true, y_pred):
+    # 将预测结果转换为整数类型
+    y_true = torch.tensor(y_true)
+    y_pred = torch.tensor(y_pred)
+    y_true = y_true.to(torch.long)
+    y_pred = y_pred.to(torch.long)
+
+    # 计算混淆矩阵
+    confusion_matrix = torch.zeros((2, 2), dtype=torch.int64)
+    for t, p in zip(y_true.view(-1), y_pred.view(-1)):
+        confusion_matrix[t, p] += 1
+
+    # 从混淆矩阵中提取值
+    tp = confusion_matrix[1, 1]
+    fp = confusion_matrix[0, 1]
+    fn = confusion_matrix[1, 0]
+    tn = confusion_matrix[0, 0]
+    print(tp)
+    print(fp)
+    print(fn)
+    print(tn)
+    # 计算准确率
+    accuracy = (tp + tn) / (tp + fp + fn + tn)
+
+    # 计算精确率
+    precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+
+    # 计算召回率
+    recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+
+    # 计算F1分数
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+
+    return accuracy, f1, precision, recall
+
+
+# 假设你的预训练嵌入矩阵是一个 numpy 数组
+embedding_matrix = np.load('data_init/embeddings_all_1024.npy')
+
+# 将 embedding_matrix 转化为 PyTorch Tensor
+embedding_tensor = torch.from_numpy(embedding_matrix).float()  # 转换为 float 类型的 Tensor
+
+# 如果需要检查 Tensor 的形状
+print(embedding_tensor.shape)
+
+name = 'train_1_1_1.csv'
+# 读取数据
+
+data = pd.read_csv(name, sep='\t', header=None, names=["source", "target", "Label"])
+# 合并特征
+edges = data[["source", "target"]].values
+Labels = data["Label"].values  # 标签
+train_edges, test_edges, train_labels, test_labels = train_test_split(
+    edges, Labels, test_size=0.2, random_state=42
+)
+
+# 从训练集中再划分出验证集
+test_edges, val_edges, test_labels, val_labels = train_test_split(
+    test_edges, test_labels, test_size=0.5, random_state=42  # 验证集占测试集的25%
+)
+
+train_edges = torch.tensor(train_edges, dtype=torch.long).T  # 转置为 (2, num_edges) 格式
+val_edges = torch.tensor(val_edges, dtype=torch.long).T
+test_edges = torch.tensor(test_edges, dtype=torch.long).T
+
+train_labels = torch.tensor(train_labels, dtype=torch.float)
+val_labels = torch.tensor(val_labels, dtype=torch.float)
+test_labels = torch.tensor(test_labels, dtype=torch.float)
+num_nodes = max(data["source"].max(), data["target"].max()) + 1
+embedding_dim = 1024
+# node_features = torch.rand(num_nodes, embedding_dim)
+
+
+# 获取正样本的边（label 为 1 的边）
+positive_edges = data[data["Label"] == 1][["source", "target"]].values
+edge_index = torch.tensor(positive_edges.T, dtype=torch.long)
+# 获取负样本的边（label 为 0 的边）
+negative_edges = data[data["Label"] == 0][["source", "target"]].values
+all_edges = np.vstack((positive_edges, negative_edges))  # 合并正负样本边
+
+# 转换为 PyTorch Tensor
+edge_index = torch.tensor(all_edges.T, dtype=torch.long)
+
+def negative_sampling(num_nodes, num_samples, existing_edges):
+    all_possible_edges = set((i, j) for i in range(num_nodes) for j in range(num_nodes) if i != j)
+    existing_edges_set = set((u, v) for u, v in existing_edges)
+    negative_edges = np.array(list(all_possible_edges - existing_edges_set))
+    sampled_indices = np.random.choice(len(negative_edges), size=num_samples, replace=False)
+    return negative_edges[sampled_indices]
+
+# 示例：采样负样本
+num_negative_samples = len(positive_edges)
+negative_edges_sampled = negative_sampling(num_nodes, num_negative_samples, positive_edges)
+
+# 构建最终训练数据
+train_edges = np.vstack((positive_edges, negative_edges_sampled))
+train_labels = np.hstack((np.ones(len(positive_edges)), np.zeros(len(negative_edges_sampled))))
+
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = GNNSAGE(pretrained_embeddings=embedding_tensor, embedding_dim=1024, hidden_dim=32).to(device)
+model.device = device
+criterion = nn.BCEWithLogitsLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+# 示例训练
+# 示例训练
+for epoch in range(10):
+    model.train()
+    optimizer.zero_grad()
+
+    # 前向传播
+    train_labels = train_labels.to(device)
+    outputs = model(edge_index, train_edges.to(device))
+
+    # 计算损失
+    loss = criterion(outputs, train_labels)
+    loss.backward()
+    optimizer.step()
+
+    # 验证集评估
+    model.eval()
+    with torch.no_grad():
+        val_labels = val_labels.to(device)
+        val_outputs = model(edge_index, val_edges.to(device))
+        val_loss = criterion(val_outputs, val_labels)
+
+        # 计算准确率、AUC等指标
+        val_predictions = torch.sigmoid(val_outputs) > 0.5
+        val_accuracy = accuracy_score(val_labels.cpu(), val_predictions.cpu())
+        roc_auc = roc_auc_score(val_labels.cpu(), torch.sigmoid(val_outputs).cpu())
+        pr_auc = average_precision_score(val_labels.cpu(), torch.sigmoid(val_outputs).cpu())
+
+    print(f"Epoch {epoch+1}, Train Loss: {loss.item():.4f}, Val Loss: {val_loss.item():.4f}, "
+          f"Val Accuracy: {val_accuracy:.4f}, ROC AUC: {roc_auc:.4f}, PR AUC: {pr_auc:.4f}")

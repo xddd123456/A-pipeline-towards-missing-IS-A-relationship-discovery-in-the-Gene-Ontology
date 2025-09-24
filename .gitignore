@@ -1,0 +1,8 @@
+__pycache__/
+build/
+*.npy
+data/
+Data preprocessing/
+data_init/
+model_prediction/
+model_results/

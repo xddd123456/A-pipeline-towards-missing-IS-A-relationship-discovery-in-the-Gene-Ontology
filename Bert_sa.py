@@ -1,0 +1,145 @@
+import numpy as np
+import torch
+from transformers import BertTokenizer, BertModel
+import json
+import torch.nn as nn
+import torch.nn.functional as F
+import math
+# ------------------------------
+# ---- Self Attention (SA) ----
+# ------------------------------
+
+class MultiHandAtt(nn.Module):
+    def __init__(self, input_size=768, output_size=768, hidden_size=768, num_heads=8):
+        super(MultiHandAtt, self).__init__()
+        self.input_size = input_size
+        self.output_size = output_size
+        self.hidden_size = hidden_size
+        self.num_heads = num_heads
+        self.linear_v = nn.Linear(input_size, output_size)
+        self.linear_k = nn.Linear(input_size, output_size)
+        self.linear_q = nn.Linear(input_size, output_size)
+        self.linear_merge = nn.Linear(output_size, output_size)
+        self.dropout = nn.Dropout(0.1)
+
+    def forward(self, v, k, q):
+        n_batches = q.size(0)
+
+        v = self.linear_v(v).view(
+            n_batches,
+            -1,
+            self.num_heads,
+            self.hidden_size // self.num_heads
+        ).transpose(1, 2)
+
+        k = self.linear_k(k).view(
+            n_batches,
+            -1,
+            self.num_heads,
+            self.hidden_size // self.num_heads
+        ).transpose(1, 2)
+
+        q = self.linear_q(q).view(
+            n_batches,
+            -1,
+            self.num_heads,
+            self.hidden_size // self.num_heads
+        ).transpose(1, 2)
+
+        scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(self.hidden_size)
+        att_map = F.softmax(scores, dim=-1)
+        att_map = self.dropout(att_map)
+
+        atted = torch.matmul(att_map, v).transpose(1, 2).contiguous().view(
+            n_batches,
+            -1,
+            self.hidden_size
+        )
+        return self.linear_merge(atted)
+
+class SA(nn.Module):
+    def __init__(self, hidden_size=768, dropout_rate=0.1):
+        super(SA, self).__init__()
+        self.mhatt = MultiHandAtt(hidden_size, hidden_size)
+        self.ffn = nn.Sequential(
+            nn.Linear(hidden_size, hidden_size * 4),
+            nn.ReLU(),
+            nn.Linear(hidden_size * 4, hidden_size),
+        )
+        self.norm1 = nn.LayerNorm(hidden_size)
+        self.norm2 = nn.LayerNorm(hidden_size)
+        self.dropout = nn.Dropout(dropout_rate)
+
+    def forward(self, x):
+        x = self.norm1(x + self.dropout(self.mhatt(x, x, x)))
+        x = self.norm2(x + self.dropout(self.ffn(x)))
+        return x
+
+# ------------------------------
+# ---- Main Processing Code ----
+# ------------------------------
+
+MAX_SEQ_LEN = 27  # 最大词数
+
+def get_padded_embeddings(text, model, tokenizer, device, sa_module):
+    """
+    获取文本的 BERT 嵌入，并通过 SA 模块处理，填充或截断到固定长度 MAX_SEQ_LEN。
+    """
+    # 对输入文本进行分词和编码
+    inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=128).to(device)
+
+    with torch.no_grad():
+        outputs = model(**inputs)
+
+    # 获取最后一层的所有 token 的嵌入
+    last_hidden_state = outputs.last_hidden_state.squeeze(0)  # 不要调用 numpy() 先保留为 Tensor
+
+    # 去掉特殊标记 [CLS] 和 [SEP] 的嵌入
+    token_embeddings = last_hidden_state[1:-1]  # 去掉 [CLS] 和 [SEP]
+
+    # 转为 NumPy 数组
+    token_embeddings = token_embeddings.detach().cpu().numpy()  # 修复 RuntimeError
+    if len(token_embeddings) > MAX_SEQ_LEN:
+        token_embeddings = token_embeddings[:MAX_SEQ_LEN]  # 截断
+    else:
+        padding = np.zeros((MAX_SEQ_LEN - len(token_embeddings), 768))  # 填充 0 向量
+        token_embeddings = np.vstack((token_embeddings, padding))  # 拼接
+
+    return token_embeddings
+
+def process_go_terms(input_file, output_file, model, tokenizer, device, sa_module):
+    """
+    处理 GO terms，生成固定大小的嵌入矩阵，并保存到文件。
+    """
+    with open(input_file, 'r', encoding='utf-8') as f:
+        go_terms = json.load(f)
+
+    embeddings = np.zeros((len(go_terms), MAX_SEQ_LEN, 768))  # 初始化最终的嵌入矩阵
+
+    for i, go_term in enumerate(go_terms):
+        name = go_term["name"]
+        token_embeddings = get_padded_embeddings(name, model, tokenizer, device, sa_module)
+        embeddings[i] = token_embeddings  # 将结果填入对应位置
+
+        if i % 1000 == 0:  # 打印进度
+            print(f"Processed {i}/{len(go_terms)} GO terms.")
+
+    # 保存结果为 .npy 文件
+    np.save(output_file, embeddings)
+    print(f"Embedding 数据已保存到 {output_file}.npy")
+
+# 模型和设备设置
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model_path = "F:/bert_base_uncare"  # 本地模型路径
+tokenizer = BertTokenizer.from_pretrained(model_path)
+model = BertModel.from_pretrained(model_path).to(device)
+
+# 初始化 SA 模块
+sa_module = SA().to(device)
+
+# 输入和输出文件路径
+input_file = "data/go_2022/go_terms.json"  # 包含 GO 条目的文件
+output_file = "data_init/go_2022/go_name_embeddings_attention"  # 输出文件名（不包含扩展名，默认为 .npy）
+
+# 处理 GO terms 并提取 name 嵌入
+process_go_terms(input_file, output_file, model, tokenizer, device, sa_module)

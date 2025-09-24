@@ -1,0 +1,26 @@
+import pandas as pd
+
+# 加载预测结果
+predictions_df = pd.read_csv('test_predictions.csv')
+predictions_1_df = pd.read_csv('test_predictions_1.csv')
+
+# 确保两个文件的格式相同，标签和预测列的名称一致
+# 比如 "Label" 和 "Prediction" 列名在两个文件中是相同的
+y_true = predictions_df['Label']
+y_pred = predictions_df['Prediction']
+
+y_true_1 = predictions_1_df['Label']
+y_pred_1 = predictions_1_df['Prediction']
+
+# 筛选出标签与预测不一致的错误预测（标签为 0 预测为 1 或 标签为 1 预测为 0）
+mistakes_df = predictions_df[(y_true != y_pred)]  # 在 test_predictions.csv 中的错误预测
+mistakes_df_1 = predictions_1_df[(y_true_1 != y_pred_1)]  # 在 test_predictions_1.csv 中的错误预测
+
+# 在两个文件中筛选出 `X1` 和 `X2` 一致的错误预测
+mistakes_combined_df = pd.merge(mistakes_df, mistakes_df_1, on=["X1", "X2", "Label", "Prediction"], suffixes=("_file1", "_file2"))
+
+# 输出提取的错误预测
+print(mistakes_combined_df)
+
+# 如果需要将提取的结果保存到文件中
+mistakes_combined_df.to_csv('mistakes_combined.csv', index=False, sep='\t')

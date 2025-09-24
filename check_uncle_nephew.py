@@ -1,0 +1,67 @@
+import pandas as pd
+from collections import defaultdict
+
+# 加载 is_a_relations.csv 文件
+is_a_file = "data/go_2022/is_a_relations.csv"  # 替换为实际路径
+
+# 确保分隔符和编码正确
+is_a_data = pd.read_csv(is_a_file, sep="\t", encoding="utf-8")
+
+# 去除列名的多余空格
+is_a_data.columns = is_a_data.columns.str.strip()
+
+# 构建子节点到父节点的多父节点映射 (child -> [parent1, parent2, ...])
+child_to_parent = defaultdict(list)
+for _, row in is_a_data.iterrows():
+    child_to_parent[row["id"]].append(row["related_id"])
+
+# 构建子节点到祖父节点的多祖父节点映射 (child -> [grandparent1, grandparent2, ...])
+child_to_grandparent = defaultdict(list)
+for child, parents in child_to_parent.items():
+    for parent in parents:
+        grandparents = child_to_parent.get(parent, [])
+        for grandparent in grandparents:
+            child_to_grandparent[child].append(grandparent)
+
+# 加载 go_pairs 文件（无列名）
+go_pairs_file = "model_prediction/prediction_data/go_2022/ndr_pairs_to_GO.csv"  # 替换为实际路径
+go_pairs = pd.read_csv(go_pairs_file, sep="\t", header=None, names=["GO_X1", "GO_X2", "Relation"], encoding="utf-8")
+
+# 初始化保存叔侄关系的列表
+uncle_nephew_pairs = []
+
+# 遍历 go_pairs 数据
+for _, row in go_pairs.iterrows():
+    go_x1, go_x2 = row["GO_X1"], row["GO_X2"]
+
+    # 获取 X1 的爷爷节点
+    grandparent_x1 = child_to_grandparent.get(go_x1, [])
+    # 获取 X2 的父节点
+    parent_x2 = child_to_parent.get(go_x2, [])
+
+    # 获取 X2 的爷爷节点
+    grandparent_x2 = child_to_grandparent.get(go_x2, [])
+    # 获取 X1 的父节点
+    parent_x1 = child_to_parent.get(go_x1, [])
+
+    # 打印调试信息
+    print(f"GO_X1: {go_x1}, GO_X2: {go_x2}")
+    print(f"Grandparents_X1: {grandparent_x1}, Parents_X2: {parent_x2}")
+    print(f"Grandparents_X2: {grandparent_x2}, Parents_X1: {parent_x1}")
+
+    # 判断正向叔侄关系
+    if any(grandparent in parent_x2 for grandparent in grandparent_x1):
+        uncle_nephew_pairs.append((go_x1, go_x2))
+
+    # 判断反向叔侄关系
+    if any(grandparent in parent_x1 for grandparent in grandparent_x2):
+        uncle_nephew_pairs.append((go_x2, go_x1))  # 注意反向加入时要交换顺序
+
+# 输出调试结果
+print(f"找到的叔侄关系：{uncle_nephew_pairs}")
+
+# 将结果保存到文件
+output_file = "model_prediction/prediction_data/go_2022/uncle_nephew_pairs.csv"  # 替换为实际路径
+pd.DataFrame(uncle_nephew_pairs, columns=["Uncle", "Nephew"]).to_csv(output_file, index=False)
+
+print(f"叔侄关系提取完成，共找到 {len(uncle_nephew_pairs)} 对关系，结果已保存到: {output_file}")

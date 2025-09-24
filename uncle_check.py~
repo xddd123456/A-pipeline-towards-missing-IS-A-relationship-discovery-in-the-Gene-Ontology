@@ -1,0 +1,31 @@
+import pandas as pd
+
+# 读取数据文件，跳过第一行，指定分隔符为制表符 (\t)，并给列命名
+mistakes_combined_df = pd.read_csv('mistakes_combined.csv', skiprows=1, header=None, sep='\t', names=["X1", "X2", "Label", "Prediction"])
+uncle_df = pd.read_csv('uncle_nephew_relations_clear.csv', skiprows=1, header=None, sep='\t', names=["Nephew", "Uncle", "Label"])
+
+# 去除可能存在的前后空格
+mistakes_combined_df['X1'] = mistakes_combined_df['X1'].astype(str).str.strip()
+mistakes_combined_df['X2'] = mistakes_combined_df['X2'].astype(str).str.strip()
+
+uncle_df['Nephew'] = uncle_df['Nephew'].astype(str).str.strip()
+uncle_df['Uncle'] = uncle_df['Uncle'].astype(str).str.strip()
+
+# 打印数据框的内容以进行检查
+print("Mistakes Combined DataFrame:")
+print(mistakes_combined_df.head())
+print("\nUncle DataFrame:")
+print(uncle_df.head())
+
+# 初始化计数器
+match_count = 0
+
+# 对每一行 mistakes_combined_df 中的 X1, X2 去匹配 uncle_df 中的 Nephew, Uncle
+for _, row1 in mistakes_combined_df.iterrows():  # 遍历 mistakes_combined_df
+    for _, row2 in uncle_df.iterrows():  # 遍历 uncle_df
+        # 比较 X1 和 X2 是否与 Nephew 和 Uncle 一致
+        if row1['X1'] == row2['Nephew'] and row1['X2'] == row2['Uncle']:
+            match_count += 1
+
+# 输出匹配的记录数量
+print(f"匹配的记录数量: {match_count}")

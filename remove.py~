@@ -1,0 +1,27 @@
+import pandas as pd
+import ast
+
+# 读取数据
+data = pd.read_csv('train.csv', sep='\t', header=None, names=["X1", "X2", "Label"])
+
+# 解析函数
+def parse_or_default(value):
+    if isinstance(value, str) and value.startswith('[') and value.endswith(']'):
+        return ast.literal_eval(value)  # 解析为列表
+    else:
+        return [value] if isinstance(value, int) else [0]  # 默认值 [0]
+
+# 解析 X1 和 X2 列
+data["X1"] = data["X1"].apply(parse_or_default)
+data["X2"] = data["X2"].apply(parse_or_default)
+
+# 检查是否全零
+def is_all_zero(sequence):
+    return all(x == 0 for x in sequence)
+
+# 找到全零行的行号
+all_zero_rows = data[(data["X1"].apply(is_all_zero)) | (data["X2"].apply(is_all_zero))].index.tolist()
+
+# 输出全零行的行号和数量
+print(f"全零行的数量: {len(all_zero_rows)}")
+print(f"全零行的行号: {all_zero_rows}")

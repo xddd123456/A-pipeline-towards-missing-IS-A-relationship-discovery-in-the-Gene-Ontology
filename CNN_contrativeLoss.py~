@@ -1,0 +1,181 @@
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import pandas as pd
+from torch.utils.data import Dataset, DataLoader
+import numpy as np
+from sklearn.model_selection import train_test_split
+from tqdm import tqdm  # 导入 tqdm
+from sklearn.model_selection import KFold
+from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, average_precision_score, \
+    precision_recall_curve, roc_curve, roc_auc_score, auc
+
+import torch.nn.functional as F
+
+
+def contrastive_loss(anchor, positive):
+    embedding1 = F.normalize(anchor, dim=1)
+    embedding2 = F.normalize(positive, dim=1)
+
+    # 相似性矩阵 [batch_size, batch_size]
+    similarity_matrix = torch.matmul(embedding1, embedding2.T) / 0.5
+
+    # 创建正样本标签 (对角线上为正样本对)
+    batch_size = embedding1.size(0)
+    labels = torch.arange(batch_size).to(embedding1.device)
+
+    # 使用交叉熵损失
+    loss = F.cross_entropy(similarity_matrix, labels)
+    return loss
+
+
+class CNN(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, pretrained_embeddings=None):
+        super(CNN, self).__init__()
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        # 预训练嵌入层
+        if pretrained_embeddings is not None:
+            self.embedding = nn.Embedding.from_pretrained(pretrained_embeddings, freeze=False)
+        else:
+            self.embedding = nn.Embedding(vocab_size, embedding_dim)
+
+        # 定义卷积层
+        self.conv1 = nn.Conv1d(in_channels=1, out_channels=64, kernel_size=3, stride=1, padding=1)
+        self.conv2 = nn.Conv1d(in_channels=64, out_channels=128, kernel_size=3, stride=1, padding=1)
+        self.conv3 = nn.Conv1d(in_channels=128, out_channels=256, kernel_size=3, stride=1, padding=1)
+
+        # 定义全连接层
+        self.fc1 = nn.Linear(256 * embedding_dim, 512)
+        self.fc2 = nn.Linear(512, 128)
+        self.fc3 = nn.Linear(128, 64)
+
+    def forward(self, x1, x2, labels=None):
+        x1 = x1.to(self.device)
+        x2 = x2.to(self.device)
+        # 获取嵌入
+        x1_embedding = self.embedding(x1)
+        x2_embedding = self.embedding(x2)
+
+        # 拼接 x1 和 x2 的嵌入向量
+        x1_embedding = x1_embedding.unsqueeze(1)  # 增加维度，变为 [batch_size, 1, seq_len, embedding_dim]
+        x2_embedding = x2_embedding.unsqueeze(1)
+
+        # 通过卷积层
+        x1_out = self.conv1(x1_embedding)
+        x1_out = F.relu(x1_out)
+        x1_out = self.conv2(x1_out)
+        x1_out = F.relu(x1_out)
+        x1_out = self.conv3(x1_out)
+        x1_out = F.relu(x1_out)
+
+        x2_out = self.conv1(x2_embedding)
+        x2_out = F.relu(x2_out)
+        x2_out = self.conv2(x2_out)
+        x2_out = F.relu(x2_out)
+        x2_out = self.conv3(x2_out)
+        x2_out = F.relu(x2_out)
+
+        # 展平卷积层输出
+        x1_out = x1_out.view(x1_out.size(0), -1)  # [batch_size, 256 * seq_len]
+        x2_out = x2_out.view(x2_out.size(0), -1)  # [batch_size, 256 * seq_len]
+
+        # 通过全连接层
+        x1_out = F.relu(self.fc1(x1_out))
+        x2_out = F.relu(self.fc1(x2_out))
+        x1_out = self.fc2(x1_out)
+        x2_out = self.fc2(x2_out)
+        x1_out = self.fc3(x1_out)
+        x2_out = self.fc3(x2_out)
+
+        return x1_out, x2_out
+
+
+
+class TextPairDataset(Dataset):
+    def __init__(self, x1_data, x2_data, labels):
+        if isinstance(x1_data, pd.Series):
+            x1_data = x1_data.to_numpy()  # 或者 x1_data.values
+        if isinstance(x2_data, pd.Series):
+            x2_data = x2_data.to_numpy()  # 或者 x2_data.values
+        if isinstance(labels, pd.Series):
+            labels = labels.to_numpy()
+
+        self.x1_data = torch.tensor(x1_data, dtype=torch.long)  # 将 numpy.ndarray 转为 Tensor
+        self.x2_data = torch.tensor(x2_data, dtype=torch.long)  # 同理
+        self.labels = torch.tensor(labels, dtype=torch.long)
+
+    def __len__(self):
+        return len(self.x1_data)
+
+    def __getitem__(self, idx):
+        x1 = self.x1_data[idx]  # 获取 x1
+        x2 = self.x2_data[idx]  # 获取 x2
+        label = self.labels[idx]  # 获取标签
+        return x1, x2, label
+
+
+def create_dataloader(x1_data, x2_data, labels, batch_size=256, shuffle=True):
+    # 构造自定义的 Dataset
+    dataset = TextPairDataset(x1_data, x2_data, labels)
+    # 创建 DataLoader
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
+    return dataloader
+
+
+name = 'train_1_1_1.csv'
+# 读取数据
+# only random neg
+data = pd.read_csv(name, sep='\t', header=None, names=["X1", "X2", "Label"])
+# 合并特征
+X1 = data["X1"].values.reshape(-1, 1)  # 如果 X1 是单列，需要 reshape 成二维数组
+X2 = data["X2"].values.reshape(-1, 1)
+Labels = data["Label"].values  # 标签
+
+# 划分训练集和测试集
+train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
+test_data, val_data = train_test_split(test_data, test_size=0.5, random_state=42)
+
+
+x1_data = train_data['X1'].values  # 将 pandas Series 转换为 numpy 数组
+x2_data = train_data['X2'].values  # 将 pandas Series 转换为 numpy 数组
+y_train = train_data['Label'].values  # 标签
+
+x1_test = test_data['X1'].values  # 测试集输入
+x2_test = test_data['X2'].values  # 测试集输入
+y_test = test_data['Label'].values  # 测试集标签
+
+x1_val = val_data['X1'].values  # 验证集输入
+x2_val = val_data['X2'].values  # 验证集输入
+y_val = val_data['Label'].values  # 验证集标签
+
+train_loader = create_dataloader(x1_data, x2_data, y_train, batch_size=256, shuffle=True)
+val_loader = create_dataloader(x1_val, x2_val, y_val, batch_size=256, shuffle=False)
+test_loader = create_dataloader(x1_test, x2_test, y_test, batch_size=256, shuffle=False)
+
+embedding_matrix = np.load('data/pre_train_embeddings/go_term_embeddings_N_reshaped_128.npy')
+embedding_tensor = torch.from_numpy(embedding_matrix).float()
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = CNN(vocab_size=47903, embedding_dim=128, pretrained_embeddings=embedding_tensor).to(device)
+# 定义优化器和损失函数
+classification_criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+model.device = device
+
+epochs = 5
+for epoch in range(epochs):
+    model.train()
+    total_loss = 0
+    for x1, x2, labels in train_loader:
+
+        # 前向传播
+        classification_out = model(x1, x2)
+        labels = labels.to(device)
+        x1_out, x2_out = model(x1, x2, labels=labels)
+        # 反向传播
+        loss = contrastive_loss(x1_out, x2_out)
+        loss.backward()
+        optimizer.step()
+
+        # 打印损失
+        print(f"Loss: {loss.item():.4f}")

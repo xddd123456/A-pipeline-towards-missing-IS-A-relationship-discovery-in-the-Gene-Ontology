@@ -1,0 +1,19 @@
+import pandas as pd
+
+
+file1 = 'model_prediction/prediction_data/new_go_pairs_2025.csv'
+
+file2 = 'model_prediction/prediction_data/go_2024/fillter/ndr_pairs_with_uncle_nephew_iter1_top.csv'
+
+df1 = pd.read_csv(file1, header=None, usecols=[0, 1], sep='\t')
+df2 = pd.read_csv(file2, header=None, usecols=[0, 1], sep='\t')
+
+# Step 2: 找出前两列相同的部分
+# 通过 inner join 获取两者前两列完全相同的行
+
+common = pd.merge(df1, df2, how='inner', on=[0, 1])
+# Step 3: 保存结果为新的 CSV 文件
+output_file = "model_prediction/prediction_data/common_lines_train.csv"
+common.to_csv(output_file, index=False, header=False)
+
+print(f"前两列相同的行已保存到 {output_file}")
