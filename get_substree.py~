@@ -1,0 +1,110 @@
+import networkx as nx
+import csv
+import pandas as pd
+
+
+def calculate_node_depths(graph):
+    """计算每个节点的深度（从根节点开始到该节点的最长路径长度）。"""
+    root_nodes = [node for node in graph.nodes() if graph.in_degree(node) == 0]
+    depths = {}
+
+    for root in root_nodes:
+        for node, depth in nx.single_source_shortest_path_length(graph.reverse(), root).items():
+            depths[node] = depth
+
+    return depths
+
+
+def find_leaf_nodes(graph):
+    """找到所有叶子节点（出度为 0 的节点）。"""
+    return [node for node in graph.nodes() if graph.out_degree(node) == 0]
+
+
+def extract_all_two_layer_nodes(graph):
+    """
+    找出所有叶子节点向上追溯两层的祖父节点，并提取这些祖父节点的子树。
+    :param graph: GO 图 (NetworkX DiGraph)。
+    :return: 子树的节点列表（每个子树是一个集合）。
+    """
+    subtrees = []
+    leaf_nodes = find_leaf_nodes(graph)
+    visited_roots = set()
+
+    for leaf in leaf_nodes:
+        current_node = leaf
+        for _ in range(2):  # 向上两层
+            predecessors = sorted(graph.predecessors(current_node))  # 选择固定的父节点
+            if predecessors:
+                current_node = predecessors[0]  # 取第一个（最小 GO ID）
+            else:
+                break
+
+        if current_node in visited_roots:
+            continue  # 避免重复处理相同祖父节点
+        visited_roots.add(current_node)
+
+        # 以祖父节点为根，找到其所有子孙节点
+        subtree_nodes = sorted(nx.dfs_preorder_nodes(graph, source=current_node))
+        subtrees.append(subtree_nodes)
+
+    return subtrees
+
+
+def find_ndr_pairs(graph, subtrees):
+    """
+    查找 NDR 节点对：共享相同子树或父节点的节点对，以及最近的叔侄关系。
+    :param graph: GO 图 (DiGraph)。
+    :param subtrees: 提取的子树列表，每个子树是节点的集合。
+    :return: NDR 节点对列表。
+    """
+    ndr_pairs = set()
+
+    for subtree in subtrees:
+        for i in range(len(subtree)):
+            for j in range(i + 1, len(subtree)):
+                node1, node2 = subtree[i], subtree[j]
+
+                parents1 = set(graph.predecessors(node1))
+                parents2 = set(graph.predecessors(node2))
+                children1 = set(graph.successors(node1))
+                children2 = set(graph.successors(node2))
+
+                if parents1 & parents2 or children1 & children2:
+                    ndr_pairs.add((node1, node2))
+                elif node1 in children2 or node2 in children1:
+                    ndr_pairs.add((node1, node2))
+
+    return sorted(ndr_pairs)  # 保证每次顺序一致
+
+
+def save_ndr_pairs_to_csv(ndr_pairs, output_file):
+    """将 NDR 节点对保存到 CSV 文件。"""
+    with open(output_file, mode='w', newline='', encoding='utf-8-sig') as file:
+        writer = csv.writer(file, delimiter='\t')
+        writer.writerow(["Node1", "Node2"])
+        writer.writerows(ndr_pairs)
+
+
+def load_go_graph(is_a_file):
+    """加载 GO 图。"""
+    go_data = pd.read_csv(is_a_file, sep='\t')
+
+    go_graph = nx.DiGraph()
+    for _, row in go_data.iterrows():
+        child, parent = row['id'], row['related_id']
+        go_graph.add_edge(parent, child)
+
+    return go_graph
+
+
+# 主流程
+is_a_file = "data/go_2022/is_a_relations.csv"
+output_file = "model_prediction/prediction_data/go_2022/ndr_pairs_all.csv"
+
+go_graph = load_go_graph(is_a_file)
+node_depths = calculate_node_depths(go_graph)
+subtrees = extract_all_two_layer_nodes(go_graph)
+ndr_pairs = find_ndr_pairs(go_graph, subtrees)
+
+save_ndr_pairs_to_csv(ndr_pairs, output_file)
+print(f"找到 {len(subtrees)} 组两层祖父子树, 找到 {len(ndr_pairs)} 对 NDR 节点对, 结果已保存到 {output_file}")
